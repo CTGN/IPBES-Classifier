@@ -300,7 +300,7 @@ def train(cfg,hp_cfg):
 
     clear_cuda_cache()
 
-    result_metrics_path="/home/leandre/Projects/Ipbes Classifier /results/metrics/binary_metrics.csv"
+    result_metrics_path="/home/leandre/Projects/Ipbes Classifier /results/metrics/results.csv"
 
     if os.path.isfile(result_metrics_path):
         result_metrics=pd.read_csv(result_metrics_path)
