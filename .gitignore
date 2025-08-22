@@ -1,0 +1,30 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+data/
+src/__pycache__
+src/data_pipeline/__pycache__
+src/data_pipeline/biomoqa/__pycache__
+src/data_pipeline/ipbes/__pycache__
+src/models/__pycache__
+src/models/biomoqa/__pycache__
+src/models/ipbes/__pycache__
+src/utils/__pycache__
+
+results/models
+results/ray_results
+results/final_model
+results/test preds
+
+plots/
+
+nohup.out
+
+
+# Virtual environments
+.venv
