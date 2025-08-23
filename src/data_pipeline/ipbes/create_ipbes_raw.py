@@ -13,7 +13,15 @@ import re
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
 logger = logging.getLogger(__name__)
 
-from src.config import CONFIG
+# Use robust import system for reproducibility
+from src.utils.import_utils import get_config, add_src_to_path
+
+# Ensure src is in path
+add_src_to_path()
+
+# Get configuration reliably
+CONFIG = get_config()
+
 pyalex.config.email = CONFIG['pyalex_email']
 pyalex.config.max_retries = CONFIG['pyalex_max_retries']
 pyalex.config.retry_backoff_factor = CONFIG['pyalex_retry_backoff_factor']
@@ -51,7 +59,6 @@ def clean_html_tags(text: str) -> str:
 
 def get_ipbes_negatives(directory=None):
     if directory is None:
-        from src.config import CONFIG
         directory = CONFIG['corpus_dir']
     # Create the corpus dataset
     logger.info(f"creating corpus dataset")
@@ -117,7 +124,6 @@ def get_ipbes_negatives(directory=None):
 
 def get_ipbes_positives(directory=None):
     if directory is None:
-        from src.config import CONFIG
         directory = CONFIG['positives_dir']
     """
     Creates 3 positives datasets from a directory containing all the positives.

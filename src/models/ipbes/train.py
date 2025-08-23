@@ -39,8 +39,14 @@ from iterstrat.ml_stratifiers import MultilabelStratifiedKFold, MultilabelStrati
 import yaml
 import pandas as pd
 
-# Use relative imports instead of hardcoded paths
-from src.config import CONFIG
+# Use robust import system for reproducibility
+from src.utils.import_utils import get_config, add_src_to_path
+
+# Ensure src is in path
+add_src_to_path()
+
+# Get configuration reliably
+CONFIG = get_config()
 
 from src.models.biomoqa.HPO_callbacks import CleanupCallback
 from src.utils import *

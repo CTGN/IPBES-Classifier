@@ -33,7 +33,14 @@ from transformers import (
 )
 import transformers
 import datasets
-from src.utils import *
+# Use robust import system for reproducibility
+from src.utils.import_utils import get_config, add_src_to_path
+
+# Ensure src is in path
+add_src_to_path()
+
+# Get configuration reliably
+CONFIG = get_config()
 import sys
 import datasets
 from time import perf_counter
@@ -41,7 +48,12 @@ from .model_init import *
 from time import perf_counter
 from iterstrat.ml_stratifiers import MultilabelStratifiedKFold, MultilabelStratifiedShuffleSplit
 from .HPO_callbacks import CleanupCallback
-from src.data_pipeline.ipbes import data_pipeline
+# Import data pipeline when needed
+try:
+    from src.data_pipeline.ipbes import data_pipeline
+except ImportError:
+    # Fallback if import fails
+    data_pipeline = None
 import pandas as pd
 
 #? How do we implement ensemble learning with cross-validation

@@ -9,8 +9,14 @@ import datasets
 import os
 import sys
 
-# Use relative imports instead of hardcoded paths
-from src.config import CONFIG
+# Use robust import system for reproducibility
+from src.utils.import_utils import get_config, add_src_to_path
+
+# Ensure src is in path
+add_src_to_path()
+
+# Get configuration reliably
+CONFIG = get_config()
 
 from src.data_pipeline.ipbes.create_ipbes_raw import loading_pipeline_from_raw
 from src.data_pipeline.ipbes.fetch import fill_missing_metadata

@@ -6,7 +6,12 @@ Handles path resolution and configuration management
 import os
 from pathlib import Path
 from typing import Dict, Any, Optional
-import yaml
+# Make yaml import optional for robustness
+try:
+    import yaml
+    YAML_AVAILABLE = True
+except ImportError:
+    YAML_AVAILABLE = False
 # Import CONFIG directly to avoid circular imports
 try:
     from src.config import CONFIG

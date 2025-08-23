@@ -1,7 +1,14 @@
 import os
 import sys
 
-from src.config import CONFIG
+# Use robust import system for reproducibility
+from src.utils.import_utils import get_config, add_src_to_path
+
+# Ensure src is in path
+add_src_to_path()
+
+# Get configuration reliably
+CONFIG = get_config()
 
 if parent_dir not in sys.path:
     sys.path.append(parent_dir)

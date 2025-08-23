@@ -4,7 +4,12 @@ Handles loading and merging of configuration files
 """
 
 import os
-import yaml
+# Make yaml import optional for robustness
+try:
+    import yaml
+    YAML_AVAILABLE = True
+except ImportError:
+    YAML_AVAILABLE = False
 from pathlib import Path
 from typing import Dict, Any, Optional
 from omegaconf import OmegaConf, DictConfig
@@ -19,6 +24,9 @@ def load_yaml_config(config_path: str) -> Dict[str, Any]:
     Returns:
         Configuration dictionary
     """
+    if not YAML_AVAILABLE:
+        raise ImportError("YAML is not available. Please install pyyaml to use this function.")
+    
     with open(config_path, 'r') as f:
         return yaml.safe_load(f)
 
@@ -116,6 +124,9 @@ def save_config(config: Dict[str, Any], output_path: str) -> None:
         config: Configuration dictionary
         output_path: Output file path
     """
+    if not YAML_AVAILABLE:
+        raise ImportError("YAML is not available. Please install pyyaml to use this function.")
+    
     output_path = Path(output_path)
     output_path.parent.mkdir(parents=True, exist_ok=True)
     

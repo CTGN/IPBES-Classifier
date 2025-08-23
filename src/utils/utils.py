@@ -30,10 +30,16 @@ from email.mime.text import MIMEText
 from sklearn.metrics import average_precision_score,matthews_corrcoef,ndcg_score,cohen_kappa_score,roc_auc_score, f1_score, recall_score, precision_score, accuracy_score
 import sys
 
-# Use relative imports instead of hardcoded paths
-from src.config import CONFIG
+# Use robust import system for reproducibility
+from src.utils.import_utils import get_config, add_src_to_path
 
-from src.config import CONFIG
+# Ensure src is in path
+add_src_to_path()
+
+# Get configuration reliably
+CONFIG = get_config()
+
+
 
 
 logger = logging.getLogger(__name__)
