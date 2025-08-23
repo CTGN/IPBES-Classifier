@@ -1,3 +1,5 @@
-from .multi_label_pipeline import TrainMultiLabelPipeline
+# IPBES models package
+# Export only what's needed to avoid circular imports
 
-__all__=["TrainMultiLabelPipeline"]
+# Don't import everything automatically - let users import what they need
+__all__ = []

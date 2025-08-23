@@ -7,7 +7,12 @@ import os
 from pathlib import Path
 from typing import Dict, Any, Optional
 import yaml
-from src.config import CONFIG
+# Import CONFIG directly to avoid circular imports
+try:
+    from src.config import CONFIG
+except ImportError:
+    # Fallback: define CONFIG locally if import fails
+    CONFIG = {}
 
 def get_project_root() -> Path:
     """Get the project root directory."""
