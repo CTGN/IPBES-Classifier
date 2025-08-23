@@ -227,10 +227,10 @@ def train_hpo(cfg,fold_idx,run_idx):
 
     clear_cuda_cache()
     logger.info(f"\nfold number {fold_idx+1} | run no. {run_idx+1}")
-            clean_ds = load_dataset("csv", data_files=CONFIG['cleaned_dataset_path'], split="train")
-        train_indices = load_dataset("csv", data_files=f"{CONFIG['folds_dir']}/train{fold_idx}_run-{run_idx}.csv",split="train")
-        dev_indices = load_dataset("csv", data_files=f"{CONFIG['folds_dir']}/dev{fold_idx}_run-{run_idx}.csv",split="train")
-        test_indices = load_dataset("csv", data_files=f"{CONFIG['folds_dir']}/test{fold_idx}_run-{run_idx}.csv",split="train")
+    clean_ds = load_dataset("csv", data_files=CONFIG['cleaned_dataset_path'], split="train")
+    train_indices = load_dataset("csv", data_files=f"{CONFIG['folds_dir']}/train{fold_idx}_run-{run_idx}.csv",split="train")
+    dev_indices = load_dataset("csv", data_files=f"{CONFIG['folds_dir']}/dev{fold_idx}_run-{run_idx}.csv",split="train")
+    test_indices = load_dataset("csv", data_files=f"{CONFIG['folds_dir']}/test{fold_idx}_run-{run_idx}.csv",split="train")
 
     train_split= clean_ds.select(train_indices['index'])
     dev_split= clean_ds.select(dev_indices['index'])
