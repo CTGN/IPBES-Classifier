@@ -64,4 +64,4 @@ done
 
 # clean up folds
 #echo "==> Cleaning up folds directory"
-#rm -r "/home/leandre/Projects/BioMoQA_Playground/data/ipbes/folds/"*
+#rm -r "./data/ipbes/folds/"*

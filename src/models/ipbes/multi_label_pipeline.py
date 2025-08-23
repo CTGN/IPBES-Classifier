@@ -329,7 +329,7 @@ class TrainMultiLabelPipeline:
                 checkpoint_config=checkpoint_config,
                 num_samples=self.n_trials,
                 resources_per_trial={"cpu": 10, "gpu": 1},
-                storage_path="/home/leandre/Projects/BioMoQA_Playground/model/ray_results/",
+                storage_path=CONFIG['ray_results_dir'],
                 callbacks=[CleanupCallback()],
             )
             logger.info(f"Analysis results: {analysis}")
@@ -471,7 +471,7 @@ class TrainMultiLabelPipeline:
             torch.cuda.empty_cache()
         if scores_df_list:
             logger.info(f"Scores DataFrame shape: {pd.concat(scores_df_list).shape}")
-            pd.concat(scores_df_list).to_csv(os.path.join("/home/leandre/Projects/BioMoQA_Playground/results/test_preds", f"{model_name}_loss-{self.loss_type}{'_with_title' if self.with_title else ''}_run-{self.run_idx}.csv"))
+            pd.concat(scores_df_list).to_csv(os.path.join(CONFIG['test_preds_dir'], f"{model_name}_loss-{self.loss_type}{'_with_title' if self.with_title else ''}_run-{self.run_idx}.csv"))
         else:
             logger.warning(f"No scores to save for model {model_name} with loss type {self.loss_type} and run {self.run_idx}.")
 
@@ -565,9 +565,9 @@ class TrainMultiLabelPipeline:
             fold_scores_df["fold"]=[fold_idx for _ in range(len(fold_scores_df))]
             scores_df_list.append(fold_scores_df)
         if not zero_shot:
-            pd.concat(scores_df_list).to_csv(os.path.join("/home/leandre/Projects/BioMoQA_Playground/results/test_preds", f"ensemble_loss-{self.loss_type}{'_with_title' if self.with_title else ''}.csv"))
+            pd.concat(scores_df_list).to_csv(os.path.join(CONFIG['test_preds_dir'], f"ensemble_loss-{self.loss_type}{'_with_title' if self.with_title else ''}.csv"))
         else:
-            pd.concat(scores_df_list).to_csv(os.path.join("/home/leandre/Projects/BioMoQA_Playground/results/test_preds", f"zero_shot_ensemble{'_with_title' if self.with_title else ''}.csv"))
+            pd.concat(scores_df_list).to_csv(os.path.join(CONFIG['test_preds_dir'], f"zero_shot_ensemble{'_with_title' if self.with_title else ''}.csv"))
          # Group by relevant columns and calculate mean metrics
         avg_metrics = self.result_metrics.groupby(
             ["data_type", "loss_type", "model_name", "run"]
@@ -597,7 +597,9 @@ class TrainMultiLabelPipeline:
                 logger.info(f"Metrics dataframe for run no. {i+1}: {self.dataset}")
         return self.result_metrics
 
-    def store_metrics(self,metric_df,path="/home/leandre/Projects/BioMoQA_Playground/results/metrics",file_name="multi_labels_metrics.csv"):
+    def store_metrics(self,metric_df,path=None,file_name="multi_labels_metrics.csv"):
+        if path is None:
+            path = CONFIG['metrics_dir']
         if metric_df is not None:
             metric_df.to_csv(os.path.join(path, file_name))
         else:
@@ -628,7 +630,9 @@ class TrainMultiLabelPipeline:
         logger.info(f"Metrics: {metrics}")
         return metrics
 
-    def store_test_folds(self,path="/home/leandre/Projects/BioMoQA_Playground/results/test preds",file_name="test_folds.csv"):
+    def store_test_folds(self,path=None,file_name="test_folds.csv"):
+        if path is None:
+            path = CONFIG['test_preds_dir']
         test_split_list=[]
         for fold_idx in range(len(self.folds)):
             logger.info(f"\nfold number {fold_idx+1} / {len(self.folds)}")
@@ -718,7 +722,7 @@ class TrainMultiLabelPipeline:
                         preds_df_list.append(fold_preds_df)
 
                     self.store_metrics(self.random_forest_metrics,file_name="random_forest_metrics.csv")
-                    pd.concat(preds_df_list).to_csv(os.path.join("/home/leandre/Projects/BioMoQA_Playground/results/test preds",f"rf_{criterion}{'_with_title' if self.with_title else ''}_{num_trees}_run-{self.run_idx}.csv"))
+                    pd.concat(preds_df_list).to_csv(os.path.join(CONFIG['test_preds_dir'],f"rf_{criterion}{'_with_title' if self.with_title else ''}_{num_trees}_run-{self.run_idx}.csv"))
 
 
 
@@ -794,7 +798,7 @@ class TrainMultiLabelPipeline:
                     fold_preds_df["fold"] = [fold_idx for _ in range(len(fold_preds_df))]
                     preds_df_list.append(fold_preds_df)
                 self.store_metrics(self.svm_metrics, file_name="svm_metrics.csv")
-                pd.concat(preds_df_list).to_csv(os.path.join("/home/leandre/Projects/BioMoQA_Playground/results/test preds", f"svm_{kernel}{'_with_title' if self.with_title else ''}_run-{self.run_idx}.csv"))
+                pd.concat(preds_df_list).to_csv(os.path.join(CONFIG['test_preds_dir'], f"svm_{kernel}{'_with_title' if self.with_title else ''}_run-{self.run_idx}.csv"))
 
     def svm_bert(self, model_name):
         """
@@ -890,7 +894,7 @@ class TrainMultiLabelPipeline:
 
                 self.store_metrics(self.svm_metrics, file_name=f"svm_bert_{model_name.replace('/', '_')}_metrics.csv")
                 pd.concat(preds_df_list).to_csv(os.path.join(
-                    "/home/leandre/Projects/BioMoQA_Playground/results/test preds",
+                    CONFIG['test_preds_dir'],
                     f"svm_bert_{model_name.replace('/', '_')}_{kernel}{'_with_title' if self.with_title else ''}_run-{self.run_idx}.csv"
                 ))
 
@@ -941,7 +945,7 @@ class TrainMultiLabelPipeline:
                 logger.info(f"Detailed metrics for fold {fold_idx+1}: {detailed_metrics}")
 
                 # Save predictions
-                preds_df.to_csv(os.path.join("/home/leandre/Projects/BioMoQA_Playground/results/test_preds", f"zero_shot_{model_name.replace('/', '_')}_fold-{fold_idx}.csv"), index=False)
+                preds_df.to_csv(os.path.join(CONFIG['test_preds_dir'], f"zero_shot_{model_name.replace('/', '_')}_fold-{fold_idx}.csv"), index=False)
                 scores_by_model.append(preds_df)
         logger.info(f"Zero-shot ensemble classification : {self.ensemble_pred(scores_by_model=scores_by_model, zero_shot=True)}")
     

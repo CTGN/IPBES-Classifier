@@ -30,11 +30,8 @@ from email.mime.text import MIMEText
 from sklearn.metrics import average_precision_score,matthews_corrcoef,ndcg_score,cohen_kappa_score,roc_auc_score, f1_score, recall_score, precision_score, accuracy_score
 import sys
 
-src_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "/home/leandre/Projects/BioMoQA_Playground/src/.."))
-
-# Add it to sys.path
-if src_dir not in sys.path:
-    sys.path.append(src_dir)
+# Use relative imports instead of hardcoded paths
+from src.config import CONFIG
 
 from src.config import CONFIG
 
@@ -55,7 +52,9 @@ def map_name(model_name):
     else:
         return model_name
 
-def save_dataframe(metric_df,path="/home/leandre/Projects/BioMoQA_Playground/results/biomoqa/metrics",file_name="binary_metrics.csv"):
+def save_dataframe(metric_df, path=None, file_name="binary_metrics.csv"):
+    if path is None:
+        path = CONFIG['metrics_dir']
         if metric_df is not None:
             metric_df.to_csv(os.path.join(path, file_name),index=False)
             logger.info(f"Metrics stored successfully at {os.path.join(path, file_name)}")
@@ -217,7 +216,9 @@ def plot_precision_recall_curve(y_true, y_scores,logger,plot_dir,data_type=None)
         logger.info(f"Precision-Recall curve saved to {plot_dir}/precision_recall_curve.png")
     return avg_precision
 
-def visualize_ray_tune_results(analysis,logger,plot_dir='/home/leandre/Projects/BioMoQA_Playground/plots', metric="eval_recall", mode="max"):
+def visualize_ray_tune_results(analysis, logger, plot_dir=None, metric="eval_recall", mode="max"):
+    if plot_dir is None:
+        plot_dir = CONFIG['plots_dir']
     """
     Create visualizations of Ray Tune hyperparameter search results.
     

@@ -132,7 +132,7 @@ def optimize_model(
         #scheduler=scheduler,
         checkpoint_config=checkpoint_config,
         #callbacks=[MyCallback()],
-        storage_path="/home/leandre/Projects/BioMoQA_Playground/model/ray_results/",
+        storage_path=CONFIG['ray_results_dir'],
         name="tune_transformer_pbt",
     )
     logger.info(f"Best run : {best_run}")

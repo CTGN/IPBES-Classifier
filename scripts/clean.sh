@@ -25,7 +25,7 @@ if [[ $b_flag -eq 0 && $i_flag -eq 0 ]]; then
 fi
 
 # Base directory for both BiomoQA and IPBES
-BASE="/home/leandre/Projects/BioMoQA_Playground/results"
+BASE="./results"
 
 # If -b was passed, delete all children under biomoqa/*
 if [[ $b_flag -eq 1 ]]; then

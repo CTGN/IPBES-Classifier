@@ -39,11 +39,8 @@ from iterstrat.ml_stratifiers import MultilabelStratifiedKFold, MultilabelStrati
 import yaml
 import pandas as pd
 
-src_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "/home/leandre/Projects/Ipbes Classifier/src/.."))
-
-# Add it to sys.path
-if src_dir not in sys.path:
-    sys.path.append(src_dir)
+# Use relative imports instead of hardcoded paths
+from src.config import CONFIG
 
 from src.models.ipbes.HPO_callbacks import CleanupCallback
 from src.utils import *
@@ -159,7 +156,7 @@ def trainable(config,cfg,tokenized_train,tokenized_dev,data_collator,tokenizer):
     logger.info(f"Trial on GPU {gpu_id} using batch size {batch_size}")
     
     training_args = CustomTrainingArguments(
-        output_dir="/home/leandre/Projects/Ipbes Classifier/results/models",
+        output_dir=CONFIG['models_dir'],
         seed=CONFIG["seed"],
         data_seed=CONFIG["seed"],
         **CONFIG["default_training_args"],
@@ -230,10 +227,10 @@ def train_hpo(cfg,fold_idx,run_idx):
 
     clear_cuda_cache()
     logger.info(f"\nfold number {fold_idx+1} | run no. {run_idx+1}")
-    clean_ds = load_dataset("csv", data_files="/home/leandre/Projects/Ipbes Classifier/data/cleaned_dataset.csv", split="train")
-    train_indices = load_dataset("csv", data_files=f"/home/leandre/Projects/Ipbes Classifier/data/folds/train{fold_idx}_run-{run_idx}.csv",split="train")
-    dev_indices = load_dataset("csv", data_files=f"/home/leandre/Projects/Ipbes Classifier/data/folds/dev{fold_idx}_run-{run_idx}.csv",split="train")
-    test_indices = load_dataset("csv", data_files=f"/home/leandre/Projects/Ipbes Classifier/data/folds/test{fold_idx}_run-{run_idx}.csv",split="train")
+            clean_ds = load_dataset("csv", data_files=CONFIG['cleaned_dataset_path'], split="train")
+        train_indices = load_dataset("csv", data_files=f"{CONFIG['folds_dir']}/train{fold_idx}_run-{run_idx}.csv",split="train")
+        dev_indices = load_dataset("csv", data_files=f"{CONFIG['folds_dir']}/dev{fold_idx}_run-{run_idx}.csv",split="train")
+        test_indices = load_dataset("csv", data_files=f"{CONFIG['folds_dir']}/test{fold_idx}_run-{run_idx}.csv",split="train")
 
     train_split= clean_ds.select(train_indices['index'])
     dev_split= clean_ds.select(dev_indices['index'])
@@ -316,7 +313,7 @@ def train_hpo(cfg,fold_idx,run_idx):
         checkpoint_config=checkpoint_config,
         num_samples=cfg['num_trials'],
         resources_per_trial={"cpu": 7, "gpu": 1},
-        storage_path="/home/leandre/Projects/Ipbes Classifier/results/ray_results/",
+        storage_path=CONFIG['ray_results_dir'],
         callbacks=[CleanupCallback(cfg['hpo_metric'])]
     )
     logger.info(f"Analysis results: {analysis}")

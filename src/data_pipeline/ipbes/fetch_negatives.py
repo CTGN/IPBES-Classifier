@@ -1,7 +1,7 @@
 import os
 import sys
 
-parent_dir = os.path.abspath("/home/leandre/Projects/Ipbes Classifier")
+from src.config import CONFIG
 
 if parent_dir not in sys.path:
     sys.path.append(parent_dir)
@@ -28,7 +28,7 @@ USER_AGENT = f"mailto:{EMAIL}"
 BATCH_SIZE = 100
 TIMEOUT = 60  # seconds
 EXPORT_CSV = True
-CSV_PATH = "/home/leandre/Projects/Ipbes Classifier /data/modified_instances/openalex_sync_results.csv"
+CSV_PATH = f"{CONFIG['data_dir']}/modified_instances/openalex_sync_results.csv"
 
 # Retry on 429, 5xx, connection errors, timeouts
 RETRY_STRATEGY = Retry(

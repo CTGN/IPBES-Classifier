@@ -137,7 +137,7 @@ analysis = tune.run(
     resources_per_trial={"cpu": 2, "gpu": 1},
     metric="f1",
     mode="max",
-    storage_path="/home/leandre/Projects/BioMoQA_Playground/ray_results",
+            storage_path=CONFIG['ray_results_dir'],
 )
 
 # Get best hyperparameters

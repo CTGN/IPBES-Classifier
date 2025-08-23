@@ -39,11 +39,8 @@ from iterstrat.ml_stratifiers import MultilabelStratifiedKFold, MultilabelStrati
 import yaml
 import pandas as pd
 
-src_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "/home/leandre/Projects/Ipbes Classifier /src/.."))
-
-# Add it to sys.path
-if src_dir not in sys.path:
-    sys.path.append(src_dir)
+# Use relative imports instead of hardcoded paths
+from src.config import CONFIG
 
 from src.models.biomoqa.HPO_callbacks import CleanupCallback
 from src.utils import *
@@ -143,9 +140,9 @@ def train(cfg,hp_cfg):
     tokenizer = AutoTokenizer.from_pretrained(cfg['model_name'])
     data_collator = DataCollatorWithPadding(tokenizer=tokenizer,padding=True)
     
-    train_split = load_dataset("csv", data_files=f"/home/leandre/Projects/Ipbes Classifier /data/folds/train{cfg['fold']}_run-{cfg['run']}.csv",split="train")
-    dev_split = load_dataset("csv", data_files=f"/home/leandre/Projects/Ipbes Classifier /data/folds/dev{cfg['fold']}_run-{cfg['run']}.csv",split="train")
-    test_split = load_dataset("csv", data_files=f"/home/leandre/Projects/Ipbes Classifier /data/folds/test{cfg['fold']}_run-{cfg['run']}.csv",split="train")
+            train_split = load_dataset("csv", data_files=f"{CONFIG['folds_dir']}/train{cfg['fold']}_run-{cfg['run']}.csv",split="train")
+        dev_split = load_dataset("csv", data_files=f"{CONFIG['folds_dir']}/dev{cfg['fold']}_run-{cfg['fold']}.csv",split="train")
+        test_split = load_dataset("csv", data_files=f"{CONFIG['folds_dir']}/test{cfg['fold']}_run-{cfg['run']}.csv",split="train")
 
     logger.info(f"train split size : {len(train_split)}")
     logger.info(f"dev split size : {len(dev_split)}")
@@ -165,7 +162,7 @@ def train(cfg,hp_cfg):
 
     # Set up training arguments
     training_args = CustomTrainingArguments(
-            output_dir="/home/leandre/Projects/Ipbes Classifier /results/models",
+            output_dir=CONFIG['models_dir'],
             seed=CONFIG["seed"],
             data_seed=CONFIG["seed"],
             **CONFIG["default_training_args"],
@@ -258,7 +255,7 @@ def train(cfg,hp_cfg):
     logger.info(f"Avg time / step: {avg_step_time:.3f}s")
     
 
-    final_model_path = os.path.join("/home/leandre/Projects/Ipbes Classifier /results/final_model", "best_model_cross_val_"+str(cfg['loss_type'])+"_" +str(map_name(cfg['model_name'])) + "_fold-"+str(cfg['fold']+1))
+            final_model_path = os.path.join(CONFIG['final_model_dir'], "best_model_cross_val_"+str(cfg['loss_type'])+"_" +str(map_name(cfg['model_name'])) + "_fold-"+str(cfg['fold']+1))
     
     trainer.save_model(final_model_path)
     logger.info(f"Best model saved to {final_model_path}")
@@ -300,7 +297,7 @@ def train(cfg,hp_cfg):
 
     clear_cuda_cache()
 
-    result_metrics_path="/home/leandre/Projects/Ipbes Classifier /results/metrics/results.csv"
+            result_metrics_path=os.path.join(CONFIG['metrics_dir'], "results.csv")
 
     if os.path.isfile(result_metrics_path):
         result_metrics=pd.read_csv(result_metrics_path)
@@ -327,7 +324,7 @@ def train(cfg,hp_cfg):
     save_dataframe(result_metrics)
 
     fold_preds_df=pd.DataFrame(data={"label":test_split["labels"],"prediction":preds,'score':scores,"fold":[cfg['fold'] for _ in range(len(preds))],"title":test_split['title'] })
-    test_preds_path=os.path.join("/home/leandre/Projects/Ipbes Classifier /results/test preds/bert",f"fold_{cfg['fold']}_{map_name(os.path.basename(cfg['model_name']))}_{cfg['loss_type']}{'_with_title' if cfg['with_title'] else ''}{'_with_keywords' if cfg['with_keywords'] else ''}_run-{cfg['run']}_opt_neg-{cfg['nb_optional_negs']}.csv")
+        test_preds_path=os.path.join(CONFIG['test_preds_dir'], f"fold_{cfg['fold']}_{map_name(os.path.basename(cfg['model_name']))}_{cfg['loss_type']}{'_with_title' if cfg['with_title'] else ''}{'_with_keywords' if cfg['with_keywords'] else ''}_run-{cfg['run']}_opt_neg-{cfg['nb_optional_negs']}.csv")
     
     fold_preds_df.to_csv(test_preds_path)
 

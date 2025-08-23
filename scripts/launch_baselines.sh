@@ -18,5 +18,5 @@ for opt_negs in "${NUM_OPT_NEGS[@]}"; do
   #echo "adding $opt_negs optional negatives"
   #uv run src/data_pipeline/biomoqa/preprocess_biomoqa.py -t -nf "$NUM_FOLDS" -nr "$NUM_RUNS" -on "$opt_negs"
   uv run src/models/biomoqa/baselines.py -on "$opt_negs" -nf "$NUM_FOLDS" -nr "$NUM_RUNS" -t
-  #rm -r /home/leandre/Projects/BioMoQA_Playground/data/biomoqa/folds/*
+  #rm -r ./data/biomoqa/folds/*
 done

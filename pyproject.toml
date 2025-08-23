@@ -10,7 +10,7 @@ dependencies = [
     "autorank>=1.3.0",
     "beautifulsoup4>=4.13.3",
     "biopython>=1.85",
-    "bitsandbytes>=0.45.4",
+    # "bitsandbytes>=0.45.4",  # Temporarily commented out for macOS compatibility
     "clarivate-wos-starter-python-client",
     "datasets>=3.4.0",
     "deep-translator>=1.11.4",

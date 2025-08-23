@@ -9,10 +9,8 @@ import datasets
 import os
 import sys
 
-parent_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "/home/leandre/Projects/Ipbes Classifier"))  # Adjust ".." based on your structure
-
-if parent_dir not in sys.path:
-    sys.path.append(parent_dir)
+# Use relative imports instead of hardcoded paths
+from src.config import CONFIG
 
 from src.data_pipeline.ipbes.create_ipbes_raw import loading_pipeline_from_raw
 from src.data_pipeline.ipbes.fetch import fill_missing_metadata
@@ -123,7 +121,7 @@ def merge_pos_neg(pos_ds, neg_ds, store=False):
     if store:
         # Save in chunks to reduce memory pressure
         #? What are num_shards ? -> see doc
-        merged_ds.save_to_disk("/home/leandre/Projects/Ipbes Classifier/data/corpus", 
+        merged_ds.save_to_disk(CONFIG['corpus_output_dir'], 
                               num_shards=4)  # Split into multiple files)
     print("Number of Positives before cleaning :",len(pos_ds))
     return merged_ds
@@ -418,7 +416,7 @@ def main():
         fill_metadata=args.fill_metadata,
         max_workers=args.max_workers
     )
-    clean_ds.to_pandas().to_csv("/home/leandre/Projects/Ipbes Classifier/data/cleaned_dataset.csv", index=False)
+    clean_ds.to_pandas().to_csv(CONFIG['cleaned_dataset_path'], index=False)
 
     for run_idx in range(len(folds_per_run)):
         folds=folds_per_run[run_idx]
@@ -432,9 +430,9 @@ def main():
             logger.info(f"dev split size : {len(dev_indices)}")
             logger.info(f"test split size : {len(test_indices)}")
             
-            np.savetxt(f"/home/leandre/Projects/Ipbes Classifier/data/folds/train{fold_idx}_run-{run_idx}.csv", train_indices, delimiter=',', fmt='%g')
-            np.savetxt(f"/home/leandre/Projects/Ipbes Classifier/data/folds/dev{fold_idx}_run-{run_idx}.csv", dev_indices, delimiter=',', fmt='%g')
-            np.savetxt(f"/home/leandre/Projects/Ipbes Classifier/data/folds/test{fold_idx}_run-{run_idx}.csv", test_indices, delimiter=',', fmt='%g')
+                    np.savetxt(f"{CONFIG['folds_dir']}/train{fold_idx}_run-{run_idx}.csv", train_indices, delimiter=',', fmt='%g')
+        np.savetxt(f"{CONFIG['folds_dir']}/dev{fold_idx}_run-{run_idx}.csv", dev_indices, delimiter=',', fmt='%g')
+        np.savetxt(f"{CONFIG['folds_dir']}/test{fold_idx}_run-{run_idx}.csv", test_indices, delimiter=',', fmt='%g')
 
 if __name__ == "__main__":
     main()

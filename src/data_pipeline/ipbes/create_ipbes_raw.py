@@ -13,9 +13,10 @@ import re
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
 logger = logging.getLogger(__name__)
 
-pyalex.config.email="leandre.catogni@hesge.ch"
-pyalex.config.max_retries = 1
-pyalex.config.retry_backoff_factor = 0.1
+from src.config import CONFIG
+pyalex.config.email = CONFIG['pyalex_email']
+pyalex.config.max_retries = CONFIG['pyalex_max_retries']
+pyalex.config.retry_backoff_factor = CONFIG['pyalex_retry_backoff_factor']
 
 
 def clean_html_tags(text: str) -> str:
@@ -48,7 +49,10 @@ def clean_html_tags(text: str) -> str:
 #TODO : our data_types depends entirely on the reading order of the data directories, we should solve this by creating a dictionarry with the name of the data directory type
 #! solve the last comment
 
-def get_ipbes_negatives(directory='/home/leandre/Projects/Ipbes Classifier/data/Raw/Corpus'):
+def get_ipbes_negatives(directory=None):
+    if directory is None:
+        from src.config import CONFIG
+        directory = CONFIG['corpus_dir']
     # Create the corpus dataset
     logger.info(f"creating corpus dataset")
     dataset = load_dataset(
@@ -111,7 +115,10 @@ def get_ipbes_negatives(directory='/home/leandre/Projects/Ipbes Classifier/data/
     """
     return dataset
 
-def get_ipbes_positives(directory = '/home/leandre/Projects/Ipbes Classifier/data/Raw/Positives'):
+def get_ipbes_positives(directory=None):
+    if directory is None:
+        from src.config import CONFIG
+        directory = CONFIG['positives_dir']
     """
     Creates 3 positives datasets from a directory containing all the positives.
     The returned datasets are raw and are just the combination of the several original files.
