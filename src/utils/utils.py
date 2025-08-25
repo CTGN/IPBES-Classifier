@@ -66,8 +66,39 @@ def save_dataframe(metric_df, path=None, file_name="binary_metrics.csv"):
         else:
             raise ValueError("result_metrics is None. Consider running the model before storing metrics.")
 
-def detailed_metrics(predictions: np.ndarray, labels: np.ndarray,scores =None) -> Dict[str, float]:
-    """Compute and display detailed metrics including confusion matrix."""
+def detailed_metrics(predictions: np.ndarray, labels: np.ndarray, scores=None, label_names=None) -> Dict[str, float]:
+    """Compute and display detailed metrics including confusion matrix.
+    
+    Args:
+        predictions: Binary predictions array. Shape (n_samples,) for binary or (n_samples, n_labels) for multi-label
+        labels: True labels array. Shape (n_samples,) for binary or (n_samples, n_labels) for multi-label  
+        scores: Prediction scores/probabilities (optional). Same shape as predictions
+        label_names: List of label names for multi-label case (e.g., ["IAS", "SUA", "VA"])
+        
+    Returns:
+        Dictionary containing computed metrics
+    """
+    # Convert to numpy arrays and ensure correct shape
+    predictions = np.asarray(predictions)
+    labels = np.asarray(labels)
+    
+    # Determine if this is multi-label (2D arrays) or binary (1D arrays)
+    is_multilabel = len(predictions.shape) > 1 and predictions.shape[1] > 1
+    
+    if is_multilabel:
+        return _compute_multilabel_metrics(predictions, labels, scores, label_names)
+    else:
+        return _compute_binary_metrics(predictions, labels, scores)
+
+
+def _compute_binary_metrics(predictions: np.ndarray, labels: np.ndarray, scores=None) -> Dict[str, float]:
+    """Compute metrics for binary classification."""
+    # Ensure 1D arrays for binary case
+    if len(predictions.shape) > 1:
+        predictions = predictions.flatten()
+    if len(labels.shape) > 1:
+        labels = labels.flatten()
+        
     cm = confusion_matrix(labels, predictions, labels=[0, 1])
     tn, fp, fn, tp = cm.ravel()
     logger.info(f"Confusion matrix: TN={tn}, FP={fp}, FN={fn}, TP={tp}")
@@ -82,15 +113,117 @@ def detailed_metrics(predictions: np.ndarray, labels: np.ndarray,scores =None) -
         **(evaluate.load("recall").compute(predictions=predictions, references=labels) or {}),
         **(evaluate.load("precision").compute(predictions=predictions, references=labels) or {}),
         **(evaluate.load("accuracy").compute(predictions=predictions, references=labels) or {}),
-        "roc_auc" : roc_auc_score(labels,scores) if scores is not None else {},
-        "AP":average_precision_score(labels,scores,average="weighted") if scores is not None else {},
-        "MCC":matthews_corrcoef(labels,predictions),
-        "NDCG":ndcg_score(np.asarray(labels).reshape(1, -1),scores.reshape(1, -1)) if scores is not None else {},
-        "kappa":cohen_kappa_score(labels,predictions),
-        'TN':tn, 'FP':fp, 'FN':fn, "TP":tp
+        "roc_auc": roc_auc_score(labels, scores) if scores is not None else 0.0,
+        "AP": average_precision_score(labels, scores) if scores is not None else 0.0,
+        "MCC": matthews_corrcoef(labels, predictions),
+        "NDCG": ndcg_score(np.asarray(labels).reshape(1, -1), scores.reshape(1, -1)) if scores is not None else 0.0,
+        "kappa": cohen_kappa_score(labels, predictions),
+        'TN': tn, 'FP': fp, 'FN': fn, "TP": tp
     }
     
     logger.info(f"Metrics: {metrics}")
+    return metrics
+
+
+def _compute_multilabel_metrics(predictions: np.ndarray, labels: np.ndarray, scores=None, label_names=None) -> Dict[str, float]:
+    """Compute metrics for multi-label classification."""
+    n_labels = predictions.shape[1]
+    
+    # Set default label names if not provided
+    if label_names is None:
+        label_names = [f"Label_{i}" for i in range(n_labels)]
+    elif len(label_names) != n_labels:
+        logger.warning(f"Number of label names ({len(label_names)}) doesn't match number of labels ({n_labels}). Using default names.")
+        label_names = [f"Label_{i}" for i in range(n_labels)]
+    
+    logger.info(f"Computing multi-label metrics for {n_labels} labels: {label_names}")
+    logger.info(f"Labels shape: {labels.shape}, Predictions shape: {predictions.shape}")
+    
+    # Compute multi-label confusion matrices
+    mcm = multilabel_confusion_matrix(labels, predictions)
+    
+    # Plot multi-label confusion matrix (one subplot per label)
+    fig, axes = plt.subplots(1, n_labels, figsize=(6*n_labels, 6))
+    if n_labels == 1:
+        axes = [axes]
+    
+    for i, (cm, label_name) in enumerate(zip(mcm, label_names)):
+        disp = ConfusionMatrixDisplay(cm, display_labels=[f"Not {label_name}", label_name])
+        disp.plot(ax=axes[i])
+        axes[i].set_title(f"Confusion Matrix - {label_name}")
+    
+    plt.tight_layout()
+    plt.savefig(os.path.join(CONFIG["plot_dir"], "multilabel_confusion_matrix.png"))
+    plt.close()
+    
+    # Compute per-label metrics
+    f1_per_label = f1_score(labels, predictions, average=None, zero_division=0)
+    recall_per_label = recall_score(labels, predictions, average=None, zero_division=0)
+    precision_per_label = precision_score(labels, predictions, average=None, zero_division=0)
+    
+    # Initialize metrics dictionary
+    metrics = {}
+    
+    # Add per-label metrics
+    for i, label_name in enumerate(label_names):
+        tn, fp, fn, tp = mcm[i].ravel()
+        metrics.update({
+            f"f1_{label_name}": float(f1_per_label[i]),
+            f"recall_{label_name}": float(recall_per_label[i]),
+            f"precision_{label_name}": float(precision_per_label[i]),
+            f"TN_{label_name}": int(tn),
+            f"FP_{label_name}": int(fp),
+            f"FN_{label_name}": int(fn),
+            f"TP_{label_name}": int(tp)
+        })
+    
+    # Add aggregate metrics
+    metrics.update({
+        "f1_macro": float(f1_score(labels, predictions, average="macro", zero_division=0)),
+        "f1_micro": float(f1_score(labels, predictions, average="micro", zero_division=0)),
+        "f1_weighted": float(f1_score(labels, predictions, average="weighted", zero_division=0)),
+        "recall_macro": float(recall_score(labels, predictions, average="macro", zero_division=0)),
+        "recall_micro": float(recall_score(labels, predictions, average="micro", zero_division=0)),
+        "recall_weighted": float(recall_score(labels, predictions, average="weighted", zero_division=0)),
+        "precision_macro": float(precision_score(labels, predictions, average="macro", zero_division=0)),
+        "precision_micro": float(precision_score(labels, predictions, average="micro", zero_division=0)),
+        "precision_weighted": float(precision_score(labels, predictions, average="weighted", zero_division=0)),
+        "accuracy": float(accuracy_score(labels, predictions)),
+        "MCC": float(matthews_corrcoef(labels.flatten(), predictions.flatten())),
+        "kappa": float(cohen_kappa_score(labels.flatten(), predictions.flatten()))
+    })
+    
+    # Add score-based metrics if scores are provided
+    if scores is not None:
+        scores = np.asarray(scores)
+        try:
+            metrics.update({
+                "roc_auc_macro": float(roc_auc_score(labels, scores, average="macro")),
+                "roc_auc_micro": float(roc_auc_score(labels, scores, average="micro")),
+                "roc_auc_weighted": float(roc_auc_score(labels, scores, average="weighted")),
+                "AP_macro": float(average_precision_score(labels, scores, average="macro")),
+                "AP_micro": float(average_precision_score(labels, scores, average="micro")),
+                "AP_weighted": float(average_precision_score(labels, scores, average="weighted")),
+                "NDCG": float(ndcg_score(labels, scores))
+            })
+            
+            # Add per-label ROC-AUC and AP
+            for i, label_name in enumerate(label_names):
+                try:
+                    metrics[f"roc_auc_{label_name}"] = float(roc_auc_score(labels[:, i], scores[:, i]))
+                    metrics[f"AP_{label_name}"] = float(average_precision_score(labels[:, i], scores[:, i]))
+                except ValueError as e:
+                    logger.warning(f"Could not compute ROC-AUC/AP for {label_name}: {e}")
+                    metrics[f"roc_auc_{label_name}"] = 0.0
+                    metrics[f"AP_{label_name}"] = 0.0
+                    
+        except ValueError as e:
+            logger.warning(f"Could not compute score-based metrics: {e}")
+            for metric_name in ["roc_auc_macro", "roc_auc_micro", "roc_auc_weighted", 
+                               "AP_macro", "AP_micro", "AP_weighted", "NDCG"]:
+                metrics[metric_name] = 0.0
+    
+    logger.info(f"Multi-label metrics computed: {len(metrics)} metrics")
     return metrics
 
 def set_random_seeds(seed: int) -> None:
