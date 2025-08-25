@@ -150,7 +150,7 @@ def trainable(config,model_name,loss_type,hpo_metric,tokenized_train,tokenized_d
     clear_cuda_cache()
     
     #ray.tune.utils.wait_for_gpu(target_util=0.15)
-    model = AutoModelForSequenceClassification.from_pretrained(model_name, num_labels=3,problem_type="multi_label_classification")
+    model = AutoModelForSequenceClassification.from_pretrained(model_name, num_labels=CONFIG["num_labels"],problem_type="multi_label_classification")
 
     # Use a consistent, conservative batch size on every GPU.
     # Dynamically inflating the batch size on a specific GPU can
@@ -180,6 +180,7 @@ def trainable(config,model_name,loss_type,hpo_metric,tokenized_train,tokenized_d
         load_best_model_at_end = True,
         save_strategy='no',
         eval_strategy="no",
+        multi_label=True if CONFIG["num_labels"] > 1 else False,
     )
     training_args.learning_rate=config["learning_rate"]
     training_args.num_train_epochs=7
@@ -240,9 +241,9 @@ def train_hpo(cfg,fold_idx,run_idx):
     dev_indices = load_dataset("csv", data_files=f"{CONFIG['folds_dir']}/dev{fold_idx}_run-{run_idx}.csv",split="train")
     test_indices = load_dataset("csv", data_files=f"{CONFIG['folds_dir']}/test{fold_idx}_run-{run_idx}.csv",split="train")
 
-    train_split= clean_ds.select(train_indices['index'])
-    dev_split= clean_ds.select(dev_indices['index'])
-    test_split= clean_ds.select(test_indices['index'])
+    train_split= clean_ds.select(train_indices['index'][:10])
+    dev_split= clean_ds.select(dev_indices['index'][:10])
+    test_split= clean_ds.select(test_indices['index'][:10])
     
     logger.info(f"Example from train split: {train_split[0]}")
 
@@ -321,7 +322,7 @@ def train_hpo(cfg,fold_idx,run_idx):
         search_alg=HyperOptSearch(metric=cfg['hpo_metric'], mode="max", random_state_seed=CONFIG["seed"]),
         checkpoint_config=checkpoint_config,
         num_samples=cfg['num_trials'],
-        resources_per_trial={"cpu": 5, "gpu": 4},
+        resources_per_trial={"cpu": 30, "gpu": 4},
         storage_path=CONFIG['ray_results_dir'],
         callbacks=[CleanupCallback(cfg['hpo_metric'])]
     )

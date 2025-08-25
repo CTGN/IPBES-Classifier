@@ -310,7 +310,7 @@ def plot_precision_recall_curve(y_true, y_scores,logger,plot_dir,data_type=None)
 
 def visualize_ray_tune_results(analysis, logger, plot_dir=None, metric="eval_recall", mode="max"):
     if plot_dir is None:
-        plot_dir = CONFIG['plots_dir']
+        plot_dir = CONFIG['plot_dir']
     """
     Create visualizations of Ray Tune hyperparameter search results.
     

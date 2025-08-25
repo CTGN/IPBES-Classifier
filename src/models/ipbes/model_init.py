@@ -40,22 +40,22 @@ def multi_label_compute_metrics(eval_pred: Tuple[np.ndarray, np.ndarray]) -> Dic
    
     logits, labels = eval_pred
     scores = 1 / (1 + np.exp(-logits.squeeze()))  # Sigmoid
-    optimal_threshold = plot_roc_curve(labels, scores, logger=logger, plot_dir=CONFIG["plots_dir"], data_type="val",metric="f1",multi_label=True)
-    predictions = (scores > optimal_threshold).astype(int)
+    optimal_thresholds = plot_roc_curve(labels, scores, logger=logger, plot_dir=CONFIG["plot_dir"], data_type="val",metric="f1",multi_label=True)
+    predictions = np.array([scores[:, label_idx] >= optimal_thresholds[label_idx] for label_idx in range(labels.shape[1])]).T.astype(int)
     f1 = f1_score(labels, predictions, average="macro", zero_division=0) or {}
     recall = recall_score(labels, predictions, average="macro", zero_division=0) or {}
     accuracy = accuracy_score(labels, predictions) or {}
     precision = precision_score(labels, predictions, average="macro", zero_division=0) or {}
     
     
-    return {**f1,
-            "f2": fbeta_score(labels, predictions, beta=2, zero_division=0,avrerage="macro"),
+    return {"f1": f1,
+            "f2": fbeta_score(labels, predictions, beta=2, zero_division=0,average="macro"),
             "roc_auc" : roc_auc_score(labels,scores,average="macro") if scores is not None else {},
-            "kappa":cohen_kappa_score(labels,predictions),
-            **accuracy,
-            **precision,**recall, "optim_threshold": optimal_threshold,
+            "accuracy": accuracy,
+            "precision": precision,
+            "recall": recall,
+            "optim_thresholds": optimal_thresholds,
             "AP":average_precision_score(labels,scores,average="macro") if scores is not None else {},
-            "MCC":matthews_corrcoef(labels,predictions),
             "NDCG":ndcg_score(np.asarray(labels).reshape(1, -1),scores.reshape(1, -1)) if scores is not None else {}
             }
 
@@ -121,6 +121,7 @@ class CustomTrainer(Trainer):
         super().__init__(*args, **kwargs)
     
     def compute_loss(self, model, inputs, return_outputs: bool = False,num_items_in_batch=None):
+        logger.info(f"Inputs keys : {inputs.keys()}")
         labels = inputs.pop("labels")
         outputs = model(**inputs)
         if self.args.multi_label:

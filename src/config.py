@@ -16,7 +16,7 @@ CONFIG = {
     "ray_results_dir": str(PROJECT_ROOT / "results" / "ray_results"),
     "test_preds_dir": str(PROJECT_ROOT / "results" / "test_preds"),
     "metrics_dir": str(PROJECT_ROOT / "results" / "metrics"),
-    "plots_dir": str(PROJECT_ROOT / "plots"),
+    "plot_dir": str(PROJECT_ROOT / "plots"),
     
     # Data subdirectories
     "raw_data_dir": str(PROJECT_ROOT / "data" / "Raw"),
@@ -27,7 +27,7 @@ CONFIG = {
     "corpus_output_dir": str(PROJECT_ROOT / "data" / "corpus"),
     
     # Model configuration
-    "num_labels": 1,
+    "num_labels": 3,
     "default_training_args": {
         "save_total_limit": 1,
         "learning_rate": None,
@@ -76,7 +76,7 @@ def ensure_directories():
         CONFIG["ray_results_dir"],
         CONFIG["test_preds_dir"],
         CONFIG["metrics_dir"],
-        CONFIG["plots_dir"],
+        CONFIG["plot_dir"],
         CONFIG["raw_data_dir"],
         CONFIG["corpus_dir"],
         CONFIG["positives_dir"],

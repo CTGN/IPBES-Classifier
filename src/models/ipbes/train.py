@@ -51,7 +51,7 @@ from src.utils.import_utils import get_config
 CONFIG = get_config()
 
 from src.models.ipbes.HPO_callbacks import CleanupCallback
-from src.utils import *
+from src.utils.utils import *
 from src.models.ipbes.model_init import *
 
 from src.config import *
@@ -102,7 +102,7 @@ def parse_args():
         "-g",
         "--gpu",
         type=str,
-        default=[0,1,2],
+        default=None,
         help="CUDA_VISIBLE_DEVICES string (e.g. '0,1')"
     )
     parser.add_argument(
@@ -147,18 +147,41 @@ def parse_args():
 def train(cfg,hp_cfg):
     tokenizer = AutoTokenizer.from_pretrained(cfg['model_name'])
     data_collator = DataCollatorWithPadding(tokenizer=tokenizer,padding=True)
-    
-            train_split = load_dataset("csv", data_files=f"{CONFIG['folds_dir']}/train{cfg['fold']}_run-{cfg['run']}.csv",split="train")
-        dev_split = load_dataset("csv", data_files=f"{CONFIG['folds_dir']}/dev{cfg['fold']}_run-{cfg['fold']}.csv",split="train")
-        test_split = load_dataset("csv", data_files=f"{CONFIG['folds_dir']}/test{cfg['fold']}_run-{cfg['run']}.csv",split="train")
+
+    clean_ds = load_dataset("csv", data_files=CONFIG['cleaned_dataset_path'], split="train")
+    train_indices = load_dataset("csv", data_files=f"{CONFIG['folds_dir']}/train{cfg['fold']}_run-{cfg['run']}.csv",split="train")
+    dev_indices = load_dataset("csv", data_files=f"{CONFIG['folds_dir']}/dev{cfg['fold']}_run-{cfg['run']}.csv",split="train")
+    test_indices = load_dataset("csv", data_files=f"{CONFIG['folds_dir']}/test{cfg['fold']}_run-{cfg['run']}.csv",split="train")
+
+    train_split= clean_ds.select(train_indices['index'][:10])
+    dev_split= clean_ds.select(dev_indices['index'][:10])
+    test_split= clean_ds.select(test_indices['index'][:10])
+
 
     logger.info(f"train split size : {len(train_split)}")
     logger.info(f"dev split size : {len(dev_split)}")
     logger.info(f"test split size : {len(test_split)}")
     
     
-    tokenized_train,tokenized_dev, tokenized_test = tokenize_datasets(train_split,dev_split,test_split, tokenizer=tokenizer,with_title=cfg['with_title'],with_keywords=cfg['with_keywords'])
+    def preprocess(batch):
+        # join title & text, tokenize
+        if cfg['with_title']:
+            # Convert to string if needed
+            titles = [str(t) for t in batch["title"]] if isinstance(batch["title"], list) else str(batch["title"])
+            abstracts = [str(a) for a in batch["abstract"]] if isinstance(batch["abstract"], list) else str(batch["abstract"])
+            enc = tokenizer(text=titles, text_pair=abstracts, truncation=True, max_length=512)
+        else:
+            abstracts = [str(a) for a in batch["abstract"]] if isinstance(batch["abstract"], list) else str(batch["abstract"])
+            enc = tokenizer(text=abstracts, truncation=True, max_length=512)
+        # stack the 3 label columns into a single multi-hot vector
+        enc["labels"] = [
+            [i, s, v] for i, s, v in zip(batch["IAS"], batch["SUA"], batch["VA"]) #TODO: use self.labels
+        ]
+        return enc
 
+    tokenized_train = train_split.map(preprocess, batched=True,num_proc=30,batch_size=100)
+    tokenized_dev = dev_split.map(preprocess, batched=True,num_proc=30, batch_size=100)
+    tokenized_test = test_split.map(preprocess, batched=True, num_proc=30, batch_size=100)
     
     #TODO : Check Julien's article about how to implement that (ask him about the threholding optimization)
     logger.info(f"Final training...")
@@ -181,6 +204,7 @@ def train(cfg,hp_cfg):
             load_best_model_at_end=True,
             save_strategy= "steps",
             eval_strategy="steps",
+            multi_label=True if CONFIG["num_labels"] > 1 else False,
         )
     
     training_args.pos_weight = hp_cfg["pos_weight"] if cfg['loss_type'] == "BCE" else None
@@ -208,7 +232,7 @@ def train(cfg,hp_cfg):
         train_dataset=tokenized_train,
         eval_dataset=tokenized_dev,
         data_collator=data_collator,
-        compute_metrics=compute_metrics,
+        compute_metrics=multi_label_compute_metrics,
         tokenizer=tokenizer,
         callbacks=[early_stopping_callback],
     )
@@ -263,7 +287,7 @@ def train(cfg,hp_cfg):
     logger.info(f"Avg time / step: {avg_step_time:.3f}s")
     
 
-            final_model_path = os.path.join(CONFIG['final_model_dir'], "best_model_cross_val_"+str(cfg['loss_type'])+"_" +str(map_name(cfg['model_name'])) + "_fold-"+str(cfg['fold']+1))
+    final_model_path = os.path.join(CONFIG['final_model_dir'], "best_model_cross_val_"+str(cfg['loss_type'])+"_" +str(map_name(cfg['model_name'])) + "_fold-"+str(cfg['fold']+1))
     
     trainer.save_model(final_model_path)
     logger.info(f"Best model saved to {final_model_path}")
@@ -305,7 +329,7 @@ def train(cfg,hp_cfg):
 
     clear_cuda_cache()
 
-            result_metrics_path=os.path.join(CONFIG['metrics_dir'], "results.csv")
+    result_metrics_path=os.path.join(CONFIG['metrics_dir'], "results.csv")
 
     if os.path.isfile(result_metrics_path):
         result_metrics=pd.read_csv(result_metrics_path)
@@ -332,7 +356,7 @@ def train(cfg,hp_cfg):
     save_dataframe(result_metrics)
 
     fold_preds_df=pd.DataFrame(data={"label":test_split["labels"],"prediction":preds,'score':scores,"fold":[cfg['fold'] for _ in range(len(preds))],"title":test_split['title'] })
-        test_preds_path=os.path.join(CONFIG['test_preds_dir'], f"fold_{cfg['fold']}_{map_name(os.path.basename(cfg['model_name']))}_{cfg['loss_type']}{'_with_title' if cfg['with_title'] else ''}{'_with_keywords' if cfg['with_keywords'] else ''}_run-{cfg['run']}_opt_neg-{cfg['nb_optional_negs']}.csv")
+    test_preds_path=os.path.join(CONFIG['test_preds_dir'], f"fold_{cfg['fold']}_{map_name(os.path.basename(cfg['model_name']))}_{cfg['loss_type']}{'_with_title' if cfg['with_title'] else ''}{'_with_keywords' if cfg['with_keywords'] else ''}_run-{cfg['run']}_opt_neg-{cfg['nb_optional_negs']}.csv")
     
     fold_preds_df.to_csv(test_preds_path)
 
