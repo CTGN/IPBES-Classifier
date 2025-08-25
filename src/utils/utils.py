@@ -41,8 +41,6 @@ from src.utils.import_utils import get_config
 from src.config import *
 
 
-
-
 logger = logging.getLogger(__name__)
 
 def map_name(model_name):
@@ -147,60 +145,146 @@ def tokenize_datasets(
     return tokenized_datasets
 
 def plot_roc_curve(y_true, y_scores, logger, plot_dir, data_type=None, metric="eval_f1",store_plot=True,multi_label=False):
+    
+    if not multi_label:
+        # Single label case - keep original logic
+        fpr, tpr, thresholds = roc_curve(y_true, y_scores) 
+        roc_auc = auc(fpr, tpr)
 
-    fpr, tpr, thresholds = roc_curve(y_true, y_scores) 
-    roc_auc = auc(fpr, tpr)
+        metric_scores = []
 
-    metric_scores = []
+        for thresh in thresholds:
+            y_pred = (y_scores >= thresh).astype(int)
+            try:
+                if metric == "f1":
+                    score = f1_score(y_true, y_pred)
+                elif metric == "accuracy":
+                    score = accuracy_score(y_true, y_pred)
+                elif metric == "precision":
+                    score = precision_score(y_true, y_pred)
+                elif metric == "recall":
+                    score = recall_score(y_true, y_pred)
+                elif metric == "kappa":
+                    score = cohen_kappa_score(y_true, y_pred)
+                else:
+                    raise ValueError(f"Unsupported metric: {metric}")
+            except ValueError:
+                score = 0  # Handle edge cases like all one class in y_pred
+            metric_scores.append(score)
 
-    for thresh in thresholds:
-        y_pred = (y_scores >= thresh).astype(int)
-        try:
-            if metric == "f1":
-                score = f1_score(y_true, y_pred) if not multi_label else f1_score(y_true, y_pred,average="macro")
-            elif metric == "accuracy":
-                score = accuracy_score(y_true, y_pred) if not multi_label else accuracy_score(y_true, y_pred,average="macro")
-            elif metric == "precision":
-                score = precision_score(y_true, y_pred) if not multi_label else precision_score(y_true, y_pred,average="macro")
-            elif metric == "recall":
-                score = recall_score(y_true, y_pred) if not multi_label else recall_score(y_true, y_pred,average="macro")
-            elif metric == "kappa":
-                score = cohen_kappa_score(y_true, y_pred) if not multi_label else cohen_kappa_score(y_true, y_pred)
-            else:
-                raise ValueError(f"Unsupported metric: {metric}")
-        except ValueError:
-            score = 0  # Handle edge cases like all one class in y_pred
-        metric_scores.append(score)
+        optimal_idx = np.argmax(metric_scores)
+        optimal_threshold = thresholds[optimal_idx]
 
-    optimal_idx = np.argmax(metric_scores)
-    optimal_threshold = thresholds[optimal_idx]
+        fig, ax1 = plt.subplots(figsize=(8, 6))
+        ax1.plot(fpr, tpr, color='darkorange', lw=2, label=f'ROC curve (area = {roc_auc:.3f})')
+        ax1.plot([0, 1], [0, 1], color='navy', lw=2, linestyle='--')
+        ax1.set_xlim([0.0, 1.0])
+        ax1.set_ylim([0.0, 1.05])
+        ax1.set_xlabel('False Positive Rate')
+        ax1.set_ylabel('True Positive Rate')
+        ax1.set_title('Receiver Operating Characteristic')
+        ax1.legend(loc="lower right")
 
-    fig, ax1 = plt.subplots(figsize=(8, 6))
-    ax1.plot(fpr, tpr, color='darkorange', lw=2, label=f'ROC curve (area = {roc_auc:.3f})')
-    ax1.plot([0, 1], [0, 1], color='navy', lw=2, linestyle='--')
-    ax1.set_xlim([0.0, 1.0])
-    ax1.set_ylim([0.0, 1.05])
-    ax1.set_xlabel('False Positive Rate')
-    ax1.set_ylabel('True Positive Rate')
-    ax1.set_title('Receiver Operating Characteristic')
-    ax1.legend(loc="lower right")
+        ax2 = ax1.twiny()
+        ax2.set_xlim(ax1.get_xlim())
+        ax2.set_xticks(fpr[::10])
+        ax2.set_xticklabels([f'{t:.2f}' for t in thresholds[::10]], rotation=45, fontsize=8)
+        ax2.set_xlabel('Thresholds')
 
-    ax2 = ax1.twiny()
-    ax2.set_xlim(ax1.get_xlim())
-    ax2.set_xticks(fpr[::10])
-    ax2.set_xticklabels([f'{t:.2f}' for t in thresholds[::10]], rotation=45, fontsize=8)
-    ax2.set_xlabel('Thresholds')
+        filename = f"roc_curve_{data_type}.png" if data_type else "roc_curve.png"
+        if store_plot:
+            plt.savefig(os.path.join(plot_dir, filename))
+            plt.close()
+            logger.info(f"ROC curve saved to {os.path.join(plot_dir, filename)}")
+        else:
+            plt.show()
+            logger.info("ROC curve displayed")
 
-    filename = f"roc_curve_{data_type}.png" if data_type else "roc_curve.png"
-    if store_plot:
-        plt.savefig(os.path.join(plot_dir, filename))
-        plt.close()
-        logger.info(f"ROC curve saved to {os.path.join(plot_dir, filename)}")
+        return optimal_threshold
+    
     else:
-        plt.show()
-        logger.info("ROC curve displayed")
+        # Multi-label case - compute optimal threshold for each label
+        y_true = np.array(y_true)
+        y_scores = np.array(y_scores)
+        
+        n_labels = y_true.shape[1]
+        optimal_thresholds = []
+        
+        # Create subplots for each label
+        fig, axes = plt.subplots(1, n_labels, figsize=(6*n_labels, 6))
+        if n_labels == 1:
+            axes = [axes]
+        
+        colors = ['darkorange', 'green', 'red', 'purple', 'brown', 'pink']
+        
+        for label_idx in range(n_labels):
+            y_true_label = y_true[:, label_idx]
+            y_scores_label = y_scores[:, label_idx]
+            
+            # Compute ROC curve for this label
+            fpr, tpr, thresholds = roc_curve(y_true_label, y_scores_label)
+            roc_auc = auc(fpr, tpr)
+            
+            # Find optimal threshold based on the specified metric
+            metric_scores = []
+            for thresh in thresholds:
+                y_pred_label = (y_scores_label >= thresh).astype(int)
+                try:
+                    if metric == "f1":
+                        score = f1_score(y_true_label, y_pred_label, zero_division=0)
+                    elif metric == "accuracy":
+                        score = accuracy_score(y_true_label, y_pred_label)
+                    elif metric == "precision":
+                        score = precision_score(y_true_label, y_pred_label, zero_division=0)
+                    elif metric == "recall":
+                        score = recall_score(y_true_label, y_pred_label, zero_division=0)
+                    elif metric == "kappa":
+                        score = cohen_kappa_score(y_true_label, y_pred_label)
+                    else:
+                        raise ValueError(f"Unsupported metric: {metric}")
+                except ValueError:
+                    score = 0  # Handle edge cases
+                metric_scores.append(score)
+            
+            optimal_idx = np.argmax(metric_scores)
+            optimal_threshold = thresholds[optimal_idx]
+            optimal_thresholds.append(optimal_threshold)
+            
+            # Plot ROC curve for this label
+            ax = axes[label_idx]
+            color = colors[label_idx % len(colors)]
+            ax.plot(fpr, tpr, color=color, lw=2, label=f'ROC curve (AUC = {roc_auc:.3f})')
+            ax.plot([0, 1], [0, 1], color='navy', lw=2, linestyle='--')
+            ax.set_xlim([0.0, 1.0])
+            ax.set_ylim([0.0, 1.05])
+            ax.set_xlabel('False Positive Rate')
+            ax.set_ylabel('True Positive Rate')
+            ax.set_title(f'ROC Curve - Label {label_idx}\n(Optimal threshold: {optimal_threshold:.3f})')
+            ax.legend(loc="lower right")
+            
+            # Add threshold information
+            ax2 = ax.twiny()
+            ax2.set_xlim(ax.get_xlim())
+            if len(fpr) > 10:
+                step = len(fpr) // 10
+                ax2.set_xticks(fpr[::step])
+                ax2.set_xticklabels([f'{t:.2f}' for t in thresholds[::step]], rotation=45, fontsize=8)
+            ax2.set_xlabel('Thresholds')
+        
+        plt.tight_layout()
+        
+        filename = f"roc_curve_multilabel_{data_type}.png" if data_type else "roc_curve_multilabel.png"
+        if store_plot:
+            plt.savefig(os.path.join(plot_dir, filename))
+            plt.close()
+            logger.info(f"Multi-label ROC curves saved to {os.path.join(plot_dir, filename)}")
+            logger.info(f"Optimal thresholds: {optimal_thresholds}")
+        else:
+            plt.show()
+            logger.info("Multi-label ROC curves displayed")
+            logger.info(f"Optimal thresholds: {optimal_thresholds}")
 
-    return optimal_threshold
+        return np.array(optimal_thresholds)
 
 def plot_precision_recall_curve(y_true, y_scores,logger,plot_dir,data_type=None):
     precision, recall, _ = precision_recall_curve(y_true, y_scores)
