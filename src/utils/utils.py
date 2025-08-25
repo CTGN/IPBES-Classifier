@@ -30,14 +30,15 @@ from email.mime.text import MIMEText
 from sklearn.metrics import average_precision_score,matthews_corrcoef,ndcg_score,cohen_kappa_score,roc_auc_score, f1_score, recall_score, precision_score, accuracy_score
 import sys
 
+from pathlib import Path
+project_root = Path(__file__).resolve().parent.parent.parent.parent
+if str(project_root) not in sys.path:
+    sys.path.append(str(project_root))
+    
+
 # Use robust import system for reproducibility
-from src.utils.import_utils import get_config, add_src_to_path
-
-# Ensure src is in path
-add_src_to_path()
-
-# Get configuration reliably
-CONFIG = get_config()
+from src.utils.import_utils import get_config
+from src.config import *
 
 
 
@@ -145,8 +146,9 @@ def tokenize_datasets(
     logger.info(f"{len(datasets)} datasets tokenized successfully")
     return tokenized_datasets
 
-def plot_roc_curve(y_true, y_scores, logger, plot_dir, data_type=None, metric="eval_f1",store_plot=True):
-    fpr, tpr, thresholds = roc_curve(y_true, y_scores)
+def plot_roc_curve(y_true, y_scores, logger, plot_dir, data_type=None, metric="eval_f1",store_plot=True,multi_label=False):
+
+    fpr, tpr, thresholds = roc_curve(y_true, y_scores) 
     roc_auc = auc(fpr, tpr)
 
     metric_scores = []
@@ -155,15 +157,15 @@ def plot_roc_curve(y_true, y_scores, logger, plot_dir, data_type=None, metric="e
         y_pred = (y_scores >= thresh).astype(int)
         try:
             if metric == "f1":
-                score = f1_score(y_true, y_pred)
+                score = f1_score(y_true, y_pred) if not multi_label else f1_score(y_true, y_pred,average="macro")
             elif metric == "accuracy":
-                score = accuracy_score(y_true, y_pred)
+                score = accuracy_score(y_true, y_pred) if not multi_label else accuracy_score(y_true, y_pred,average="macro")
             elif metric == "precision":
-                score = precision_score(y_true, y_pred)
+                score = precision_score(y_true, y_pred) if not multi_label else precision_score(y_true, y_pred,average="macro")
             elif metric == "recall":
-                score = recall_score(y_true, y_pred)
+                score = recall_score(y_true, y_pred) if not multi_label else recall_score(y_true, y_pred,average="macro")
             elif metric == "kappa":
-                score = cohen_kappa_score(y_true, y_pred)
+                score = cohen_kappa_score(y_true, y_pred) if not multi_label else cohen_kappa_score(y_true, y_pred)
             else:
                 raise ValueError(f"Unsupported metric: {metric}")
         except ValueError:

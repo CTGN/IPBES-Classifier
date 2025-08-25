@@ -12,12 +12,17 @@ import re
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
 logger = logging.getLogger(__name__)
+import sys
+
+from pathlib import Path
+project_root = Path(__file__).resolve().parent.parent.parent.parent
+if str(project_root) not in sys.path:
+    sys.path.append(str(project_root))
 
 # Use robust import system for reproducibility
-from src.utils.import_utils import get_config, add_src_to_path
+from src.utils.import_utils import get_config
 
-# Ensure src is in path
-add_src_to_path()
+
 
 # Get configuration reliably
 CONFIG = get_config()

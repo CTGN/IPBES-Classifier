@@ -3,12 +3,13 @@ set -euo pipefail
 IFS=$'\n\t'
 
 # Models to iterate over
-#"microsoft/BiomedNLP-BiomedBERT-base-uncased-abstract"
-#"microsoft/BiomedNLP-BiomedBERT-base-uncased-abstract-fulltext"
+
 MODELS=(
-  "FacebookAI/roberta-base"
-  "dmis-lab/biobert-v1.1"
-  "google-bert/bert-base-uncased"
+    "microsoft/BiomedNLP-BiomedBERT-base-uncased-abstract"
+    "microsoft/BiomedNLP-BiomedBERT-base-uncased-abstract-fulltext"
+    "FacebookAI/roberta-base"
+    "dmis-lab/biobert-v1.1"
+    "google-bert/bert-base-uncased"
 )
 
 # Number of HPO/train runs and folds
@@ -32,20 +33,20 @@ echo "------> Fold: ${fold}"
         --config configs/hpo.yaml \
         --fold "${fold}" \
         --run "${run}" \
-        --n_trials 25 \
-        --hpo_metric "eval_roc_auc" \
+        --n_trials 1 \
+        --hpo_metric "eval_AP" \
         -m "${model}" \
         --loss "${loss}" \
         -t
 
         # Training with best HPO config
         uv run src/models/ipbes/train.py \
-        --config configs/ipbes/train.yaml \
+        --config configs/train.yaml \
         --hp_config configs/best_hpo.yaml \
         --fold "${fold}" \
         --run "${run}" \
         -m "${model}" \
-        -bm "eval_roc_auc" \
+        -bm "eval_AP" \
         --loss "${loss}" \
         -t
     done

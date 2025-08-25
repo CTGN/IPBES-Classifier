@@ -21,41 +21,43 @@ from transformers import (
     TrainingArguments,
     set_seed,
 )
-from sklearn.metrics import make_scorer,f1_score,accuracy_score,recall_score,precision_score
+import sys
+from pathlib import Path
+project_root = Path(__file__).resolve().parent.parent.parent.parent
+if str(project_root) not in sys.path:
+    sys.path.append(str(project_root))
+from sklearn.metrics import cohen_kappa_score,ndcg_score,matthews_corrcoef,average_precision_score,roc_auc_score,fbeta_score,recall_score,f1_score,accuracy_score,precision_score,roc_curve,auc
 from torchvision.ops import sigmoid_focal_loss
-from src.utils import *
+from src.utils.utils import *
 import logging
 from src.config import *
 
 logger = logging.getLogger(__name__)
 
-def compute_metrics(eval_pred: Tuple[np.ndarray, np.ndarray]) -> Dict[str, float]:
-    """Compute evaluation metrics from model predictions."""
-    #TODO : print the size of logits to be sure that we compute the metrics in the right way
-    logits, labels = eval_pred
-    scores = 1 / (1 + np.exp(-logits.squeeze()))  # Sigmoid
-    predictions = (scores > 0.5).astype(int)
-    f1 = evaluate.load("f1").compute(predictions=predictions, references=labels) or {}
-    accuracy = evaluate.load("accuracy").compute(predictions=predictions, references=labels) or {}
-    precision = evaluate.load("precision").compute(predictions=predictions, references=labels) or {}
-    optimal_threshold = plot_roc_curve(labels, scores, logger=logger, plot_dir=CONFIG["plot_dir"], data_type="val")
-    
-    return {**f1, **accuracy, **precision, "optim_threshold": optimal_threshold}
 
 def multi_label_compute_metrics(eval_pred: Tuple[np.ndarray, np.ndarray]) -> Dict[str, float]:
     """Compute evaluation metrics from model predictions."""
-    #TODO : print the size of logits to be sure that we compute the metrics in the right way
+   
     logits, labels = eval_pred
-    scores = 1 / (1 + np.exp(-logits.squeeze())) 
-    logger.info(f"Logits shape : {logits.shape} and logits squeeze shape : {logits.squeeze().shape}")
-
-    predictions = (scores > 0.5).astype(int)
-    f1={"f1_weighted":f1_score(labels,predictions,average="weighted")}
-    recall={"recall_weighted":recall_score(labels,predictions,average="weighted")}
-    accuracy = {"accuracy":accuracy_score(labels,predictions)}
-    precision = {"precision_weighted":precision_score(labels,predictions,average="weighted")}
+    scores = 1 / (1 + np.exp(-logits.squeeze()))  # Sigmoid
+    optimal_threshold = plot_roc_curve(labels, scores, logger=logger, plot_dir=CONFIG["plots_dir"], data_type="val",metric="f1",multi_label=True)
+    predictions = (scores > optimal_threshold).astype(int)
+    f1 = f1_score(labels, predictions, average="macro", zero_division=0) or {}
+    recall = recall_score(labels, predictions, average="macro", zero_division=0) or {}
+    accuracy = accuracy_score(labels, predictions) or {}
+    precision = precision_score(labels, predictions, average="macro", zero_division=0) or {}
     
-    return {**f1, **recall, **precision, **accuracy}
+    
+    return {**f1,
+            "f2": fbeta_score(labels, predictions, beta=2, zero_division=0,avrerage="macro"),
+            "roc_auc" : roc_auc_score(labels,scores,average="macro") if scores is not None else {},
+            "kappa":cohen_kappa_score(labels,predictions),
+            **accuracy,
+            **precision,**recall, "optim_threshold": optimal_threshold,
+            "AP":average_precision_score(labels,scores,average="macro") if scores is not None else {},
+            "MCC":matthews_corrcoef(labels,predictions),
+            "NDCG":ndcg_score(np.asarray(labels).reshape(1, -1),scores.reshape(1, -1)) if scores is not None else {}
+            }
 
 
 class LossPlottingCallback(TrainerCallback):
@@ -124,7 +126,7 @@ class CustomTrainer(Trainer):
         if self.args.multi_label:
             logits = outputs.logits
         else:
-            logits = outputs.logits.view(-1)
+            logits = outputs.logits
         
         if self.args.loss_type == "BCE":
             pos_weight=torch.tensor(self.args.pos_weight,device=self.model.device)

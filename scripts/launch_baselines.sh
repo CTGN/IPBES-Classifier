@@ -9,7 +9,7 @@ MODELS=(
   google-bert/bert-base-uncased
 )
 
-NUM_OPT_NEGS=(500)
+NUM_OPT_NEGS=(0)
 
 NUM_RUNS=1
 NUM_FOLDS=5

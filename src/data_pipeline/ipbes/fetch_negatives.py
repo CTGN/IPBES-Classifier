@@ -1,17 +1,15 @@
 import os
 import sys
 
-# Use robust import system for reproducibility
-from src.utils.import_utils import get_config, add_src_to_path
+from pathlib import Path
+project_root = Path(__file__).resolve().parent.parent.parent.parent
+if str(project_root) not in sys.path:
+    sys.path.append(str(project_root))
 
-# Ensure src is in path
-add_src_to_path()
+from src.utils.import_utils import get_config
 
-# Get configuration reliably
+
 CONFIG = get_config()
-
-if parent_dir not in sys.path:
-    sys.path.append(parent_dir)
 
 from src.data_pipeline.ipbes.create_ipbes_raw import loading_pipeline_from_raw
 

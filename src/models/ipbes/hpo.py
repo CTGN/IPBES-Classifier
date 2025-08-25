@@ -39,8 +39,14 @@ from iterstrat.ml_stratifiers import MultilabelStratifiedKFold, MultilabelStrati
 import yaml
 import pandas as pd
 
+from pathlib import Path
+project_root = Path(__file__).resolve().parent.parent.parent.parent
+if str(project_root) not in sys.path:
+    sys.path.append(str(project_root))
+
 # Use robust import system for reproducibility
 from src.utils.import_utils import get_config, add_src_to_path
+from src.utils.utils import *
 
 # Ensure src is in path
 add_src_to_path()
@@ -138,13 +144,13 @@ def parse_args():
     return parser.parse_args()
 
 @staticmethod
-def trainable(config,cfg,tokenized_train,tokenized_dev,data_collator,tokenizer):
+def trainable(config,model_name,loss_type,hpo_metric,tokenized_train,tokenized_dev,data_collator,tokenizer):
     
     # Clear CUDA cache at the start of each trial
     clear_cuda_cache()
     
     #ray.tune.utils.wait_for_gpu(target_util=0.15)
-    model = AutoModelForSequenceClassification.from_pretrained(cfg['model_name'], num_labels=len(cfg['labels']),problem_type="multi_label_classification")
+    model = AutoModelForSequenceClassification.from_pretrained(model_name, num_labels=3,problem_type="multi_label_classification")
 
     # Use a consistent, conservative batch size on every GPU.
     # Dynamically inflating the batch size on a specific GPU can
@@ -152,10 +158,8 @@ def trainable(config,cfg,tokenized_train,tokenized_dev,data_collator,tokenizer):
     # threshold and provoke "unspecified launch failure" errors.
     # We can use a larger batch size on the A100 GPU (device 2)
     gpu_id = os.environ.get("CUDA_VISIBLE_DEVICES")
-    if cfg['gpu'] is not None and gpu_id == cfg['gpu']:
-        batch_size = 100
-    else:
-        batch_size = 25
+    
+    batch_size = 100
     
     logger.info(f"Trial on GPU {gpu_id} using batch size {batch_size}")
     
@@ -307,7 +311,8 @@ def train_hpo(cfg,fold_idx,run_idx):
     checkpoint_config = tune.CheckpointConfig(checkpoint_frequency=0, checkpoint_at_end=False)
     sync_config=tune.SyncConfig(sync_artifacts_on_checkpoint=False,sync_artifacts=False)
     
-    wrapped_trainable=tune.with_parameters(trainable,cfg=cfg,tokenized_train=tokenized_train,tokenized_dev=tokenized_dev,data_collator=data_collator,tokenizer=tokenizer)
+    wrapped_trainable=tune.with_parameters(trainable,model_name=cfg['model_name'],loss_type=cfg['loss_type'],hpo_metric=cfg['hpo_metric'],tokenized_train=tokenized_train,tokenized_dev=tokenized_dev,data_collator=data_collator,tokenizer=tokenizer)
+
     analysis = tune.run(
         wrapped_trainable,
         config=tune_config,
@@ -316,7 +321,7 @@ def train_hpo(cfg,fold_idx,run_idx):
         search_alg=HyperOptSearch(metric=cfg['hpo_metric'], mode="max", random_state_seed=CONFIG["seed"]),
         checkpoint_config=checkpoint_config,
         num_samples=cfg['num_trials'],
-        resources_per_trial={"cpu": 7, "gpu": 1},
+        resources_per_trial={"cpu": 5, "gpu": 4},
         storage_path=CONFIG['ray_results_dir'],
         callbacks=[CleanupCallback(cfg['hpo_metric'])]
     )

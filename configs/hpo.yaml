@@ -7,3 +7,4 @@ loss_type: "BCE"
 with_title: True
 with_keywords: False
 nb_optional_negs: 100
+labels : ["IAS","VA","SUA"]
