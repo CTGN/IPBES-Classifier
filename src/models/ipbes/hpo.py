@@ -241,9 +241,9 @@ def train_hpo(cfg,fold_idx,run_idx):
     dev_indices = load_dataset("csv", data_files=f"{CONFIG['folds_dir']}/dev{fold_idx}_run-{run_idx}.csv",split="train")
     test_indices = load_dataset("csv", data_files=f"{CONFIG['folds_dir']}/test{fold_idx}_run-{run_idx}.csv",split="train")
 
-    train_split= clean_ds.select(train_indices['index'][:10])
-    dev_split= clean_ds.select(dev_indices['index'][:10])
-    test_split= clean_ds.select(test_indices['index'][:10])
+    train_split= clean_ds.select(train_indices['index'])
+    dev_split= clean_ds.select(dev_indices['index'])
+    test_split= clean_ds.select(test_indices['index'])
     
     logger.info(f"Example from train split: {train_split[0]}")
 
@@ -322,7 +322,7 @@ def train_hpo(cfg,fold_idx,run_idx):
         search_alg=HyperOptSearch(metric=cfg['hpo_metric'], mode="max", random_state_seed=CONFIG["seed"]),
         checkpoint_config=checkpoint_config,
         num_samples=cfg['num_trials'],
-        resources_per_trial={"cpu": 30, "gpu": 4},
+        resources_per_trial={"cpu": 7, "gpu": 1},
         storage_path=CONFIG['ray_results_dir'],
         callbacks=[CleanupCallback(cfg['hpo_metric'])]
     )

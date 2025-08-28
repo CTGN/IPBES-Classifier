@@ -14,7 +14,7 @@ CONFIG = {
     "models_dir": str(PROJECT_ROOT / "results" / "models"),
     "final_model_dir": str(PROJECT_ROOT / "results" / "final_model"),
     "ray_results_dir": str(PROJECT_ROOT / "results" / "ray_results"),
-    "test_preds_dir": str(PROJECT_ROOT / "results" / "test_preds"),
+    "test_preds_dir": str(PROJECT_ROOT / "results" / "test preds"),
     "metrics_dir": str(PROJECT_ROOT / "results" / "metrics"),
     "plot_dir": str(PROJECT_ROOT / "plots"),
     

@@ -103,7 +103,7 @@ def get_config() -> dict:
                     "models_dir": str(project_root / "results" / "models"),
                     "final_model_dir": str(project_root / "results" / "final_model"),
                     "ray_results_dir": str(project_root / "results" / "ray_results"),
-                    "test_preds_dir": str(project_root / "results" / "test_preds"),
+                    "test_preds_dir": str(project_root / "results" / "test preds"),
                     "metrics_dir": str(project_root / "results" / "metrics"),
                     "plots_dir": str(project_root / "plots"),
                     "raw_data_dir": str(project_root / "data" / "Raw"),

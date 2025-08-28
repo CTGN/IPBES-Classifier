@@ -75,7 +75,7 @@ def get_config_paths() -> Dict[str, Path]:
     paths['models_dir'] = project_root / 'results' / 'models'
     paths['final_model_dir'] = project_root / 'results' / 'final_model'
     paths['ray_results_dir'] = project_root / 'results' / 'ray_results'
-    paths['test_preds_dir'] = project_root / 'results' / 'test_preds'
+    paths['test_preds_dir'] = project_root / 'results' / 'test preds'
     paths['metrics_dir'] = project_root / 'results' / 'metrics'
     paths['archives_dir'] = project_root / 'results' / 'archives'
     
@@ -155,7 +155,7 @@ def get_model_output_paths(model_name: str, loss_type: str, fold: int, with_titl
     return {
         'model': base_results / 'models' / f'{clean_model_name}_{loss_type}{title_suffix}',
         'final_model': Path(CONFIG['final_model_dir']) / f'best_model_cross_val_{loss_type}_{clean_model_name}_fold-{fold+1}',
-        'test_preds': base_results / 'test_preds' / f'{clean_model_name}_{loss_type}{title_suffix}_fold_{fold}',
+        'test_preds': base_results / 'test preds' / f'{clean_model_name}_{loss_type}{title_suffix}_fold_{fold}',
         'metrics': base_results / 'metrics' / f'{clean_model_name}_{loss_type}{title_suffix}_metrics.csv'
     }
 

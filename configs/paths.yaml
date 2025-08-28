@@ -18,7 +18,7 @@ paths:
   models_dir: "${PROJECT_ROOT}/results/models"
   final_model_dir: "${PROJECT_ROOT}/results/final_model"
   ray_results_dir: "${PROJECT_ROOT}/results/ray_results"
-  test_preds_dir: "${PROJECT_ROOT}/results/test_preds"
+  test_preds_dir: "${PROJECT_ROOT}/results/test preds"
   metrics_dir: "${PROJECT_ROOT}/results/metrics"
   archives_dir: "${PROJECT_ROOT}/results/archives"
   
@@ -54,7 +54,7 @@ file_patterns:
   results: "results.csv"
   multi_label_metrics: "multi_labels_metrics.csv"
   test_folds: "test_folds.csv"
-  test_predictions: "test_preds"
+  test_predictions: "test preds"
   
 # API configuration
 api:

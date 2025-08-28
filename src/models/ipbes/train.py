@@ -153,9 +153,9 @@ def train(cfg,hp_cfg):
     dev_indices = load_dataset("csv", data_files=f"{CONFIG['folds_dir']}/dev{cfg['fold']}_run-{cfg['run']}.csv",split="train")
     test_indices = load_dataset("csv", data_files=f"{CONFIG['folds_dir']}/test{cfg['fold']}_run-{cfg['run']}.csv",split="train")
 
-    train_split= clean_ds.select(train_indices['index'][:10])
-    dev_split= clean_ds.select(dev_indices['index'][:10])
-    test_split= clean_ds.select(test_indices['index'][:10])
+    train_split= clean_ds.select(train_indices['index'])
+    dev_split= clean_ds.select(dev_indices['index'])
+    test_split= clean_ds.select(test_indices['index'])
 
 
     logger.info(f"train split size : {len(train_split)}")
@@ -189,7 +189,7 @@ def train(cfg,hp_cfg):
     model=AutoModelForSequenceClassification.from_pretrained(cfg['model_name'], num_labels=CONFIG["num_labels"])
     #model.gradient_checkpointing_enable()
 
-    batch_size=25
+    batch_size=100
 
     # Set up training arguments
     training_args = CustomTrainingArguments(
@@ -296,6 +296,7 @@ def train(cfg,hp_cfg):
     logger.info(f"On test Set (with threshold 0.5) : ")
     # Compute detailed metrics
     predictions = trainer.predict(tokenized_test)
+    test_labels= np.array([test_split[label] for label in ['IAS','SUA','VA']] ).T
     
     scores = 1 / (1 + np.exp(-predictions.predictions.squeeze()))
     preds = (scores > 0.5).astype(int)
@@ -305,25 +306,22 @@ def train(cfg,hp_cfg):
     logger.info(f"Scores: {scores[:10]}")  # First 10 scores
     logger.info(f"Preds shape: {preds.shape}")
     logger.info(f"Preds: {preds[:10]}")  # First 10 predictions
-    logger.info(f"Test labels shape: {np.asarray(test_split['labels']).shape}")
-    logger.info(f"Test labels: {test_split['labels'][:10]}")  # First 10 labels
+    logger.info(f"Test labels shape: {np.asarray(test_labels).shape}")
+    logger.info(f"Test labels: {test_labels[:10]}")  # First 10 labels
     logger.info(f"Test split: {test_split}")
 
     logger.info(f"Unique values in predictions: {np.unique(preds)}")
-    logger.info(f"Unique values in labels: {np.unique(test_split['labels'])}")
-    logger.info(f"Confusion matrix:\n{confusion_matrix(test_split['labels'], preds)}")
-    res1=detailed_metrics(preds, test_split["labels"],scores=scores)
+    logger.info(f"Unique values in labels: {np.unique(test_labels)}")
+    res1=detailed_metrics(preds,test_labels,scores=scores)
 
 
-    plot_roc_curve(test_split["labels"],scores,logger=logger,plot_dir=CONFIG["plot_dir"],data_type="test")
-    plot_precision_recall_curve(test_split["labels"],preds,logger=logger,plot_dir=CONFIG["plot_dir"],data_type="test")
+    plot_roc_curve(test_labels,scores,logger=logger,plot_dir=CONFIG["plot_dir"],data_type="test",multi_label=True)
 
     #! The following seems weird. we are talking about decision here. View it like a ranking problem. take a perspective for usage
-    threshold = eval_results_dev["eval_optim_threshold"]
+    threshold = eval_results_dev["eval_optim_thresholds"]
     logger.info(f"\nOn test Set (New optimal threshold of {threshold} according to the dev set): ")
     preds = (scores > threshold).astype(int)
-    res2=detailed_metrics(preds, test_split["labels"],scores=scores)
-    plot_precision_recall_curve(test_split["labels"],preds,logger=logger,plot_dir=CONFIG["plot_dir"],data_type="test")
+    res2=detailed_metrics(preds, test_labels,scores=scores)
 
     logger.info(f"Results for fold {cfg['fold']+1} with optim_threshold learned from dev set : {res2}")
 
@@ -355,8 +353,24 @@ def train(cfg,hp_cfg):
     
     save_dataframe(result_metrics)
 
-    fold_preds_df=pd.DataFrame(data={"label":test_split["labels"],"prediction":preds,'score':scores,"fold":[cfg['fold'] for _ in range(len(preds))],"title":test_split['title'] })
-    test_preds_path=os.path.join(CONFIG['test_preds_dir'], f"fold_{cfg['fold']}_{map_name(os.path.basename(cfg['model_name']))}_{cfg['loss_type']}{'_with_title' if cfg['with_title'] else ''}{'_with_keywords' if cfg['with_keywords'] else ''}_run-{cfg['run']}_opt_neg-{cfg['nb_optional_negs']}.csv")
+    labels_array = np.array(test_labels)
+    preds_array = np.array(preds)
+    scores_array = np.array(scores)
+    
+    fold_preds_df = pd.DataFrame({
+        "IAS_label": labels_array[:, 0],
+        "SUA_label": labels_array[:, 1], 
+        "VA_label": labels_array[:, 2],
+        "IAS_pred": preds_array[:, 0],
+        "SUA_pred": preds_array[:, 1],
+        "VA_pred": preds_array[:, 2],
+        "IAS_score": scores_array[:, 0],
+        "SUA_score": scores_array[:, 1],
+        "VA_score": scores_array[:, 2],
+        "fold": [cfg['fold'] for _ in range(len(preds))],
+        "title": test_split['title']
+    })
+    test_preds_path=os.path.join(CONFIG['test_preds_dir'], 'bert',f"fold_{cfg['fold']}_{map_name(os.path.basename(cfg['model_name']))}_{cfg['loss_type']}{'_with_title' if cfg['with_title'] else ''}{'_with_keywords' if cfg['with_keywords'] else ''}_run-{cfg['run']}_opt_neg-{cfg['nb_optional_negs']}.csv")
     
     fold_preds_df.to_csv(test_preds_path)
 

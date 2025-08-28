@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-set -euo pipefail
+#set -euo pipefail
 IFS=$'\n\t'
 
 # Models to iterate over
@@ -21,7 +21,7 @@ for (( run=0; run<NUM_RUNS; run++ )); do
 echo "--> Run #${run}"
 # try both losses
 # each fold
-for (( fold=0; fold<NUM_FOLDS; fold++ )); do
+for (( fold=2; fold<NUM_FOLDS; fold++ )); do
 echo "------> Fold: ${fold}"
     for loss in BCE; do
     echo "----> Loss function: ${loss}"
@@ -33,7 +33,7 @@ echo "------> Fold: ${fold}"
         --config configs/hpo.yaml \
         --fold "${fold}" \
         --run "${run}" \
-        --n_trials 1 \
+        --n_trials 20 \
         --hpo_metric "eval_AP" \
         -m "${model}" \
         --loss "${loss}" \

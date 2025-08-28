@@ -57,7 +57,7 @@ def map_name(model_name):
     else:
         return model_name
 
-def save_dataframe(metric_df, path=None, file_name="binary_metrics.csv"):
+def save_dataframe(metric_df, path=None, file_name="results.csv"):
     if path is None:
         path = CONFIG['metrics_dir']
         if metric_df is not None:
@@ -66,7 +66,7 @@ def save_dataframe(metric_df, path=None, file_name="binary_metrics.csv"):
         else:
             raise ValueError("result_metrics is None. Consider running the model before storing metrics.")
 
-def detailed_metrics(predictions: np.ndarray, labels: np.ndarray, scores=None, label_names=None) -> Dict[str, float]:
+def detailed_metrics(predictions: np.ndarray, labels: np.ndarray, scores=None, label_names=['IAS','SUA','VA']) -> Dict[str, float]:
     """Compute and display detailed metrics including confusion matrix.
     
     Args:

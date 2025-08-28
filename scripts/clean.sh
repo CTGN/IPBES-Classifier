@@ -3,7 +3,6 @@
 # Usage function
 usage() {
   echo "Usage: $0 [-b] [-i]"
-  echo "  -b    delete all child files/directories under results/biomoqa"
   echo "  -i    delete all child files/directories under results/ipbes"
   exit 1
 }
@@ -29,16 +28,17 @@ BASE="./results"
 
 # If -b was passed, delete all children under biomoqa/*
 if [[ $b_flag -eq 1 ]]; then
-  rm -r "$BASE/biomoqa/ray_results/"*    \
-         "$BASE/biomoqa/final_model/"*    \
-         "$BASE/biomoqa/models/"*
+  rm -r "$BASE/ray_results/"*    \
+         "$BASE/final_model/"*    \
+         "$BASE/models/"*
 fi
 
 # If -i was passed, delete all children under ipbes/*
 if [[ $i_flag -eq 1 ]]; then
-  rm -r "$BASE/ipbes/ray_results/"*      \
-         "$BASE/ipbes/final_model/"*      \
-         "$BASE/ipbes/models/"*
+  rm -r "$BASE/ray_results/"*      \
+         "$BASE/final_model/"*      \
+         "$BASE/models/"* \
+          "$BASE/test preds/"* 
 fi
 
 # Always clean /tmp/ray/*
