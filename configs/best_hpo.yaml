@@ -1,9 +1,9 @@
 direction: max
-fold: 3
+fold: 4
 hpo_metric: eval_AP
 learning_rate: 7.340675018434774e-05
 loss_type: BCE
-model_name: FacebookAI/roberta-base
+model_name: google-bert/bert-base-uncased
 num_trials: 20
 pos_weight: 3.9109029727093
 run_idx: 0

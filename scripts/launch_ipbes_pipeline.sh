@@ -5,10 +5,10 @@ IFS=$'\n\t'
 # Models to iterate over
 
 MODELS=(
-    "microsoft/BiomedNLP-BiomedBERT-base-uncased-abstract"
-    "microsoft/BiomedNLP-BiomedBERT-base-uncased-abstract-fulltext"
-    "FacebookAI/roberta-base"
-    "dmis-lab/biobert-v1.1"
+    #"microsoft/BiomedNLP-BiomedBERT-base-uncased-abstract"
+    #"microsoft/BiomedNLP-BiomedBERT-base-uncased-abstract-fulltext"
+    #"FacebookAI/roberta-base"
+    #"dmis-lab/biobert-v1.1"
     "google-bert/bert-base-uncased"
 )
 
@@ -21,7 +21,7 @@ for (( run=0; run<NUM_RUNS; run++ )); do
 echo "--> Run #${run}"
 # try both losses
 # each fold
-for (( fold=2; fold<NUM_FOLDS; fold++ )); do
+for (( fold=4; fold<NUM_FOLDS; fold++ )); do
 echo "------> Fold: ${fold}"
     for loss in BCE; do
     echo "----> Loss function: ${loss}"

@@ -419,7 +419,7 @@ def plot_roc_curve(y_true, y_scores, logger, plot_dir, data_type=None, metric="e
 
         return np.array(optimal_thresholds)
 
-def plot_precision_recall_curve(y_true, y_scores,logger,plot_dir,data_type=None):
+def plot_precision_recall_curve(y_true, y_scores,plot_dir,data_type=None):
     precision, recall, _ = precision_recall_curve(y_true, y_scores)
     avg_precision = average_precision_score(y_true, y_scores)
     
@@ -431,14 +431,16 @@ def plot_precision_recall_curve(y_true, y_scores,logger,plot_dir,data_type=None)
     plt.title('Precision-Recall Curve')
     plt.legend(loc="lower left")
     plt.grid(True)
-    if data_type is not None:
-        plt.savefig(os.path.join(plot_dir, "precision_recall_curve"+data_type+".png"))
-        plt.close()
-        logger.info(f"Precision-Recall curve saved to {plot_dir}/precision_recall_curve"+data_type+".png")
-    else:
-        plt.savefig(os.path.join(plot_dir, "precision_recall_curve.png"))
-        plt.close()
-        logger.info(f"Precision-Recall curve saved to {plot_dir}/precision_recall_curve.png")
+    if plot_dir is not None and not os.path.exists(plot_dir):
+        os.makedirs(plot_dir, exist_ok=True)
+        if data_type is not None:
+            plt.savefig(os.path.join(plot_dir, "precision_recall_curve"+data_type+".png"))
+            plt.close()
+            logger.info(f"Precision-Recall curve saved to {plot_dir}/precision_recall_curve"+data_type+".png")
+        else:
+            plt.savefig(os.path.join(plot_dir, "precision_recall_curve.png"))
+            plt.close()
+            logger.info(f"Precision-Recall curve saved to {plot_dir}/precision_recall_curve.png")
     return avg_precision
 
 def visualize_ray_tune_results(analysis, logger, plot_dir=None, metric="eval_recall", mode="max"):
