@@ -19,7 +19,6 @@ src/utils/__pycache__
 results/models
 results/ray_results
 results/final_model
-results/test preds
 
 plots/
 

@@ -1,0 +1,1178 @@
+,IAS_label,SUA_label,VA_label,IAS_pred,SUA_pred,VA_pred,IAS_score,SUA_score,VA_score,fold,title
+0,1,0,0,1,0,0,0.8971201800000002,0.347961278,0.0941380912,4,On the context-dependent scaling of consumer feeding rates
+1,1,0,0,1,0,0,0.9560034319999999,0.1403129668,0.0738869918,4,"Non-native species in Canada’s boreal zone: diversity, impacts, and risk"
+2,1,0,0,1,0,0,0.9576697940000001,0.1208379544,0.0782515004,4,Fire and grazing impacts on plant diversity and alien plant invasions in the southern Sierra Nevada
+3,1,0,0,1,0,0,0.9571502800000001,0.119091265,0.0798862666,4,A Subcontinental Analysis of Forest Fragmentation Effects on Insect and Disease Invasion
+4,1,0,0,1,0,0,0.956051714,0.1187802,0.0767452426,4,"Effects of Patch Size, Fragmentation, and Invasive Species on Plant and Lepidoptera Communities in Southern Texas"
+5,1,0,0,1,1,0,0.59518556,0.673195052,0.31197890800000005,4,Marine urbanization: an ecological framework for designing multifunctional artificial structures
+6,1,0,0,1,0,0,0.95543446,0.11732657720000002,0.079635027,4,Non-native plant species benefit from disturbance: a meta-analysis
+7,1,0,0,1,0,0,0.95764608,0.118907155,0.07659553699999999,4,Australian acacias as invasive species: lessons to be learnt from regions with long planting histories
+8,1,0,0,1,0,0,0.891078666,0.41539908600000003,0.06688032740000001,4,Domestication leads to increased predation susceptibility
+9,1,0,0,1,0,0,0.94860315,0.15976028999999997,0.06871834140000002,4,Cases of White Spot Disease (WSD) in European shrimp farms
+10,1,0,0,1,0,0,0.9570509059999999,0.12119308080000002,0.0821588548,4,Bioenergy Feedstocks at Low Risk for Invasion in the USA: a “White List” Approach
+11,1,0,0,1,0,0,0.956455952,0.1177042402,0.0765747198,4,Unmasking the invader: Genetic identity of invasive wild boar from three minor islands off Sardinia (Italy)
+12,1,0,0,1,0,0,0.956786402,0.11442576600000001,0.08159442079999998,4,Buffel grass (Cenchrus ciliaris) as an invader and threat to biodiversity in arid environments: A review
+13,1,0,0,1,0,0,0.957856722,0.11792229799999998,0.076782993,4,Cultivar selection prior to introduction may increase invasiveness: evidence from Ardisia crenata
+14,1,0,0,1,0,0,0.955896018,0.11357572919999999,0.08287494599999999,4,"The influence of the invasive process on behaviours in an intentionally introduced hybrid, Xiphophorus helleri–maculatus"
+15,1,0,0,1,0,0,0.945444038,0.22841128399999996,0.0570253908,4,From 61 species to five: endemic tree snails of the Society Islands fall prey to an ill-judged biological control programme
+16,1,0,0,1,1,0,0.834434896,0.574024646,0.0834712276,4,"Not Knowing, Not Recording, Not Listing: Numerous Unnoticed Mollusk Extinctions"
+17,1,0,0,0,1,1,0.406233236,0.5570317819999999,0.685560704,4,The Capability Approach: a theoretical survey
+18,1,0,0,0,1,1,0.37007438,0.719132158,0.620083182,4,Kincentric Ecology: Indigenous Perceptions of the Human-Nature Relationship
+19,1,0,0,1,0,0,0.958319288,0.12641164900000001,0.0750218884,4,"Alien reef-building polychaete drives long-term changes in invertebrate biomass and diversity in a small, urban estuary"
+20,1,0,0,1,0,0,0.8427094820000001,0.40355423679999997,0.08713810899999999,4,Lessons from old fenced plots: Eco‐cultural Impacts of feral ungulates and potential decline in sea‐level rise resilience of coastal floodplains in northern Australia
+21,1,0,0,1,0,0,0.9007739619999999,0.2291159104,0.09836334039999999,4,Managing tourism in the Galapagos Islands through price incentives: A choice experiment approach
+22,1,0,0,1,0,0,0.9574597280000001,0.11267137579999997,0.081740936,4,Experimental evidence for positive effects of invasive seaweed on native invertebrates via habitat-formation in a seagrass bed
+23,1,0,0,1,0,0,0.957289716,0.1196679406,0.0755621834,4,Prosopis L. Invasion in the South-Western Region of Botswana: The Perceptions of Rural Communities and Management Options
+24,1,0,0,1,0,0,0.8902284779999998,0.3501370668,0.0801941724,4,How many bird extinctions have we prevented?
+25,1,0,0,1,0,0,0.9567886999999999,0.117641946,0.08517288460000001,4,Ecological and socioeconomic impacts of invasive alien species in island ecosystems
+26,1,0,0,1,0,0,0.95744182,0.1219053548,0.07678697920000001,4,Can local use assist in controlling invasive alien species in tropical forests? The case of Lantana camara in southern India
+27,1,0,0,1,0,0,0.958318236,0.11699023439999998,0.0817329348,4,Building social resilience to biological invasions. A case study of Panama Tropical Race 4 in the Australian Banana Industry
+28,1,0,0,1,0,0,0.956578214,0.12338697800000001,0.0731880344,4,"Biology and Control of the Khapra Beetle, Trogoderma granarium, a Major Quarantine Threat to Global Food Security"
+29,1,0,0,1,0,0,0.9571446659999999,0.1145308446,0.08804010200000001,4,"Biological invasions, ecological resilience and adaptive governance"
+30,1,0,0,1,0,0,0.957502098,0.1193820072,0.07444524540000001,4,Patterns of invasion in the Laurentian Great Lakes in relation to changes in vector activity
+31,1,0,0,1,0,0,0.940192588,0.200592826,0.0741062636,4,The Flora of Chad: a checklist and brief analysis.
+32,1,0,0,1,0,0,0.957135576,0.11314166660000002,0.08197301100000001,4,Fungi and invasions in South Africa
+33,1,0,0,1,1,0,0.8096240339999999,0.5866204679999999,0.08464119680000001,4,Conservation of the biodiversity of Brazil's inland waters
+34,1,0,0,1,0,0,0.9581780219999999,0.118538404,0.08307794099999999,4,"Jack of all trades, master of some? On the role of phenotypic plasticity in plant invasions"
+35,1,0,0,1,0,0,0.9577071220000001,0.115880137,0.07604784560000001,4,"A review of allodiversity in Lake Naivasha, Kenya: Developing conservation actions to protect East African lakes from the negative impacts of alien species"
+36,1,0,0,1,0,0,0.87854031,0.36659984199999995,0.1397073808,4,Epigenetics for ecologists
+37,1,0,0,1,0,0,0.95679222,0.121186134,0.07159746600000001,4,"The introduced alga Kappaphycus alvarezii (Doty ex P.C. Silva, 1996) in abandoned cultivation sites in Bocas del Toro, Panama"
+38,1,0,0,1,0,0,0.95768954,0.11528882659999999,0.07799764560000001,4,Invasive blue mussels threaten regional scale genetic diversity in mainland and remote offshore locations: the need for baseline data and enhanced protection in the Southern Ocean
+39,1,0,0,1,0,0,0.9544192340000001,0.12424341320000001,0.07679256679999999,4,Host shift to an invasive plant triggers rapid animal hybrid speciation
+40,1,0,0,1,0,0,0.956655088,0.1203646816,0.0772987562,4,Invasive predators and global biodiversity loss
+41,1,0,0,1,0,0,0.952493284,0.152066684,0.0685709852,4,Extinction By Hybridization and Introgression
+42,1,0,0,1,0,0,0.9542941599999999,0.11885398999999999,0.0747411788,4,Differences in soft-sediment macrobenthic assemblages invaded by Caulerpa taxifolia compared to uninvaded habitats
+43,1,0,0,1,0,0,0.9578034220000001,0.11390796300000001,0.0802927736,4,"Rabari Shepherds and the Mad Tree: The Dynamics of Local Ecological Knowledge in the Context of Prosopis juliflora Invasion in Gujarat, India"
+44,1,0,0,1,0,0,0.9579436579999999,0.134712504,0.07412473080000001,4,"Water use of Prosopis juliflora and its impacts on catchment water budget and rural livelihoods in Afar Region, Ethiopia"
+45,1,0,0,1,0,0,0.9326558300000001,0.179920986,0.0847400044,4,Prosopis juliflora (mesquite)
+46,1,0,0,1,0,0,0.9567629240000001,0.11094114120000001,0.08383103160000001,4,Integrating expert knowledge at regional and national scales improves impact assessments of non-native species
+47,1,0,0,1,0,0,0.9562187080000001,0.1158225232,0.07765654320000001,4,Hybrid watermilfoil (Myriophyllum spicatum × Myriophyllum sibiricum) exhibits traits associated with greater invasiveness than its introduced and native parental taxa
+48,1,0,0,1,0,0,0.9562049800000001,0.126450186,0.071324824,4,Effects of an exotic plant invasion on native understory plants in a tropical dry forest
+49,1,0,0,1,0,0,0.957047148,0.117068696,0.080281844,4,Non-indigenous species as stressors in estuarine and marine communities: Assessing invasion impacts and interactions
+50,1,0,0,1,0,0,0.957440822,0.11971346499999999,0.07528924000000001,4,Towards a framework for understanding the context dependence of impacts of non‐native tree species
+51,1,1,0,1,0,0,0.9533569140000001,0.175745146,0.0633900372,4,"Future scenarios of marine resources and ecosystem conditions in the Eastern Mediterranean under the impacts of fishing, alien species and sea warming"
+52,1,0,0,1,1,0,0.579242552,0.757779444,0.134662308,4,Lake Victoria fisheries: the Kenyan reality and environmental implications
+53,1,0,0,1,1,0,0.527306612,0.788635236,0.1842545388,4,"Traditional Mapuche ecological knowledge in Patagonia, Argentina: fishes and other living beings inhabiting continental waters, as a reflection of processes of change"
+54,1,0,0,1,1,0,0.786095368,0.512367876,0.1096214382,4,Western and Indigenous knowledge converge to explain Melaleuca forest dieback on Aboriginal land in northern Australia
+55,1,0,0,1,0,0,0.9386386099999999,0.20735529800000002,0.068188953,4,The Precarious State of a Cultural Keystone Species: Tribal and Biological Assessments of the Role and Future of Black Ash
+56,1,0,0,1,0,0,0.954942026,0.154189768,0.06341349719999999,4,Chromolaena odorata in slash-and-burn rice systems of Northern Laos
+57,1,0,0,1,0,0,0.9242448920000002,0.25889580079999996,0.08874085620000001,4,Survey of fatal anaphylactic reactions to imported fire ant stings. Report of the Fire Ant Subcommittee of the American Academy of Allergy and Immunology
+58,1,0,0,1,0,0,0.9458537140000001,0.1554132712,0.0767905926,4,"Angiostrongylus cantonensis: a review of its distribution, molecular biology and clinical significance as a human pathogen"
+59,1,0,0,1,0,0,0.9492799199999998,0.17240082399999998,0.0709540802,4,Spread and impact of fall armyworm (Spodoptera frugiperda J.E. Smith) in maize production areas of Kenya
+60,1,0,0,1,0,0,0.911332432,0.267721913,0.08277045720000001,4,Contact allergy to the Asteraceae plant Ambrosia artemisiifolia L (ragweed) in sesquiterpene lactone-sensitive patients in southern Sweden
+61,1,0,0,1,0,0,0.9234384980000001,0.234987434,0.088445451,4,Epidemiological Scenario of Dengue in Brazil
+62,1,0,0,1,0,0,0.958281442,0.11864311159999999,0.0794877672,4,A global review of socioeconomic and environmental impacts of ants reveals new insights for risk assessment
+63,1,0,0,1,0,0,0.95756108,0.11511682200000002,0.07721493,4,"Potential economic impact of introduction and spread of the red imported fire ant, Solenopsis invicta, in Hawaii"
+64,1,0,0,1,0,0,0.9537270120000001,0.13329886279999997,0.073751166,4,Impact of Xylella fastidiosa subspecies pauca in European olives
+65,1,0,0,1,0,0,0.9510293359999998,0.162175516,0.0632678726,4,"Invasion of an Exotic Fish—Common Carp, Cyprinus Carpio L. (Actinopterygii: Cypriniformes: Cyprinidae) in the Ganga River, India and its Impacts"
+66,1,0,0,1,0,0,0.8961303600000001,0.363481534,0.0819392984,4,Unusual complications after occupational exposure to giant hogweed (Heracleum mantegazzianum): A case report
+67,1,0,0,1,0,0,0.95580482,0.12513252999999996,0.08613544380000002,4,"InvaCost, a public database of the economic costs of biological invasions worldwide"
+68,1,0,0,0,1,0,0.368240118,0.8132294999999999,0.39956293400000004,4,Into the Void: International Law and the Protection of Animal Welfare
+69,1,0,1,1,0,0,0.8620861179999999,0.18290536400000001,0.1954853274,4,Integrating ecosystem services and disservices: insights from plant invasions
+70,1,0,0,1,0,0,0.957397452,0.11056690300000001,0.08372951799999999,4,Improving species distribution models for invasive non-native species with biologically informed pseudo-absence selection
+71,1,0,0,1,0,0,0.957355676,0.12169406519999999,0.07598582899999999,4,Horizon scanning for potential invasive non‐native species across the United Kingdom Overseas Territories
+72,1,0,0,1,0,0,0.952738458,0.1512047272,0.06900805239999999,4,Functional trait changes in the floras of 11 cities across the globe in response to urbanization
+73,1,0,0,1,0,0,0.9565438260000001,0.11569606099999999,0.0792476406,4,Alien species as a potential threat for Natura 2000 habitats: a national survey
+74,1,0,0,1,0,0,0.9580275840000001,0.12381016279999998,0.0758334328,4,"Finding indications of lag time, saturation and trading inflow in the emergence record of exotic agricultural insect pests in Japan."
+75,1,0,0,1,0,0,0.925981102,0.212750715,0.0794631142,4,Beta diversity of urban floras among European and non-European cities: Beta diversity of urban floras
+76,1,0,0,1,0,0,0.953878014,0.1341976678,0.0672210472,4,Ecological characteristics of Ventenata dubia in the Intermountain Pacific Northwest
+77,1,0,0,1,0,0,0.9556382600000001,0.14015540799999998,0.0685833606,4,The future of soil invertebrate communities in polar regions: different climate change responses in the Arctic and Antarctic?
+78,1,0,0,1,0,0,0.9577801639999999,0.1191974536,0.07439176180000001,4,Ants invading deserts: Non-native species in arid Moroccan oases
+79,1,0,0,1,0,0,0.9578830079999999,0.11726243399999998,0.0775250876,4,Surviving the Antarctic Winter—Life Stage Cold Tolerance and Ice Entrapment Survival in The Invasive Chironomid Midge Eretmoptera murphyi
+80,1,0,0,1,0,0,0.9568480019999999,0.1191526856,0.0795427284,4,What and where? Predicting invasion hotspots in the Arctic marine realm
+81,1,0,0,1,0,0,0.956284758,0.12067725060000001,0.07593520220000001,4,A latitudinal gradient of beta diversity for exotic vascular plant species in North America
+82,1,0,0,1,0,0,0.8821250020000001,0.26271161899999995,0.1130744852,4,Ecological risk modelling in developing resources of ecosystems characterized by varying vulnerability levels
+83,1,0,0,1,0,0,0.957466424,0.1236133408,0.0717690946,4,The biology of Canadian weeds. 134. Bromus inermis Leyss
+84,1,0,0,1,0,0,0.956038068,0.11362308099999999,0.0859068492,4,Biological invasions in aquatic ecosystems in China
+85,1,0,0,1,0,0,0.9560245799999999,0.123932537,0.0783205934,4,Alien aquatic plant species in European countries
+86,1,0,0,1,0,0,0.95764515,0.1175043268,0.0821984256,4,"Invasion of coastal marine communities in North America: Apparent patterns , processes, and biases"
+87,1,0,0,1,0,0,0.9484077940000001,0.17969934,0.072283577,4,Microemulsion formulation of a new biopesticide to control the diamondback moth (Lepidoptera: Plutellidae)
+88,1,0,0,1,0,0,0.929116716,0.227702816,0.0889812044,4,Have biopesticides come of age?
+89,1,0,0,1,0,0,0.946028254,0.1952664,0.0594168186,4,A strategic approach to mitigating the impacts of wild canids: proposed activities of the Invasive Animals Cooperative Research Centre
+90,1,0,0,1,0,0,0.870335012,0.35552918799999994,0.0781464716,4,"Stakeholder judgements of the social acceptability of control practices for kangaroos, unmanaged goats and feral pigs in the south-eastern rangelands of Australia"
+91,1,0,0,1,0,0,0.9557142799999999,0.13389341960000004,0.0745752336,4,Concepts for biocontrol in marine environments: is there a way forward?
+92,1,0,0,1,0,0,0.9572617859999999,0.12808566500000002,0.0729620546,4,Managing invasive crayfish: use of X‐ray sterilisation of males
+93,1,0,0,1,0,0,0.9242705680000001,0.24953893099999996,0.08450889939999999,4,Lessons learned during the successful eradication of bovine tuberculosis from Australia
+94,1,0,0,1,0,0,0.8921673340000001,0.34816112199999993,0.068197456,4,Long-term effects of warren ripping for rabbit control in semi-arid South Australia.
+95,1,0,0,1,0,0,0.83983334,0.3639116,0.135340784,4,Boater Perceptions of Environmental Issues Affecting Lakes in Northern Wisconsin
+96,1,0,0,1,0,0,0.9286651679999999,0.22401029599999997,0.07995395520000001,4,Massive Outbreak Draws Fresh Attention to Little-Known Virus
+97,1,0,0,1,0,0,0.90259854,0.287032888,0.106333118,4,The Outbreak of West Nile Virus Infection in the New York City Area in 1999
+98,1,0,0,1,0,0,0.93581503,0.2046765212,0.076015035,4,Human Sensitization to Prosopis juliflora Antigen in Saudi Arabia
+99,1,0,0,1,0,0,0.948312788,0.166297096,0.07355391539999999,4,Environmental and Economic Costs of Nonindigenous Species in the United States
+100,1,0,0,1,0,0,0.8171099999999999,0.47666961199999996,0.1049077642,4,"Rapa whelk (Rapana venosa Valenciennes, 1846) fishery along the Turkish coast of the Black Sea"
+101,1,0,0,1,0,0,0.957388832,0.11677909639999999,0.07616228620000001,4,"Effects of an African grass invasion on vegetation, soil and interstitial water characteristics in a tropical freshwater marsh in La Mancha, Veracruz (Mexico)"
+102,1,0,0,1,0,0,0.95772197,0.12478771,0.07411207700000001,4,Impacts of invasive Australian acacias: implications for management and restoration: Australian acacias: linking impacts and restoration
+103,1,0,0,1,0,0,0.9571975,0.11326658760000001,0.087347876,4,Massive economic costs of biological invasions despite widespread knowledge gaps: a dual setback for India
+104,1,0,0,1,0,0,0.955517894,0.11550677760000001,0.0889164182,4,The economic cost of managing invasive species in Australia
+105,1,0,0,1,0,0,0.9558978939999999,0.11770248700000001,0.088316123,4,Decision tools for managing biological invasions: existing biases and future needs
+106,1,0,0,1,0,0,0.9571412199999999,0.113921495,0.085146595,4,Building a synthesis of economic costs of biological invasions in New Zealand
+107,1,0,0,1,0,0,0.9135844040000001,0.242951986,0.112814822,4,ProMED-mail: 22 years of digital surveillance of emerging infectious diseases
+108,1,0,0,1,0,0,0.847771202,0.37011331599999997,0.154659596,4,BioCaster: detecting public health rumors with a Web-based text mining system
+109,1,0,0,1,1,0,0.582152036,0.793170192,0.15776179399999998,4,Detecting Denning Polar Bears with Forward-Looking Infrared (FLIR) Imagery
+110,1,0,0,1,0,0,0.935030076,0.209464058,0.0705076506,4,Insect pest monitoring with camera-equipped traps: strengths and limitations
+111,1,0,0,1,0,0,0.956231232,0.11096485679999998,0.0853353252,4,"Prosopis: A global assessment of the biogeography, benefits, impacts and management of one of the world's worst woody invasive plant taxa"
+112,1,0,0,1,0,0,0.9575498860000001,0.1237678574,0.0736806072,4,Flow regulation reduces native plant cover and facilitates exotic invasion in riparian wetlands
+113,1,0,0,1,0,0,0.9580265600000001,0.1270911,0.0839042068,4,Eradications and People: Lessons from the Plant Eradication Program in Galapagos
+114,1,0,0,1,0,0,0.9582237040000001,0.1162984094,0.078793628,4,The large-scale removal of mammalian invasive alien species in Northern Europe
+115,1,0,0,1,1,0,0.507124732,0.811487174,0.17293074,4,Drastic decline of flood pulse in the Cambodian floodplains (Mekong River and Tonle Sap system)
+116,1,0,0,1,0,0,0.954219782,0.11814798600000001,0.08525316560000001,4,MIREN: A New Research Network Concerned With Plant Invasion into Mountain Areas
+117,1,0,0,1,0,0,0.95447302,0.139469986,0.0713611712,4,Processes at multiple scales affect richness and similarity of non-native plant species in mountains around the world
+118,1,0,0,1,1,0,0.668043696,0.657239594,0.109738136,4,Taxonomic biases persist from listing to management for Canadian species at risk
+119,1,0,0,1,0,0,0.8557043679999999,0.41786677800000005,0.130425128,4,Seven Shortfalls that Beset Large-Scale Knowledge of Biodiversity
+120,1,0,0,0,1,1,0.476487854,0.638567012,0.5536652,4,The science of citizen science: Exploring barriers to use as a primary research tool
+121,1,0,0,0,1,1,0.44381673600000004,0.675366508,0.5549047,4,"Citizen science can improve conservation science, natural resource management, and environmental protection"
+122,1,0,0,1,0,0,0.957991672,0.1147168478,0.07935727719999999,4,"Citizen science: a successful tool for monitoring invasive alien species (IAS) in Marine Protected Areas. The case study of the Egadi Islands MPA (Tyrrhenian Sea, Italy)"
+123,1,0,0,1,0,0,0.9078681059999999,0.242566307,0.0897292538,4,New Zealand marine biosecurity: Delivering outcomes in a fluid environment
+124,1,0,0,1,0,0,0.95705566,0.1150999704,0.083921755,4,Dealing with non-native species: what makes the difference in South America?
+125,1,0,0,1,1,0,0.804073242,0.6339459420000001,0.0879761756,4,Spatial and taxonomic biases in bat records: Drivers and conservation implications in a megadiverse country
+126,1,0,0,0,1,0,0.35917185199999996,0.83144308,0.4169365,4,Constraints of philanthropy on determining the distribution of biodiversity conservation funding
+127,1,0,0,1,0,0,0.938820446,0.184410534,0.0842669384,4,"Qualitative impacts of Senna spectabilis on distribution of welfare: A household survey of dependent communities in Budongo Forest Reserve, Uganda"
+128,1,0,0,1,0,0,0.9568601820000001,0.11623765020000001,0.08534118439999999,4,Perceptions of impact: Invasive alien plants in the urban environment
+129,1,0,0,1,0,0,0.8704512839999999,0.301400464,0.12181127079999998,4,"Multilevel stakeholder networks for Australian marine biosecurity: well-structured for top-down information provision, requires better two-way communication"
+130,1,0,0,1,0,0,0.955132492,0.149774542,0.0641820636,4,"Macroinvertebrates in North American tallgrass prairie soils: effects of fire, mowing, and fertilization on density and biomass"
+131,1,0,0,1,1,0,0.630115566,0.568707836,0.20291736999999999,4,Edge-effects Drive Tropical Forest Fragments Towards an Early-Successional System
+132,1,0,0,1,0,0,0.9556439200000002,0.121795378,0.0754393626,4,A global examination on the differential impacts of roadsides on native vs. exotic and weedy plant species
+133,1,0,0,1,0,0,0.9580087300000001,0.120601018,0.07647551799999999,4,Vegetation composition along a New England transmission line corridor and its implications for other trophic levels
+134,1,0,0,1,0,0,0.9562989,0.11489776999999998,0.087473368,4,Performance Comparisons of Co-Occurring Native and Alien Invasive Plants: Implications for Conservation and Restoration
+135,1,0,0,1,0,0,0.95566812,0.1190222732,0.0782305454,4,Alien and native plant richness and abundance respond to different environmental drivers across multiple gravel floodplain ecosystems
+136,1,0,0,1,0,0,0.956538178,0.14360142,0.0667379024,4,Impact of wild boar (Sus scrofa) in its introduced and native range: a review
+137,1,0,0,1,0,0,0.955867018,0.145093338,0.0679075244,4,A systematic review of the impacts and management of introduced deer (family Cervidae) in Australia
+138,1,0,0,1,0,0,0.8731296319999998,0.29550332,0.1002460298,4,"Alien turf: Overfishing, overgrazing and invader domination in south‐eastern Levant reef ecosystems"
+139,1,0,0,1,1,0,0.802069294,0.583985324,0.073433286,4,Assessment of game restocking contributions to anthropogenic hybridization: the case of the Iberian red-legged partridge
+140,1,0,0,1,0,0,0.957058118,0.12115484299999998,0.0767038938,4,"Influence of landscape structure on invasive predators: feral cats and red foxes in the brigalow landscapes, Queensland, Australia"
+141,1,0,0,1,0,0,0.9561170220000001,0.11445162139999998,0.0788297288,4,"Species introductions, diversity and disturbances in marine macrophyte assemblages of the northwestern Mediterranean Sea"
+142,1,0,0,1,1,0,0.74622074,0.577977016,0.1091266448,4,Extraterritorial hunting expeditions to intense fire scars by feral cats
+143,1,0,0,1,0,0,0.9579035100000001,0.12157195540000001,0.0761094842,4,Ecological and socio-economic impacts of invasive water hyacinth (Eichhornia crassipes): a review
+144,1,0,0,1,0,0,0.95206075,0.16399712680000003,0.0643401084,4,Thirty years of vegetation dynamics in response to a fluctuating rabbit population on sub-Antarctic Macquarie Island
+145,1,0,0,1,0,0,0.95704718,0.11303673539999999,0.0826425666,4,Modeling Hawaiian Ecosystem Degradation due to Invasive Plants under Current and Future Climates
+146,1,0,0,1,0,0,0.954201668,0.16172199399999998,0.061459373399999996,4,"Responses of seabirds to the rabbit eradication on Ile Verte, sub-Antarctic Kerguelen Archipelago"
+147,1,0,0,1,0,0,0.9562983700000001,0.11086656739999998,0.08291278020000001,4,Indirect effects of invasive species removal devastate World Heritage Island
+148,1,1,0,1,0,0,0.9491000679999999,0.213765378,0.06982089059999999,4,Red List Indices to measure the sustainability of species use and impacts of invasive alien species
+149,1,0,0,1,0,0,0.8977671180000002,0.412885118,0.06519095579999999,4,Fossil birds from the hawaiian islands: evidence for wholesale extinction by man before Western contact
+150,1,0,0,1,0,0,0.9572171559999999,0.1164025954,0.075784008,4,"Biological Invasion by Myrica faya in Hawai'i: Plant Demography, Nitrogen Fixation, Ecosystem Effects"
+151,1,0,0,1,0,0,0.930905742,0.226895806,0.066454291,4,Rattus exulans and the catastrophic disappearance of Hawai’i’s native lowland forest
+152,1,0,0,1,0,0,0.9575176320000001,0.12403631480000002,0.071402586,4,"Is the southern crab Halicarcinus planatus (Fabricius, 1775) the next invader of Antarctica?"
+153,1,0,0,1,0,0,0.9558908800000001,0.142582029,0.067453662,4,Importance of non-native honeybees (Apis mellifera) as flower visitors to the Hawaiian tree ʻŌhiʻa lehua (Metrosideros polymorpha) across an elevation gradient
+154,1,0,0,1,0,0,0.9378323460000001,0.2142267962,0.07208919100000001,4,The Biogeography of Globally Threatened Seabirds and Island Conservation Opportunities: Seabird Conservation Opportunities
+155,1,0,0,1,0,0,0.956996648,0.13970097799999998,0.0716376174,4,Seabird population changes following mammal eradications on islands
+156,1,0,0,1,0,0,0.9211790900000001,0.2155906672,0.07729012960000001,4,Weeds as agricultural constraint to farmers in Benin: results of a diagnostic study
+157,1,0,0,1,0,0,0.9518568199999999,0.154798516,0.0698853636,4,Unintended consequences of using alien fish for human benefit in protected areas
+158,1,0,0,1,0,0,0.9565596120000001,0.11414820799999999,0.0770482984,4,"Plant community changes after the reduction of an invasive rangeland weed, diffuse knapweed, Centaurea diffusa"
+159,1,0,0,1,0,0,0.957722278,0.120850541,0.07455046580000001,4,"Review: The invasion of Acacia nilotica in Baluran National Park, Indonesia, and potential future control strategies"
+160,1,0,0,1,0,0,0.9533295580000001,0.1267654058,0.08796879640000001,4,Will Threat of Biological Invasions Unite the European Union?
+161,1,0,0,1,0,0,0.9494406639999999,0.13790338300000002,0.07566079919999999,4,"Combining physical, cultural and biological methods: prospects for integrated non-chemical weed management strategies"
+162,1,0,0,1,0,0,0.957423406,0.11256146060000001,0.08616430979999999,4,Four priority areas to advance invasion science in the face of rapid environmental change
+163,1,0,0,1,0,0,0.95431362,0.131038941,0.0745292954,4,Poa annua L. in Antarctic: searching for the source of introduction
+164,1,0,0,1,0,0,0.956011086,0.1141360476,0.0777591794,4,Spread of the tiger: Global risk of invasion by the mosquito Aedes albopictus
+165,1,0,0,1,0,0,0.95130147,0.142595291,0.07281803519999999,4,Western Corn Rootworm (Diabrotica virgifera virgifera LeConte) in Europe: Current Status and Sustainable Pest Management
+166,1,0,0,1,0,0,0.9495690059999999,0.1896469208,0.06162103539999999,4,Historical changes in northeastern US bee pollinators related to shared ecological traits
+167,1,0,0,1,0,0,0.894091572,0.23191309,0.09300203659999999,4,Corridors for aliens but not for natives: effects of marine urban sprawl at a regional scale
+168,1,0,0,1,0,0,0.896933668,0.22801305200000002,0.1037431146,4,Global Biodiversity: Indicators of Recent Declines
+169,1,0,0,0,1,1,0.49122911399999997,0.63918691,0.5574384880000001,4,The FAIR Guiding Principles for scientific data management and stewardship
+170,1,0,0,1,0,0,0.9574224979999999,0.1145062568,0.0817032366,4,Evaluating stakeholder awareness and involvement in risk prevention of aquatic invasive plant species by a national code of conduct
+171,1,0,0,0,1,1,0.396943664,0.6143019799999999,0.67016482,4,The dark side of transformation: latent risks in contemporary sustainability discourse
+172,1,0,0,1,0,0,0.9557963560000001,0.12207526400000002,0.08522183059999999,4,Indicators for monitoring biological invasions at a national level
+173,1,0,0,1,0,0,0.957178284,0.1177821348,0.0759798756,4,Hiking trails as conduits for the spread of non-native species in mountain areas
+174,1,0,0,1,0,0,0.7549867440000001,0.466864628,0.33072834,4,ENM Components: a new set of web service-based workflow components for ecological niche modelling
+175,1,0,0,1,0,0,0.9565232720000001,0.11386214079999998,0.0810659104,4,"Distribution and impact of invasive alien plant species in Bardia National Park, western Nepal"
+176,1,0,0,1,0,0,0.95729574,0.12171505279999999,0.0754775304,4,Invasive alien palm Pinanga coronata threatens native tree ferns in an oceanic island rainforest.
+177,1,0,0,1,0,0,0.955250878,0.13217904600000002,0.07903968800000001,4,Isolated and vulnerable: the history and future of Pacific Island terrestrial biodiversity
+178,1,0,0,1,0,0,0.956536378,0.118514021,0.0810893678,4,Plant genome size influences stress tolerance of invasive and native plants via plasticity
+179,1,0,0,1,0,0,0.850066754,0.4969174580000001,0.06557353960000001,4,"Zanzibar's endemic red colobus Piliocolobus kirkii : first systematic and total assessment of population, demography and distribution"
+180,1,0,0,1,0,0,0.9566116020000001,0.11382837239999999,0.0794898946,4,Ecological and evolutionary misadventures of Spartina
+181,1,0,0,1,0,0,0.947665504,0.14861532800000002,0.0839978404,4,Niche dynamics in space and time
+182,1,0,0,1,0,0,0.955779358,0.11452072499999999,0.080970324,4,Genetic control of invasive plants species using selfish genetic elements
+183,1,0,0,1,0,0,0.8722380319999999,0.261773728,0.11038092640000001,4,‘There are new species’: indigenous knowledge of biodiversity change in Arctic Yakutia
+184,1,0,0,1,0,0,0.9471725880000001,0.155177666,0.079380517,4,"Evolution, Diversity, and Taxonomy of the Peronosporaceae, with Focus on the Genus Peronospora"
+185,1,0,0,1,0,0,0.95741117,0.12262821799999998,0.08371329799999999,4,Coordinating invasive plant management among conservation and rural stakeholders
+186,1,0,0,0,1,1,0.45119298399999996,0.6028458879999999,0.636950186,4,The ecology of games as a theory of polycentricity: recent advances and future challenges
+187,1,0,0,0,1,1,0.49179698400000005,0.58008073,0.60136632,4,Collaborative environmental governance: Achieving collective action in social-ecological systems
+188,1,0,0,0,1,1,0.450334784,0.64704753,0.597281952,4,Studying human–nature relationships through a network lens: A systematic review
+189,1,0,0,1,0,0,0.95492484,0.157160982,0.064698784,4,"Spread and attempted eradication of the grey squirrel (Sciurus carolinensis) in Italy, and consequences for the red squirrel (Sciurus vulgaris) in Eurasia"
+190,1,0,0,1,0,0,0.902916348,0.286658722,0.0867495522,4,Adaptive co-management for collaborative commercial pest management: the case of industry-driven fruit fly area-wide management
+191,1,0,0,1,0,0,0.95295568,0.14174220799999998,0.0702828136,4,The Irish potato famine pathogen Phytophthora infestans originated in central Mexico rather than the Andes
+192,1,0,0,0,1,0,0.331624868,0.839200022,0.349544488,4,Social networks and transitions to co-management in Jamaican marine reserves and small-scale fisheries
+193,1,0,0,1,0,0,0.90671322,0.22154704399999997,0.0966646644,4,Improving interactions between animal rights groups and conservation biologists
+194,1,0,0,1,0,0,0.957403788,0.11760980160000001,0.085491208,4,High and rising economic costs of biological invasions worldwide
+195,1,0,0,1,0,0,0.9543870999999999,0.11598576820000002,0.08710554,4,Trying to engage the crowd in recording invasive alien species in Europe: experiences from two smartphone applications in northwest Europe
+196,1,0,0,1,0,0,0.956588132,0.11724734419999998,0.08063208,4,Status and management of non-native plant invasion in three of the largest national parks in the United States
+197,1,0,0,1,0,0,0.8789827499999999,0.389789063,0.0835824202,4,Changing lenses to assess biodiversity: patterns of species richness in sub-Antarctic plants and implications for global conservation
+198,1,0,0,1,0,0,0.9580433100000001,0.12305612799999999,0.07431836259999999,4,"Alien lichens unintentionally transported to the “Arctowski” station (South Shetlands, Antarctica)"
+199,1,0,0,1,0,0,0.957449896,0.11878375,0.07717921860000002,4,"Selective and non‐selective control of invasive plants: the short‐term effects of growing‐season prescribed fire, herbicide, and mowing in two Texas prairies"
+200,1,0,0,1,1,0,0.693761584,0.65511287,0.1287290756,4,Confronting a biome crisis: global disparities of habitat loss and protection: Confronting a biome crisis
+201,1,0,0,1,0,0,0.955707752,0.122419627,0.0788198692,4,"Altitudinal distribution patterns of the native and alien woody flora in Kashmir Himalaya, India"
+202,1,0,0,1,0,0,0.9567753419999999,0.1135224932,0.0790221858,4,Three invasive tree species change soil chemistry in Guam forests
+203,1,0,0,1,0,0,0.955904952,0.11477766959999999,0.08322972399999999,4,"Invasive Plant Species in The Disturbed Forest of Batukahu Nature Reserve, Bali, Indonesia"
+204,1,0,0,1,0,0,0.9561037879999998,0.12206773200000001,0.079311145,4,Alien plant species that invade high elevations are generalists: support for the directional ecological filtering hypothesis
+205,1,0,0,1,0,0,0.957603342,0.115040645,0.08002052479999999,4,"Marine invasive species: establishing pathways, their presence and potential threats in the Galapagos Marine Reserve"
+206,1,0,0,1,0,0,0.956694244,0.12743912599999999,0.07290640420000001,4,Predicting invasion risk of 16 species of eucalypts using a risk assessment protocol developed for Brazil
+207,1,0,0,1,0,0,0.9547549140000001,0.12650712719999999,0.08198902200000001,4,Models of alien species richness show moderate predictive accuracy and poor transferability
+208,1,0,0,1,0,0,0.95340951,0.1479249812,0.073024114,4,Sellers’ Revisited: A Big Data Reassessment of Historical Outbreaks of Bluetongue and African Horse Sickness due to the Long-Distance Wind Dispersion of Culicoides Midges
+209,1,0,0,1,0,0,0.953545254,0.11194664979999999,0.0813269234,4,"The potential geographical distribution and phenology of Bemisia tabaci Middle East/Asia Minor 1, considering irrigation and glasshouse production"
+210,1,0,0,1,0,0,0.948424262,0.14309907500000002,0.0952386472,4,Crossing Frontiers in Tackling Pathways of Biological Invasions
+211,1,0,0,1,0,0,0.9572511459999999,0.113965841,0.08525167780000001,4,Horizon scanning for invasive alien species with the potential to threaten biodiversity and human health on a Mediterranean island
+212,1,0,0,1,0,0,0.9484692939999999,0.17392064399999999,0.0717894284,4,Estimating Consignment-Level Infestation Rates from the Proportion of Consignment that Failed Border Inspection: Possibilities and Limitations in the Presence of Overdispersed Data
+213,1,0,0,1,0,0,0.95804859,0.1179824642,0.07483295059999999,4,Food for thought: Risks of non-native species transfer to the Antarctic region with fresh produce
+214,1,0,0,1,0,0,0.95673534,0.1259245796,0.0833094584,4,Weed risk assessment: a way forward or a waste of time?
+215,1,0,0,1,0,0,0.956215772,0.116187088,0.0892977548,4,A Cost–Benefit Approach for Prioritizing Invasive Species
+216,1,0,0,1,0,0,0.950857554,0.151693968,0.0716048616,4,Taxonomic changes and non-native species: An overview of constraints and new challenges for macroinvertebrate-based indices calculation in river ecosystems
+217,1,0,0,1,0,0,0.957564284,0.11833520680000001,0.0747069258,4,Aliens in Antarctica: Assessing transfer of plant propagules by human visitors to reduce invasion risk
+218,1,0,0,1,0,0,0.9551850099999999,0.1108914966,0.0804869762,4,Early assessment of the impact of alien species: differential consequences of an invasive crayfish on adult and larval amphibians
+219,1,0,0,1,0,0,0.956642546,0.1207447288,0.08006480839999999,4,Invasion hotspots for non-native plants in Australia under current and future climates
+220,1,0,0,1,0,0,0.9577924900000001,0.11800108379999999,0.0789985664,4,Climate Change in Western US Deserts: Potential for Increased Wildfire and Invasive Annual Grasses
+221,1,0,0,1,0,0,0.9568142639999999,0.11542323140000002,0.08164062520000001,4,The Future of species invasions in the Great Lakes-St. Lawrence River basin
+222,1,0,0,1,0,0,0.8901506099999998,0.3943237599999999,0.078254942,4,Imposex and organotin prevalence in a European post-legislative scenario: Temporal trends from 2003 to 2008
+223,1,0,0,1,0,0,0.925168394,0.300419234,0.062177014600000004,4,Island biodiversity hotspots are getting hotter: vulnerability of tree species to climate change in New Caledonia
+224,1,0,0,1,0,0,0.95557225,0.1130244212,0.07942215999999999,4,"Assessing and managing the current and future pest risk from water hyacinth, (Eichhornia crassipes), an invasive aquatic plant threatening the environment and water security"
+225,1,0,0,1,0,0,0.956886836,0.1100022938,0.08397817660000001,4,How far could the alien boatman Trichocorixa verticalis verticalis spread? Worldwide estimation of its current and future potential distribution
+226,1,0,0,1,0,0,0.957194836,0.1140877512,0.07834602859999999,4,"Global potential distribution of an invasive species, the yellow crazy ant (Anoplolepis gracilipes) under climate change"
+227,1,0,0,1,0,0,0.9552052679999999,0.1318728952,0.07373822599999999,4,Predicting Novel Riparian Ecosystems in a Changing Climate
+228,1,0,0,1,0,0,0.94075954,0.23732421799999998,0.06286518919999999,4,Impact of sea level rise on the 10 insular biodiversity hotspots
+229,1,1,1,0,1,1,0.47872946,0.629259734,0.5999111920000001,4,An inclusive approach to assesse nature's contributions to people
+230,1,0,0,1,0,0,0.9551275499999999,0.1154853414,0.0887901592,4,Will climate change promote future invasions?
+231,1,0,0,1,0,0,0.801784936,0.45977590999999995,0.120604355,4,The Significance of Social Perceptions in Implementing Successful Feral Cat Management Strategies: A Global Review
+232,1,0,0,1,0,0,0.956149542,0.1141110388,0.082346925,4,The invasibility of tropical forests by exotic plants
+233,1,0,0,1,1,0,0.56588339,0.705641922,0.185634356,4,Marine ecoregions of the world: A bioregionalization of coastal and shelf areas
+234,1,0,0,1,0,0,0.8070858660000001,0.29646918400000005,0.1976407938,4,Global priorities for an effective information basis of biodiversity distributions
+235,1,0,0,1,0,0,0.85751777,0.496209244,0.08073501459999999,4,"The marine ichthyofauna of Lebanon: an annotated checklist, history, biogeography, and conservation status"
+236,1,0,0,1,0,0,0.9117086619999999,0.34512760600000003,0.075289046,4,Commensal rats and humans: Integrating rodent phylogeography and zooarchaeology to highlight connections between human societies
+237,1,0,0,1,0,0,0.95619046,0.1189292596,0.0856186996,4,Are terrestrial biological invasions different in the tropics?
+238,1,0,0,1,1,0,0.804983792,0.569422194,0.0890833306,4,"Origin and domestication of the wild carp, Cyprinus carpio: from Roman gourmets to the swimming flowers"
+239,1,0,0,1,0,0,0.958317428,0.119117322,0.07788257400000001,4,Multi-taxa inventory of naturalized species in Chile
+240,1,0,0,1,0,0,0.95566125,0.1150148956,0.08288063,4,Globally threatened vertebrates on islands with invasive species
+241,1,0,0,1,0,0,0.954990696,0.132478164,0.07547596100000001,4,A new wave of marine fish invasions through the Panama and Suez canals
+242,1,0,0,1,0,0,0.95579278,0.1157266076,0.085950208,4,Alien plants introduced by different pathways differ in invasion success: Unintentional introductions as a threat to natural areas
+243,1,0,0,0,1,0,0.479189324,0.7218410499999999,0.41190601400000004,4,Integrated assessment models for ecologists: the present and the future
+244,1,0,0,1,0,0,0.9507824420000001,0.16030059800000002,0.06907295399999999,4,"Spread of invasive ragweed: climate change, management and how to reduce allergy costs"
+245,1,0,0,1,0,0,0.956103554,0.11266197400000003,0.0798515754,4,Aquatic invasive species and emerging infectious disease threats: A One Health perspective
+246,1,0,0,0,1,0,0.323830054,0.86954036,0.278085012,4,Aquaculture: a newly emergent food production sector—and perspectives of its impacts on biodiversity and conservation
+247,1,0,0,1,0,0,0.95786174,0.122152328,0.07590071120000001,4,Climate change leads to increasing population density and impacts of a key island invader
+248,1,0,0,1,0,0,0.880696526,0.28060642900000005,0.0838801774,4,Prospects for the return of shell-crushing crabs to Antarctica
+249,1,0,0,1,0,0,0.9513083019999999,0.15157021539999999,0.0858573702,4,Managing invasive plants in a rural-amenity landscape: the role of social capital and Landcare
+250,1,0,1,0,1,1,0.368542624,0.6261598939999999,0.686814354,4,Closing the governance gaps in the water-energy-food nexus: Insights from integrative governance
+251,1,0,0,1,0,0,0.95643592,0.1185063228,0.088415633,4,Opportunities for better use of collective action theory in research and governance for invasive species management
+252,1,0,0,1,0,0,0.956865322,0.12163645920000002,0.0849015484,4,Governance of genetic biocontrol technologies for invasive fish
+253,1,0,0,1,1,0,0.6205884079999999,0.504607882,0.33601225200000007,4,Stakeholder mapping for the governance of biosecurity: a literature review
+254,1,0,0,1,0,0,0.9566361139999999,0.11689911559999999,0.08540545499999999,4,"Making adaptive governance work in biodiversity conservation: lessons in invasive alien aquatic plant management in Lake Biwa, Japan"
+255,1,0,0,1,0,0,0.957080886,0.115951688,0.0779064132,4,New pasture plants intensify invasive species risk
+256,1,0,0,1,0,0,0.9526571239999999,0.1148162578,0.08895943619999999,4,The importance of assessing positive and beneficial impacts of alien species
+257,1,0,0,1,0,0,0.956730928,0.12389894220000001,0.07473229199999999,4,Alien Plants in the Eastern Cape Province in South Africa: Perceptions of Their Contributions to Livelihoods of Local Communities
+258,1,0,0,1,0,0,0.9224663879999999,0.243022958,0.0648342982,4,Efficacy of the Boar-Operated-System to deliver baits to feral swine
+259,1,0,0,1,0,0,0.957074088,0.14015226,0.070564246,4,Killing effect of “miefeiling” on alien nile tilapia in ornamental aquaculture
+260,1,0,1,0,1,1,0.33706594,0.71989757,0.5646006079999999,4,The contributions of Indigenous Peoples and local communities to ecological restoration
+261,1,0,0,1,0,0,0.952517494,0.15765725999999997,0.0636912224,4,Feral Goat Eradications on Islands
+262,1,0,0,1,0,0,0.937989838,0.174477773,0.0917401408,4,"Weed biocontrol with fungi: past, present and future"
+263,1,0,0,1,0,0,0.919443444,0.27225868200000003,0.0974698548,4,Public Opinion Towards Gene Drive as a Pest Control Approach for Biodiversity Conservation and the Association of Underlying Worldviews
+264,1,0,0,1,0,0,0.957603046,0.12013087660000002,0.078733672,4,Genetic control of invasive fish: technological options and its role in integrated pest management
+265,1,0,0,1,0,0,0.95189632,0.1117720844,0.08398023859999999,4,"Ecological, behavioral, and genetic factors influencing the recombinant control of invasive pests"
+266,1,0,0,1,0,0,0.93014828,0.21614154200000005,0.0847845506,4,IRAC: Mode of action classification and insecticide resistance management
+267,1,0,0,1,0,0,0.95389392,0.1440771912,0.07474754219999999,4,Efficient population modification gene-drive rescue system in the malaria mosquito Anopheles stephensi
+268,1,0,0,1,0,0,0.947839776,0.193932218,0.0673836668,4,"Quantifying Eradication Success: the Removal of Feral Pigs from Santa Cruz Island, California"
+269,1,0,0,1,0,0,0.95576747,0.115519678,0.078385777,4,Weed Control for the Preservation of Biological Diversity
+270,1,0,0,1,0,0,0.9520362459999999,0.141298706,0.07553465919999999,4,Suppression gene drive in continuous space can result in unstable persistence of both drive and wild-type alleles
+271,1,0,0,1,1,0,0.702796176,0.5266508599999999,0.17620447739999998,4,Along the Way Back from the Brink
+272,1,0,0,1,0,0,0.946544866,0.177180735,0.07044121639999999,4,"Genetic Sexing Strains in Medfly, Ceratitis capitata, Sterile Insect Technique Programmes"
+273,1,0,0,1,0,0,0.9458328500000001,0.168439306,0.0853157682,4,RNAi as an emerging approach to control Fusarium head blight disease and mycotoxin contamination in cereals
+274,1,0,0,1,0,0,0.956843586,0.11747029280000001,0.07756164319999999,4,Can Biological Control Overcome the Threat From Newly Invasive Coconut Rhinoceros Beetle Populations (Coleoptera: Scarabaeidae)? A Review
+275,1,0,0,0,1,0,0.30429645,0.864043706,0.336699492,4,Wild Animal Welfare in International Law: The Present Position and the Scope for Development
+276,1,0,0,1,0,0,0.9572121680000001,0.12345507840000003,0.086914859,4,Diverse views among scientists on non-native species
+277,1,0,0,1,0,0,0.906085474,0.1675101772,0.13483381879999998,4,Invasive uncertainties: environmental change and the politics of limited science
+278,1,0,0,1,0,0,0.956255742,0.1142356242,0.08353438700000002,4,Environmentally‐contingent behaviour of invasive plants as drivers or passengers
+279,1,0,0,1,0,0,0.95755288,0.11540585280000001,0.081992955,4,The Ecology of Bird Introductions
+280,1,0,0,1,0,0,0.958090464,0.1174620306,0.086046161,4,Plant invasions in the Anthropocene
+281,1,0,0,1,0,0,0.9562607780000001,0.1165179712,0.08861512500000002,4,"Parasites and biological invasions: parallels, interactions, and control"
+282,1,0,0,1,0,0,0.9561844760000001,0.11322130400000001,0.0821273678,4,"Residence time, expansion toward the equator in the invaded range and native range size matter to climatic niche shifts in non-native species"
+283,1,0,1,0,1,1,0.397691306,0.577618002,0.6732199459999999,4,Transformative governance of biodiversity: insights for sustainable development
+284,1,0,0,0,1,1,0.42171241000000004,0.5771793620000001,0.676635558,4,Integrative environmental governance: enhancing governance in the era of synergies
+285,1,0,0,0,1,1,0.49294137199999993,0.571198952,0.615861496,4,"Modes of Network Governance: Structure, Management, and Effectiveness"
+286,1,0,0,1,0,0,0.956260018,0.1143236474,0.0879583008,4,Controlling invasive species in complex social landscapes
+287,1,0,0,1,0,0,0.957174204,0.117069377,0.08757903040000001,4,The Convention on Biological Diversity (CBD)’s Post-2020 target on invasive alien species – what should it include and how should it be monitored?
+288,1,0,0,0,1,0,0.44342839000000006,0.822953712,0.273549004,4,"Neither Fish, nor Fowl: Honeybees and the Parameters of Current Legal Frameworks for Animals, Wildlife and Biodiversity"
+289,1,0,0,1,0,0,0.8512553220000001,0.297660272,0.1403729106,4,Achieving Cross-Scale Collaboration for Large Scale Conservation Initiatives
+290,1,0,0,0,1,1,0.419051666,0.553035116,0.68006554,4,Leverage points for sustainability transformations: nine guiding questions for sustainability science and practice
+291,1,0,0,1,0,0,0.9560344439999999,0.1148836468,0.08541877299999999,4,Country Compendium of the Global Register of Introduced and Invasive Species
+292,1,0,0,1,0,0,0.9567205400000001,0.11537739300000001,0.0834665048,4,Setting the scene for achievable post-2020 convention on biological diversity targets: A review of the impacts of invasive alien species on ecosystem services in Africa
+293,1,0,0,1,0,0,0.9503653639999999,0.152542962,0.0825405152,4,Effects of environmental change on zoonotic disease risk: an ecological primer
+294,1,0,0,1,0,0,0.926174314,0.25979511,0.0758729002,4,Emerging infectious diseases of wildlife--threats to biodiversity and human health
+295,1,0,0,1,0,0,0.9402693000000001,0.184935008,0.08508513659999999,4,Origins of major human infectious diseases
+296,1,0,0,0,1,1,0.443553548,0.57798689,0.6649754360000001,4,What makes ecology `political'?: rethinking `scale' in political ecology
+297,1,0,1,1,0,0,0.9487670899999999,0.184617484,0.0698518124,4,Holding up a mirror to the society: Children recognize exotic species much more than local ones
+298,1,0,0,1,0,0,0.95592565,0.12478111680000001,0.07444611300000001,4,Ecological Predictions and Risk Assessment for Alien Fishes in North America
+299,1,0,0,1,0,0,0.9578200960000001,0.12732617219999998,0.0730627606,4,The untamed shrew: on the termination of an eradication programme for an introduced species
+300,1,0,0,1,0,0,0.956535568,0.11575042599999999,0.08352979159999999,4,Options for reducing uncertainty in impact classification for alien species
+301,1,0,0,1,0,0,0.87224459,0.314068792,0.0870177066,4,Zero-tolerance biosecurity protects high-conservation-value island nature reserve
+302,1,0,0,1,0,0,0.9560133239999999,0.11336793200000002,0.08592120519999999,4,Pest Risk Maps for Invasive Alien Species: A Roadmap for Improvement
+303,1,0,0,1,0,0,0.9563601580000001,0.1223646112,0.08489517360000001,4,Assessing the threat of exotic plant pests
+304,1,0,0,1,0,0,0.956411496,0.142762166,0.06933436159999999,4,Effectiveness of removals of the invasive lionfish: how many dives are needed to deplete a reef?
+305,1,0,0,1,0,0,0.95682139,0.12022427499999999,0.07849132140000001,4,Managing Alien Plants for Biodiversity Outcomes—the Need for Triage
+306,1,0,0,1,0,0,0.88909498,0.2268317648,0.12756357000000002,4,The International Legal Framework For Biosecurity And The Challenges Ahead
+307,1,0,0,1,0,0,0.9167188759999998,0.35472634200000003,0.0671840188,4,The Illegal Wildlife Trade Is a Likely Source of Alien Species
+308,1,0,0,1,0,0,0.956313134,0.1147458088,0.08477343600000001,4,The Cultural Value of Invasive Species: A Case Study from Semi–Arid Northeastern Brazil
+309,1,0,0,1,0,0,0.95618958,0.11904114699999999,0.08340952739999999,4,Sustainability as a framework for considering gene drive mice for invasive rodent eradication
+310,1,0,0,1,0,0,0.95045062,0.14940027360000002,0.07967625140000001,4,Survey evaluations to assess marine bioinvasions
+311,1,0,0,1,0,0,0.950795364,0.1294668624,0.08251499939999998,4,Socio-economic impact classification of alien taxa (SEICAT)
+312,1,0,0,1,0,0,0.95626609,0.1123867776,0.0819917876,4,Predicting global ascidian invasions
+313,1,0,0,1,0,0,0.9583028420000002,0.11445252720000001,0.08033237319999999,4,Invasive aquatic plants in the aquarium and ornamental pond industries: a risk assessment for southern O ntario ( C anada)
+314,1,0,0,1,0,0,0.9565587600000001,0.11309182079999999,0.0815932848,4,Suitability of Laurentian Great Lakes for invasive species based on global species distribution models and local habitat
+315,1,0,0,1,0,0,0.9572162280000001,0.1137970564,0.0808663094,4,Using analogous climates and global insect distribution data to identify potential sources of new invasive insect pests in New Zealand
+316,1,0,0,1,0,0,0.95640909,0.1198882352,0.0771874806,4,"Current and projected global distribution of Phytophthora cinnamomi, one of the world's worst plant pathogens"
+317,1,0,0,1,0,0,0.95640424,0.131998744,0.06788585659999999,4,Modeling the potential global distribution of light brown apple moth Epiphyas postvittana (Lepidoptera: Tortricidae) using CLIMEX
+318,1,0,0,1,0,0,0.9564318400000001,0.1134906722,0.07928383700000001,4,The potential distribution of the Russian wheat aphid (Diuraphis noxia): an updated distribution model including irrigation improves model fit for predicting potential spread
+319,1,0,0,1,0,0,0.9548218420000001,0.11231125280000001,0.0855442612,4,"Global invasion in progress: modeling the past, current and potential global distribution of the common myna"
+320,1,0,0,1,1,0,0.708859002,0.579958744,0.21871378999999996,4,"To increase trust, change the social design behind aggregated biodiversity data"
+321,1,0,0,1,0,0,0.956658264,0.113808939,0.08172403739999999,4,Biotic and abiotic factors predicting the global distribution and population density of an invasive large mammal
+322,1,0,0,1,0,0,0.953918274,0.13379723,0.0697825296,4,Range-Expanding Pests and Pathogens in a Warming World
+323,1,0,0,1,0,0,0.95696867,0.11749553539999999,0.07869906619999999,4,"Spartina alterniflora invasions in the Yangtze River estuary, China: An overview of current status and ecosystem effects"
+324,1,0,0,1,0,0,0.940361186,0.17418756999999999,0.07048848439999998,4,Recent achievements in studies on diseases of common carp (Cyprinus carpio L.)
+325,1,0,0,1,0,0,0.9541703119999999,0.13689807399999998,0.06899887960000001,4,Emerging risks of non-native species escapes from aquaculture: Call for policy improvements in China and other developing countries
+326,1,0,0,1,0,0,0.9558094340000001,0.1136784726,0.085230707,4,Allee effects in biological invasions
+327,1,0,0,1,0,0,0.955201962,0.1168370764,0.07753359000000001,4,"Forecasting the global extent of invasion of the cereal pest Spodoptera frugiperda, the fall armyworm"
+328,1,0,0,1,0,0,0.937345602,0.18089814320000003,0.079735661,4,Global Documentation of Fish Introductions: the Growing Crisis and Recommendations for Action
+329,1,0,0,1,0,0,0.9570538839999999,0.11392085800000003,0.080698798,4,Towards the European eradication of the North American ruddy duck
+330,1,0,0,1,0,0,0.9449931420000001,0.165658471,0.0876242152,4,The International Plant Sentinel Network: a tool for Regional and National Plant Protection Organizations
+331,1,0,0,1,0,0,0.957004088,0.12721115119999998,0.07492952580000001,4,Eradication of Invading Insect Populations: From Concepts to Applications
+332,1,0,0,1,0,0,0.932533982,0.229180624,0.08240139760000001,4,It’s a wrap: encapsulation as a management tool for marine biofouling
+333,1,0,0,1,0,0,0.9568907299999999,0.1127218692,0.0852642958,4,Early Warning Systems as a Component of Integrated Pest Management to Prevent the Introduction of Exotic Pests
+334,1,0,0,1,0,0,0.9553901620000002,0.10968410879999999,0.0864284732,4,Plant Quarantine as a Measure Against Invasive Alien Species: The Framework of the International Plant Protection Convention and the plant health regulations in the European Union
+335,1,0,0,1,0,0,0.955589668,0.12679626300000002,0.0746204098,4,Alien versus native species as drivers of recent extinctions
+336,1,0,0,1,0,0,0.9512167600000001,0.1545295528,0.06852789340000001,4,"Dutch elm disease revisited: past, present and future management in Great Britain"
+337,1,0,0,1,0,0,0.956426892,0.11446617559999998,0.08395304140000001,4,Viewing invasive species removal in a whole-ecosystem context
+338,1,0,0,1,0,0,0.9541688239999999,0.1083895888,0.086381898,4,An options based bioeconomic model for biological and chemical control of invasive species
+339,1,0,0,1,0,0,0.9564706999999999,0.1135797346,0.0843329292,4,Alternative states models provide an effective framework for invasive species control and restoration of native communities
+340,1,0,0,1,0,0,0.9472119059999999,0.16417762679999998,0.07171489899999998,4,Some agrometeorological aspects of pest and disease management for the 21st century
+341,1,0,0,1,0,0,0.956673866,0.11406937720000002,0.08168544120000001,4,Remote analysis of biological invasion and the impact of enemy release
+342,1,0,0,1,0,0,0.955340316,0.12311949879999999,0.0752037962,4,"Ludwigia grandiflora (Michx.) Greuter & Burdet subsp. hexapetala (Hook. & Arn.) G. L. Nesom & Kartesz, an Invasive Aquatic Plant in Lake Biwa, the Largest Lake in Japan"
+343,1,0,0,1,0,0,0.9555919000000002,0.1135566072,0.089182832,4,Implementing invasive species management in an adaptive management framework
+344,1,0,0,1,0,0,0.9575684640000001,0.133453559,0.07089019399999999,4,Invasive lionfish in the Mediterranean: Low public awareness yet high stakeholder concerns
+345,1,0,0,1,0,0,0.9569218740000001,0.11932382000000001,0.072509882,4,"Invasive potential of Eucalyptus globulus: Seed dispersal, seedling recruitment and survival in habitats surrounding plantations"
+346,1,0,0,1,0,0,0.9551496260000001,0.11210466000000001,0.0898634104,4,Global threat to agriculture from invasive species
+347,1,0,0,1,0,0,0.956644702,0.121008314,0.0799419024,4,"Biological invasions in the Antarctic: extent, impacts and implications"
+348,1,0,0,0,1,0,0.49714651200000004,0.8324052999999999,0.203944206,4,Could European marine conservation policy benefit from systematic conservation planning?
+349,1,0,0,1,0,0,0.927996928,0.27628103400000004,0.061230562799999985,4,Designing Optimized Multi-Species Monitoring Networks to Detect Range Shifts Driven by Climate Change: A Case Study with Bats in the North of Portugal
+350,1,0,0,1,0,0,0.95704271,0.1140052336,0.08678528199999999,4,Plant invasion science in protected areas: progress and priorities
+351,1,0,0,1,0,0,0.95601696,0.12109192099999999,0.075613986,4,The role of intraspecific hybridization in the evolution of invasiveness: a case study of the ornamental pear tree Pyrus calleryana
+352,1,0,0,1,0,0,0.9570246219999999,0.11863568940000002,0.079569045,4,Antarctica: The final frontier for marine biological invasions
+353,1,0,0,1,1,0,0.557284414,0.7314344760000001,0.21039109800000003,4,Internet sales of plants for planting–an increasing trend and threat?
+354,1,0,0,1,1,0,0.5797534839999999,0.6070728139999999,0.423200812,4,A Taxonomy and Treatment of Uncertainty for Ecology and Conservation Biology
+355,1,0,0,1,0,0,0.9577520100000001,0.11486860799999998,0.08231501199999999,4,Working across Cultures to Protect Native American Natural and Cultural Resources from Invasive Species in California
+356,1,0,0,1,0,0,0.77336812,0.39352207300000003,0.19762569619999998,4,Priority Threat Management for biodiversity conservation: A handbook
+357,1,0,0,1,0,0,0.9546332620000001,0.130558305,0.082621121,4,A framework for engaging stakeholders on the management of alien species
+358,1,0,0,1,0,0,0.95596762,0.11773999000000002,0.0908494926,4,Beyond protocols: improving the reliability of expert-based risk analysis underpinning invasive species policies
+359,1,0,0,1,1,0,0.757497984,0.57817824,0.149929396,4,From the lab into the wild: Design and deployment methods for multi-modal tracking platforms
+360,1,0,0,1,1,0,0.77060365,0.540103314,0.13534468160000002,4,Environmental sensor networks in ecological research
+361,1,0,0,1,0,0,0.9560179999999999,0.1129695896,0.0812720452,4,Improving invasive ant eradication as a conservation tool: A review
+362,1,0,0,1,0,0,0.95438997,0.1271595848,0.0759172524,4,A performance evaluation of targeted eDNA and eDNA metabarcoding analyses for freshwater fishes
+363,1,0,0,1,0,0,0.9574920560000001,0.1154248736,0.0777450288,4,"eDNA surveys to detect species at very low densities: A case study of European carp eradication in Tasmania, Australia"
+364,1,0,0,1,0,0,0.9504620020000001,0.138277004,0.07422290200000001,4,Previsual symptoms of Xylella fastidiosa infection revealed in spectral plant-trait alterations
+365,1,0,0,1,0,0,0.954050108,0.1320777614,0.07187261319999999,4,Optimizing Generic Cerambycid Pheromone Lures for Australian Biosecurity and Biodiversity Monitoring
+366,1,0,0,1,0,0,0.913845312,0.27089693600000003,0.08206270140000001,4,Studies on the pathogenesis of bovine ephemeral fever in sentinel cattle. I. Virology and serology.
+367,1,0,0,1,0,0,0.9562609679999999,0.1286167862,0.0812570772,4,A review of pest surveillance techniques for detecting quarantine pests in Europe
+368,1,0,0,1,0,0,0.956776928,0.1225229614,0.08088059339999999,4,Environmental DNA Sampling Informs Fish Eradication Efforts: Case Studies and Lessons Learned
+369,1,0,0,1,0,0,0.957071148,0.1267506738,0.07085727700000001,4,Sentinel nurseries to assess the phytosanitary risks from insect pests on importations of live plants
+370,1,0,0,1,1,0,0.607801214,0.6472252860000001,0.16896494880000001,4,"Beyond water-intensive agriculture: Expansion of Prosopis juliflora and its growing economic use in Tamil Nadu, India"
+371,1,0,0,1,0,0,0.9578014260000002,0.11761245979999999,0.078993415,4,Beasts or beauties? Laypersons’ perception of invasive alien plant species in Switzerland and attitudes towards their management
+372,1,0,0,1,0,0,0.9553186100000002,0.11056643000000002,0.0887225188,4,A practical tool for assessing ecosystem services enhancement and degradation associated with invasive alien species
+373,1,0,0,1,0,0,0.9557349399999999,0.11205829199999999,0.0895963122,4,Human Health Link to Invasive Species
+374,1,0,0,1,0,0,0.957653762,0.1188056754,0.0750153012,4,Arrival rate of nonindigenous insect species into the United States through foreign trade
+375,1,0,0,1,1,0,0.5437781319999999,0.7609828939999999,0.20309935480000002,4,Food smuggling and trafficking: The key factors of influence
+376,1,0,0,1,0,0,0.957477866,0.1175521862,0.07378131639999999,4,"Exotic European earthworm invasion dynamics in northern hardwood forests of Minnesota, USA"
+377,1,0,0,1,0,0,0.9579145920000001,0.12543437600000001,0.07366529520000001,4,Tall-statured grasses: a useful functional group for invasion science
+378,1,0,0,1,0,0,0.9512767280000001,0.143981932,0.07215188719999999,4,"Global Emergence of Batrachochytrium dendrobatidis and Amphibian Chytridiomycosis in Space, Time, and Host"
+379,1,0,0,1,0,0,0.956736574,0.11502664,0.0814495918,4,How can alien species inventories and interception data help us prevent insect invasions?
+380,1,0,0,1,0,0,0.955638416,0.13251333999999998,0.0720484044,4,"Use of native and non-native shrimp (Penaeidae, Dendrobranchiata) in world shrimp farming"
+381,1,0,0,1,0,0,0.9573042919999999,0.1131147076,0.07831653599999999,4,"The profile of a ‘perfect’ invader – the case of killer shrimp, Dikerogammarus villosus"
+382,1,0,0,1,0,0,0.9576495900000002,0.11412738400000003,0.0804049924,4,"Congener diversity, topographic heterogeneity and human-assisted dispersal predict spread rates of alien herpetofauna at a global scale"
+383,1,0,0,1,0,0,0.95692924,0.1162885566,0.0759878566,4,Slimy invasion: Climatic niche and current and future biogeography of Arion slug invaders
+384,1,0,0,1,0,0,0.95665724,0.12098725880000001,0.0729923432,4,"Distribution and the origin of invasive apple snails, Pomacea canaliculata and P. maculata (Gastropoda: Ampullariidae) in China"
+385,1,0,0,1,0,0,0.9575343679999999,0.121098169,0.07702203760000001,4,"The New Toad in Town: Distribution of the Asian Toad, Duttaphrynus Melanostictus, in the Toamasina Area of Eastern Madagascar"
+386,1,0,0,1,0,0,0.9573999820000001,0.12544687599999998,0.0709886318,4,A new forest pest in Europe: a review of Emerald ash borer (Agrilus planipennis) invasion
+387,1,0,0,1,0,0,0.956475466,0.1548931932,0.06788786439999998,4,Industrial rearing of edible insects could be a major source of new biological invasions
+388,1,0,0,1,0,0,0.956725788,0.1113679236,0.0850347634,4,Ecological effects and management of invasive alien Vespidae
+389,1,0,0,1,0,0,0.956110818,0.113602388,0.0838615108,4,Global rise in emerging alien species results from increased accessibility of new source pools
+390,1,0,0,1,0,0,0.957231428,0.12145716079999999,0.07874907319999999,4,"Global indicators of biological invasion: species numbers, biodiversity impact and policy responses: Invasive alien species indicator: 2010 Biodiversity Target"
+391,1,0,0,0,1,0,0.287355584,0.824336276,0.496366244,4,Getting the message right on nature‐based solutions to climate change
+392,1,0,0,1,0,0,0.87220683,0.24952597999999998,0.12031047600000003,4,"Following Garkman, the frog, in North Eastern Arnhem Land (Australia)"
+393,1,0,0,1,0,0,0.9563140560000001,0.1412341554,0.074272946,4,Introduced annual grass increases regional fire activity across the arid western USA (1980-2009)
+394,1,0,0,1,0,0,0.9564805700000001,0.1139499428,0.0832206384,4,"Invasions by ladybugs, ladybirds, and other predatory beetles"
+395,1,0,0,1,0,0,0.955786994,0.1126228914,0.081304448,4,"Facilitative interactions among aquatic invaders: is an ""invasional meltdown"" occurring in the Great Lakes?"
+396,1,0,0,1,0,0,0.9577354759999999,0.13182831879999998,0.070855534,4,Fire enhances the ‘competition-free’ space of an invader shrub: Rosa rubiginosa in northwestern Patagonia
+397,1,0,0,1,0,0,0.95720042,0.12812147299999999,0.06970807720000001,4,Effect of soil conditions and landscape factors on macro-snail communities in newly created grasslands of restored landfill sites in the UK
+398,1,0,0,1,0,0,0.956365412,0.1509647528,0.06628995400000001,4,"Beach litter and woody-debris colonizers on the Atlantico department Caribbean coastline, Colombia"
+399,1,0,0,1,0,0,0.851047064,0.357708354,0.092010264,4,"How are garbage dumps impacting vertebrate demography, health, and conservation?"
+400,1,0,0,1,0,0,0.9576786540000001,0.11432685839999998,0.0832659504,4,Creating Invasion Resistant Soils via Nitrogen Management
+401,1,0,0,1,0,0,0.9570097879999999,0.127152284,0.0709379126,4,Alternatives to Release: Efficient Methods for Disposal of Excess or Unwanted Aquarium Macroalgae in the Genus Chaetomorpha
+402,1,0,0,0,1,0,0.342595634,0.8251011819999998,0.46764006199999997,4,The Blue Acceleration: The Trajectory of Human Expansion into the Ocean
+403,1,0,0,1,0,0,0.9560917740000001,0.111740007,0.08102563559999999,4,Selenium exposure results in reduced reproduction in an invasive ant species and altered competitive behavior for a native ant species
+404,1,0,0,1,1,0,0.771295924,0.6234663319999999,0.117564688,4,Past and future global transformation of terrestrial ecosystems under climate change
+405,1,0,0,1,0,0,0.957000944,0.11835995080000002,0.07729730600000001,4,"Introduction, establishment rate, pathways and impact of spiders alien to Europe"
+406,1,0,0,1,0,0,0.947454274,0.20209418720000003,0.063251478,4,Tree Mortality Following Defoliation by the European Gypsy Moth (Lymantria dispar L.). in the. United States: A Review
+407,1,0,0,1,0,0,0.94325572,0.199584992,0.0729732808,4,Environmental matching reveals non-uniform range-shift patterns in benthic marine Crustacea
+408,1,0,0,1,0,0,0.958578638,0.12357385900000002,0.0761901942,4,Urban trees facilitate the establishment of non-native forest insects
+409,1,0,0,1,0,0,0.957600498,0.126295384,0.0716885292,4,Environmental factors influencing local distributions of European green crab (Carcinus maenas) for modeling and management applications
+410,1,0,0,1,0,0,0.956539756,0.11277949999999999,0.08138093500000002,4,Recurrent bridgehead effects accelerate global alien ant spread
+411,1,0,0,1,0,0,0.9569327659999999,0.11781041480000001,0.07571057199999999,4,New aliens in Australia: 18 years of vertebrate interceptions
+412,1,0,0,1,0,0,0.9573991940000001,0.11279886320000002,0.0805835188,4,Invasive amphibians in southern Africa: a review of invasion pathways
+413,1,0,0,1,0,0,0.95743836,0.1257169434,0.07293565739999999,4,Habitat and community modification by an introduced herbivorous snail
+414,1,0,0,1,0,0,0.957588316,0.12303299000000001,0.0731024096,4,"Overview on the European green crab Carcinus spp. (Portunidae, Decapoda), one of the most famous marine invaders and ecotoxicological models"
+415,1,0,0,1,0,0,0.95722508,0.116324978,0.0819185384,4,Alien reptiles on Mediterranean Islands: A model for invasion biogeography
+416,1,0,0,1,0,0,0.9568852099999999,0.1151536196,0.0785742502,4,Patterns of selectivity in introductions of mammal species worldwide
+417,1,0,0,1,0,0,0.9544656220000001,0.14065542560000002,0.0790565246,4,Risks of biological control for conservation purposes
+418,1,0,0,1,0,0,0.897411272,0.34557068399999996,0.0666001568,4,"Naturalising Australian Trees in South Africa: Climate, Exotics and Experimentation"
+419,1,0,0,1,0,0,0.94821732,0.172865939,0.0631274524,4,"The first record of the banana prawn Fenneropenaeus merguiensis (De Man, 1888) (Crustacea: Decapoda: Penaeidae) from the Mediterranean Sea"
+420,1,0,0,1,0,0,0.95633196,0.11926799079999999,0.0768039864,4,Invasion of Kalanchoe by clonal spread
+421,1,0,0,1,0,0,0.956880452,0.13754937,0.0700748558,4,Biosafety in Populusspp. and other forest trees: from non-native species to taxa derived from traditional breeding and genetic engineering
+422,1,1,0,1,0,0,0.9566684779999999,0.11546841319999998,0.0806334294,4,The global distribution and drivers of alien bird species richness
+423,1,0,0,1,0,0,0.9534135600000001,0.1134889166,0.0985076514,4,Research on the social perception of invasive species: a systematic literature review
+424,1,0,0,1,0,0,0.949314048,0.189037917,0.0771705878,4,The direct drivers of recent global anthropogenic biodiversity loss
+425,1,0,0,1,0,0,0.955116836,0.1158386916,0.0831477416,4,Effects of increased soil nitrogen on the dominance of alien annual plants in the Mojave Desert
+426,1,0,0,1,0,0,0.9581707360000001,0.11845968839999999,0.08459966999999999,4,"Invasional meltdown 6 years later: important phenomenon, unfortunate metaphor, or both?"
+427,1,0,0,1,1,0,0.7932008340000001,0.5855127299999999,0.09997016700000001,4,Response of the herbaceous layer of forest ecosystems to excess nitrogen deposition
+428,1,0,0,1,0,0,0.95527242,0.117436422,0.08076876260000002,4,Roads as Conduits for Exotic Plant Invasions in a Semiarid Landscape
+429,1,0,0,1,0,0,0.9408177280000001,0.223387732,0.06367195839999999,4,Restoration of Seagrass Meadows in the Mediterranean Sea: A Critical Review of Effectiveness and Ethical Issues
+430,1,0,0,1,1,0,0.7786041680000001,0.616471698,0.0756035968,4,Social and genetic analysis of a population of free-living cats (Felis catus L.) exploiting a resource-rich habitat
+431,1,0,0,1,1,0,0.6811759900000001,0.553271792,0.1855322374,4,Multidimensional evaluation of managed relocation
+432,1,0,0,0,1,0,0.40141320199999997,0.842420396,0.276866654,4,A global-scale data set of mining areas
+433,1,0,0,1,0,0,0.940932332,0.2211347788,0.06288908580000001,4,Influence of herbaceous ground cover on forest restoration of eastern US coal surface mines
+434,1,0,0,1,0,0,0.9575278920000001,0.1205068234,0.07360540139999999,4,Anthropogenic marine litter composition in coastal areas may be a predictor of potentially invasive rafting fauna
+435,1,0,0,1,0,0,0.9575088,0.11550632320000001,0.0777885394,4,Predicting Plant Invasions Following China’s Water Diversion Project
+436,1,0,0,1,1,0,0.8446881940000001,0.503567278,0.0810630814,4,The velocity of climate change
+437,1,0,0,1,0,0,0.9290719700000001,0.184261713,0.0820698666,4,The global distribution and phylogeography of Mycobacterium bovis clonal complexes
+438,1,0,0,1,0,0,0.9547285220000001,0.11178082520000002,0.0879429458,4,Forest Roads Facilitate the Spread of Invasive Plants
+439,1,0,0,1,1,0,0.607798346,0.7759676040000001,0.171410256,4,Potential environmental effects of deepwater floating offshore wind energy facilities
+440,1,0,0,0,1,0,0.283104042,0.87656247,0.286359828,4,"Restocking, Stock Enhancement, and Sea Ranching: Arenas of Progress"
+441,1,0,0,1,0,0,0.957165404,0.1138048602,0.08325266320000001,4,"Why forests appear resistant to exotic plant invasions: intentional introductions, stand dynamics, and the role of shade tolerance"
+442,1,0,0,1,0,0,0.9563189839999999,0.1130239588,0.08311431,4,Will climate change increase the risk of plant invasions into mountains?
+443,1,0,0,1,0,0,0.9579733999999999,0.129629975,0.07339346040000001,4,A review of mammal eradications on Mediterranean islands
+444,1,0,0,1,0,0,0.9572053199999999,0.11324677320000001,0.0818910212,4,"Invasive, naturalized and casual alien plants in southern Africa: a summary based on the Southern African Plant Invaders Atlas (SAPIA)"
+445,1,0,0,1,0,0,0.95196574,0.142609856,0.07986873199999998,4,"Non-indigenous species in Portuguese coastal areas, coastal lagoons, estuaries and islands"
+446,1,0,0,1,0,0,0.9339488320000001,0.316409912,0.06670874819999999,4,Naturalised terrestrial Stylommatophora (Mollusca: Gastropoda)
+447,1,0,0,1,0,0,0.95764353,0.1297136486,0.0688305516,4,Preliminary re-survey of the land snail fauna of Rotuma: conservation and biosecurity implications
+448,1,0,0,1,0,0,0.9572419560000001,0.1167531238,0.08750468119999999,4,"Invasive species, ecosystem services and human well-being"
+449,1,0,0,1,0,0,0.95776499,0.1251221536,0.07969515619999998,4,"Invasive plants – friends or foes? Contribution of prickly pear (Opuntia ficus-indica) to livelihoods in Makana Municipality, Eastern Cape, South Africa"
+450,1,0,0,1,0,0,0.9577018840000001,0.126008225,0.0728255606,4,Indirect effects of invasive Burmese pythons on ecosystems in southern Florida
+451,1,0,0,1,0,0,0.9565359259999999,0.11289697280000002,0.0905238032,4,The role of eco-evolutionary experience in invasion success
+452,1,0,0,1,0,0,0.9560140520000001,0.11170502,0.07848656859999999,4,The potential evolutionary impact of invasive balloon vines on native soapberry bugs in South Africa
+453,1,0,0,1,0,0,0.9327154700000001,0.183551682,0.08304351839999999,4,Ecological Impacts of Nonnative Freshwater Fishes
+454,1,0,0,1,0,0,0.8452978200000001,0.447567204,0.128206474,4,Net effects of multiple stressors in freshwater ecosystems: a meta-analysis
+455,1,0,0,1,0,0,0.9558897639999999,0.13864041,0.06627119620000001,4,A review of the ever increasing threat to European crayfish from non-indigenous crayfish species
+456,1,0,0,0,1,0,0.43577797,0.8182468120000002,0.21637313000000002,4,"Towards a sustainable human use of freshwater crayfish (Crustacea, Decapoda, Astacidea)"
+457,1,0,0,1,0,0,0.9572356900000001,0.12011743500000001,0.07639288559999999,4,Invasão biológica de Artocarpus heterophyllus Lam. (Moraceae) em um fragmento de Mata Atlântica no Nordeste do Brasil: impactos sobre a fitodiversidade e os solos dos sítios invadidos
+458,1,0,0,1,0,0,0.95587034,0.11502969479999998,0.08434298999999999,4,Biotic resistance to plant invasions? Native herbivores prefer non-native plants
+459,1,0,0,1,0,0,0.95598228,0.1126710468,0.0834786646,4,Diversity reduces invasibility in experimental plant communities: the role of plant species
+460,1,0,0,1,0,0,0.95726264,0.11532614159999999,0.0815346076,4,Are Modern Biological Invasions an Unprecedented Form of Global Change?
+461,1,0,0,1,0,0,0.9580444499999998,0.11482807000000002,0.07852183339999999,4,Invasional ‘meltdown’ on an oceanic island
+462,1,0,0,1,0,0,0.9566003719999999,0.11476022659999999,0.07967345779999999,4,Salt tolerance underlies the cryptic invasion of North American salt marshes by an introduced haplotype of the common reed Phragmites australis (Poaceae)
+463,1,0,0,1,0,0,0.956106378,0.1113236956,0.08464018139999999,4,Extending the observational record to provide new insights into invasive alien species in a coastal dune environment of New Zealand
+464,1,0,0,1,0,0,0.954237906,0.11718810399999999,0.08024567460000001,4,Elevated CO2 increases productivity and invasive species success in an arid ecosystem
+465,1,0,0,1,0,0,0.956801846,0.1291815428,0.0704902128,4,Differential impacts from an extreme cold spell on subtropical vs. tropical specialist bees in southern Florida
+466,1,0,0,1,0,0,0.95670801,0.11458003799999998,0.08167966959999999,4,Suilloid fungi as global drivers of pine invasions
+467,1,0,0,1,0,0,0.9579751420000001,0.1187859948,0.0818197588,4,Meta-analysis suggests biotic resistance in freshwater environments is driven by consumption rather than competition
+468,1,0,0,1,0,0,0.955019514,0.123339651,0.0743478206,4,Sensitivity of native and non-native mollusc species to changing river water temperature and salinity
+469,1,0,0,1,1,0,0.8127439299999999,0.5235743439999999,0.1049459322,4,Coastal flooding by tropical cyclones and sea-level rise
+470,1,0,0,1,0,0,0.9558262839999999,0.12340073800000002,0.07345553939999999,4,The assembly of an island fauna by natural invasion: sources and temporal patterns in the avian colonization of Barbados
+471,1,0,0,1,0,0,0.9560603239999999,0.11106655920000001,0.0850607972,4,Relative roles of climatic suitability and anthropogenic influence in determining the pattern of spread in a global invader
+472,1,0,0,1,0,0,0.9567469599999999,0.1144612044,0.0828394644,4,Invasion debt - quantifying future biological invasions
+473,1,0,0,1,0,0,0.95700558,0.12096702200000001,0.07584283859999999,4,"Spatial distribution of marine invasive species: environmental, demographic and vector drivers"
+474,1,0,0,1,0,0,0.956580134,0.11384096200000002,0.08552512799999999,4,"Different Traits Determine Introduction, Naturalization and Invasion Success In Woody Plants: Proteaceae as a Test Case"
+475,1,0,0,1,0,0,0.956014652,0.13908761600000003,0.0696392696,4,Do human activities raise species richness? Contrasting patterns in United States plants and fishes
+476,1,0,0,1,0,0,0.9576858560000001,0.11859238359999999,0.081857426,4,"What determines pine naturalization: species traits, climate suitability or forestry use?"
+477,1,0,0,1,0,0,0.9579244800000002,0.1234319744,0.07645528139999999,4,Naturalization of ornamental plant species in public green spaces and private gardens
+478,1,0,0,0,1,0,0.34155803800000006,0.8265983720000001,0.39717765399999994,4,Over the hills and further away from coast: global geospatial patterns of human and environment over the 20th–21st centuries
+479,1,0,0,1,0,0,0.9565627640000001,0.1154347572,0.07803506060000001,4,"Status, invasiveness and environmental threats of three tropical American invasive weeds (Parthenium hysterophorus L., Ageratum conyzoides L., Lantana camara L.) in India"
+480,1,0,0,1,0,0,0.95698204,0.11837008360000001,0.0776317164,4,Invading European Seas: Assessing pathways of introduction of marine aliens
+481,1,0,0,1,0,0,0.95718763,0.11461398019999999,0.08554437299999999,4,Integrating invasive species policies across ornamental horticulture supply chains to prevent plant invasions
+482,1,0,0,1,0,0,0.9578151680000001,0.11283312699999999,0.08169375779999999,4,The ‘dirty dozen’: socio-economic factors amplify the invasion potential of 12 high-risk aquatic invasive species in Great Britain and Ireland
+483,1,0,0,1,0,0,0.9206040380000001,0.26081761400000003,0.073552201,4,The Historical Ecology of Game Species Introductions in Hawai‘i1
+484,1,0,0,1,0,0,0.9526180439999999,0.139145784,0.07240748379999999,4,The changing patterns of plant naturalization in Australia
+485,1,0,0,1,0,0,0.9567979699999999,0.1131800718,0.085608726,4,"Housing is positively associated with invasive exotic plant species richness in New England, USA"
+486,1,0,0,1,0,0,0.9565111679999999,0.1141225916,0.0788437798,4,"Disentangling the roles of climate, propagule pressure and land use on the current and potential elevational distribution of the invasive weed Oxalis pes-caprae, L. on Crete"
+487,1,0,0,1,0,0,0.95591198,0.11249042280000002,0.0827120184,4,Risk map for the range expansion of Thrips palmi in Korea under climate change: Combining species distribution models with land-use change
+488,1,0,0,1,0,0,0.956352826,0.1130475262,0.0863682044,4,Pathologists and entomologists must join forces against forest pest and pathogen invasions
+489,1,0,0,1,0,0,0.95696826,0.11564274059999997,0.0783098674,4,Quantifying abundance and distribution of native and invasive oysters in an urbanised estuary
+490,1,0,0,1,0,0,0.9582356219999999,0.12473428820000002,0.0772091564,4,Marine invertebrate larvae love plastics: Habitat selection and settlement on artificial substrates
+491,1,0,0,1,0,0,0.909644632,0.239840902,0.08475334639999998,4,Loss of native rocky reef biodiversity in Australian metropolitan embayments
+492,1,0,0,1,0,0,0.863772168,0.413690556,0.0820083982,4,Human-mediated drivers of change — impacts on coastal ecosystems and marine biota of South Africa
+493,1,0,0,1,0,0,0.903699434,0.309156283,0.0772347758,4,Climate relationships with increasing wildfire in the southwestern US from 1984 to 2015
+494,1,0,0,1,0,0,0.9558268460000001,0.1134629698,0.08467004399999999,4,The role of waterbirds in the dispersal of aquatic alien and invasive species
+495,1,0,0,1,0,0,0.9560081199999999,0.11723095079999998,0.08568308200000001,4,Community ecology theory as a framework for biological invasions
+496,1,0,0,1,0,0,0.9430511919999999,0.1597329368,0.0969787966,4,A uniform terminology on bioinvasions: a chimera or an operative tool?
+497,1,0,0,1,1,1,0.506907494,0.6166477240000001,0.511285198,4,The Role of Nature-Based Solutions in Supporting Social-Ecological Resilience for Climate Change Adaptation
+498,1,0,0,1,0,0,0.956301316,0.12379913799999998,0.0788309374,4,A place for alien species in ecosystem restoration
+499,1,0,0,1,0,0,0.9569768960000001,0.11854768499999997,0.0795549918,4,The biogeography of prediction error: why does the introduced range of the fire ant over-predict its native range?
+500,1,0,0,1,0,0,0.8598200819999999,0.4742062020000001,0.096092916,4,Biotic Multipliers of Climate Change
+501,1,0,0,0,1,1,0.404979628,0.660355038,0.610084134,4,Ecological restoration should be redefined for the twenty-first century
+502,1,0,0,0,1,0,0.49620537000000003,0.617154332,0.448968138,4,Defining biocultural approaches to conservation
+503,1,0,0,1,0,0,0.9573396000000001,0.1141215502,0.0868119244,4,The economic costs of biological invasions in Africa: a growing but neglected threat?
+504,1,0,0,1,0,0,0.956712238,0.12019534000000001,0.07150222120000001,4,Positive feedback loop between introductions of non-native marine species and cultivation of oysters in Europe
+505,1,0,0,1,1,0,0.594116716,0.719384926,0.1307118306,4,Environmental impacts and implications of tropical carrageenophyte seaweed farming
+506,1,0,0,1,0,0,0.9480974159999999,0.18345301900000002,0.06105853119999999,4,Top-down control of species distributions: feral cats driving the regional extinction of a threatened rodent in northern Australia
+507,1,0,0,1,0,0,0.95680903,0.1111547244,0.080149577,4,Can we predict the effects of alien species? A case-history of the invasion of South Africa by Mytilus galloprovincialis (Lamarck)
+508,1,0,0,1,0,0,0.9580575679999999,0.125351372,0.0745612942,4,Twenty years of zebra mussels: lessons from the mollusk that made headlines
+509,1,0,0,1,0,0,0.9557552420000001,0.11324364360000001,0.0816915896,4,Exploring the effects of invasive algae on the persistence of gorgonian populations
+510,1,0,0,1,0,0,0.930605706,0.244429744,0.058447783399999995,4,"The impact of fox control on the relative abundance of forest mammals in East Gippsland, Victoria"
+511,1,0,0,1,0,0,0.9140546180000001,0.31193352,0.058073198199999995,4,Devil Declines and Catastrophic Cascades: Is Mesopredator Release of Feral Cats Inhibiting Recovery of the Eastern Quoll?
+512,1,0,0,1,0,0,0.9519592999999998,0.16567641500000002,0.061350320599999994,4,Reintroduction of fossorial native mammals and potential impacts on ecosystem processes in an Australian desert landscape
+513,1,0,0,1,1,0,0.7184404019999999,0.538107114,0.20697192639999998,4,The Nagoya Protocol on Access to Genetic Resources and the Fair and Equitable Sharing of Benefits Arising from their Utilization to the Convention on Biological Diversity
+514,1,0,0,1,0,0,0.87734699,0.427917518,0.0842969258,4,Taxonomic shortfalls in digitised collections of Australia’s flora
+515,1,0,0,1,0,0,0.9362987979999999,0.239822984,0.0773449658,4,"Hymenoscyphus fraxineus, the correct scientific name for the fungus causing ash dieback in Europe"
+516,1,0,0,1,0,0,0.9545653399999999,0.1114591554,0.0863931424,4,"Spread of a model invasive alien species, the harlequin ladybird Harmonia axyridis in Britain and Ireland"
+517,1,0,0,1,1,0,0.7083539059999999,0.702921116,0.1487535068,4,Distorted Views of Biodiversity: Spatial and Temporal Bias in Species Occurrence Data
+518,1,0,0,1,0,0,0.8930826639999999,0.238448328,0.10260565120000001,4,"From killing lists to healthy country: Aboriginal approaches to weed control in the Kimberley, Western Australia"
+519,1,0,0,1,0,0,0.958124392,0.1210608276,0.07563887999999999,4,Turning back the tide of American mink invasion at an unprecedented scale through community participation and adaptive management
+520,1,0,0,1,0,0,0.95527228,0.1199488688,0.0880391432,4,International cooperation in the solution to trade-related invasive species risks
+521,1,0,0,1,0,0,0.893111484,0.39826496,0.0728344214,4,"Multidimensional biases, gaps and uncertainties in global plant occurrence information"
+522,1,0,0,1,0,0,0.94785177,0.218780258,0.0744810732,4,Level of environmental threat posed by horticultural trade in Cactaceae
+523,1,0,0,1,0,0,0.9559539000000001,0.1087620832,0.0846509188,4,Biological invasions in soil: DNA barcoding as a monitoring tool in a multiple taxa survey targeting European earthworms and springtails in North America
+524,1,0,0,1,1,0,0.79590418,0.585612494,0.1309213526,4,New scientific discoveries: Plants and fungi
+525,1,0,0,1,0,0,0.95111262,0.136391591,0.075773862,4,Four unnamed species of nonsymbiotic rhizobia isolated from the rhizosphere of Lotus corniculatus
+526,1,0,0,1,0,0,0.956439324,0.11422098299999998,0.0784582522,4,Novel insights into the emergence of pathogens: the case of chestnut blight
+527,1,0,0,1,0,0,0.9575514999999999,0.11198755860000001,0.0790422302,4,Last chance to know? Using Literature to explore the biogeography and invasion biology of the death cap mushroom Amanita phalloides (Vaill. ex Fr. :Fr.) Link
+528,1,0,0,1,0,0,0.9569189,0.11132473400000001,0.0839145856,4,Pandora's Box Contained Bait: The Global Problem of Introduced Earthworms
+529,1,0,0,1,0,0,0.9450360680000001,0.193179009,0.0629514286,4,"Genetic connectivity between trans-oceanic populations of Capreolia implexa (Gelidiales, Rhodophyta) in cool temperate waters of Australasia and Chile."
+530,1,0,0,1,0,0,0.897767636,0.35059727999999996,0.07009798119999999,4,A reassessment of the foliose Bangiales (Rhodophyta) in the Balearic Islands including the proposed synonymy of Pyropia olivii with Pyropia koreana
+531,1,0,0,1,0,0,0.946404766,0.180417878,0.068996891,4,"Molecular evidence for verifying the distribution of Chondracanthus chamissoi and C. teedei (Gigartinaceae, Rhodophyta)"
+532,1,0,0,1,1,0,0.75843296,0.6731354860000001,0.075828917,4,Integrated fisheries assessment and possible causes for the collapse of anchovy kilka in the Caspian Sea
+533,1,0,0,1,0,0,0.95799633,0.1170575734,0.08118939859999999,4,Breaking Bad: Native Aquatic Plants Gone Rogue and the Invasive Species That Inspire Them
+534,1,0,0,1,0,0,0.9183731359999999,0.29785203,0.0753394296,4,Records of Coprophilous Fungi from the Lesser Antilles and Puerto Rico
+535,1,0,0,1,0,0,0.95617292,0.11945622,0.0802362844,4,Alien and native species in Central European urban floras: a quantitative comparison
+536,1,0,0,1,0,0,0.9563936780000001,0.11585172039999998,0.07706823160000001,4,Exotic Species in the Great Lakes: A History of Biotic Crises and Anthropogenic Introductions
+537,1,0,0,1,0,0,0.95580532,0.1190000756,0.0869386946,4,Invasion and management of agricultural alien insects in China
+538,1,0,0,1,0,0,0.9564542680000001,0.11535206,0.0880201392,4,European map of alien plant invasions based on the quantitative assessment across habitats
+539,1,0,0,1,0,0,0.9570400579999999,0.120868384,0.0734020434,4,First report of alien Drosera rotundifolia in a high conservation value Patagonian peat bog
+540,1,0,0,1,0,0,0.93379946,0.15987383319999998,0.0938694476,4,"Are urban systems beneficial, detrimental, or indifferent for biological invasion?"
+541,1,0,0,1,0,0,0.9569177979999999,0.11833084999999999,0.0782794996,4,Phylogenetic beta diversity of native and alien species in European urban floras
+542,1,0,0,1,0,0,0.9573303620000001,0.120143584,0.07922731899999999,4,Phyloecology of urban alien floras
+543,1,0,0,1,0,0,0.9464134420000001,0.20348491800000001,0.06505622679999999,4,"The crab that came in from the cold: First record of Paralithodes camtschaticus (Tilesius, 1815) in the Mediterranean Sea"
+544,1,0,0,1,0,0,0.783772776,0.3007020959999999,0.18875135739999999,4,Biogeographic Atlas of the Deep NW Pacific Fauna
+545,1,0,0,1,0,0,0.8928021320000001,0.38264349000000003,0.06166211619999999,4,Colonization of the deep sea by fishes
+546,1,0,0,1,0,0,0.956435208,0.13685911320000002,0.06883110939999999,4,A large population of king crabs in Palmer Deep on the west Antarctic Peninsula shelf and potential invasive impacts
+547,1,0,0,1,0,0,0.9558916420000001,0.12094134599999999,0.0812526186,4,Understanding smallholders' responses to fall armyworm (Spodoptera frugiperda) invasion: Evidence from five African countries
+548,1,0,0,1,0,0,0.945859638,0.21866433600000001,0.058479022800000016,4,Control of a stoat (Mustela erminea) population irruption to enhance mohua (yellowhead) (Mohoua ochrocephala) breeding success in New Zealand
+549,1,0,0,1,0,0,0.956692704,0.11366668459999998,0.08480288999999999,4,"Seed density is as important as limiting similarity, diversity effect, and propagule pressure in plant restoration to control invasion"
+550,1,0,0,1,0,0,0.9286081679999999,0.21981410400000004,0.0807138308,4,Impact of international travel and border control measures on the global spread of the novel 2019 coronavirus outbreak
+551,1,0,0,1,0,0,0.9524006119999999,0.15479598,0.0742989292,4,Diverse Host Immune Responses of Different Geographical Populations of the Coconut Rhinoceros Beetle to Oryctes rhinoceros Nudivirus (OrNV) Infection
+552,1,0,0,1,0,0,0.9567673900000001,0.1116573966,0.08159917019999999,4,"Introduction to the Special Feature for Ecological Risk Assessment of Introduced Bumblebees: Status of the European bumblebee, Bombus terrestris, in Japan as a beneficial pollinator and an invasive alien species"
+553,1,0,0,1,0,0,0.8918311600000001,0.33371851480000003,0.07812153699999999,4,"Prevalence, effects and management of fall army worm in the Nkoranza South Municipality, Bono East region of Ghana"
+554,1,0,0,1,0,0,0.958392734,0.11779633780000001,0.0778393466,4,Impact of an invasive alga (Womersleyella setacea) on sponge assemblages: compromising the viability of future populations
+555,1,0,0,1,0,0,0.9539461280000001,0.11282150739999999,0.0790650692,4,Impact of the invasive green alga Caulerpa racemosa var. cylindracea on the epiphytic macroalgal assemblage of Posidonia oceanica seagrass rhizomes in the Adriatic Sea
+556,1,0,0,1,0,0,0.956219338,0.115692256,0.0775714572,4,Changes in South African rocky intertidal invertebrate community structure associated with the invasion of the mussel Mytilus galloprovincialis
+557,0,1,0,1,1,0,0.611249382,0.750292696,0.118872057,4,Disease risks and overabundance of game species
+558,0,1,0,1,0,0,0.9037066540000002,0.3676296,0.0644149494,4,Reconstructed Dynamics of Rapid Extinctions of Chaparral-Requiring Birds in Urban Habitat Islands
+559,0,1,0,0,1,1,0.42454484600000003,0.7310539500000001,0.524139074,4,Factors underlying the inclination to donate to particular types of charity
+560,0,1,0,0,1,0,0.32782482999999996,0.8581337400000001,0.32594703599999997,4,Opinion. Collecting and conservation: cause and effect
+561,0,1,0,1,1,0,0.6966992399999999,0.691089262,0.14517504299999998,4,"Formal definition and dating of the GSSP (Global Stratotype Section and Point) for the base of the Holocene using the Greenland NGRIP ice core, and selected auxiliary records"
+562,0,1,0,0,1,0,0.32791607399999995,0.861138464,0.304587582,4,Predictable waves of sequential forest degradation and biodiversity loss spreading from an African city
+563,0,1,0,0,1,0,0.48603807599999993,0.810793268,0.15957924399999998,4,Historical overfishing and the recent collapse of coastal ecosystems
+564,0,1,0,0,1,0,0.32747563399999996,0.8162568760000001,0.41549645999999996,4,A decision support tool for response to global change in marine systems: the IMBER-ADApT Framework
+565,0,1,0,0,1,0,0.298844792,0.8786154079999999,0.270480828,4,Global estimates of shark catches using trade records from commercial markets
+566,0,1,0,1,1,0,0.6474809159999999,0.702376836,0.12617214599999999,4,Quantification of extinction risk: IUCN's system for classifying threatened species
+567,0,1,0,1,1,0,0.5136013960000001,0.83272722,0.15576123,4,Estimating IUCN Red List population reduction: JARA—a decision-support tool applied to pelagic sharks
+568,0,1,0,0,1,0,0.419250702,0.783524202,0.38602880199999995,4,Indigenous weather and climate forecasting knowledge among Afar pastoralists of north eastern Ethiopia: Role in adaptation to weather and climate variability
+569,0,1,0,0,1,0,0.34186722999999997,0.8292761740000001,0.335649446,4,Role of Traditional Ecological Knowledge and Seasonal Calendars in the Context of Climate Change: A Case Study from China
+570,0,1,0,0,1,0,0.29755604,0.813180172,0.482706474,4,Agriculture and biodiversity conservation: opportunity knocks
+571,0,1,0,0,1,0,0.40138428400000004,0.807238062,0.391610132,4,Do Waves Have Memories? Human and Ocean Issues in Taiwan Indigenous Writer Syaman Rapongan’s Writing
+572,0,1,0,0,1,0,0.276389744,0.878373502,0.2907977,4,Fishing Effort and Catch Composition of Urban Market and Rural Villages in Brazilian Amazon
+573,0,1,0,1,1,0,0.7442501440000001,0.65071158,0.0835870348,4,"Goliath catfish spawning in the far western Amazon confirmed by the distribution of mature adults, drifting larvae and migrating juveniles"
+574,0,1,0,1,1,0,0.6162405360000001,0.7559955859999999,0.10735678600000001,4,"Recovery of Arapaima sp. populations by community-based management in floodplains of the Purus River, Amazon: recovery of arapaima sp. populations"
+575,0,1,0,0,1,0,0.36593024,0.864172598,0.21996442600000005,4,"Pacific salmon in the rapidly changing arctic: Exploring local knowledge and emerging fisheries in Utqiaġvik and Nuiqsut, Alaska"
+576,0,1,0,0,1,0,0.311540548,0.8832543060000001,0.24605025,4,The demise of Darwin's fishes: Evidence of fishing down and illegal shark finning in the Galápagos Islands
+577,0,1,0,0,1,0,0.336156796,0.867678776,0.22984813399999998,4,Collaborative assessment of California spiny lobster population and fishery responses to a marine reserve network
+578,0,1,0,1,0,0,0.86585936,0.47644794199999996,0.0900656784,4,"When everything converges: Integrative taxonomy with shell, DNA and venomic data reveals Conus conco, a new species of cone snails (Gastropoda: Conoidea)"
+579,0,1,0,0,1,0,0.457569754,0.8448305680000001,0.163239872,4,Extinction risk and conservation of the world’s sharks and rays
+580,0,1,0,1,1,0,0.6925773420000001,0.7016361919999999,0.14872727,4,Poleward displacement of coastal upwelling-favorable winds in the ocean's eastern boundary currents through the 21st century: UPWELLING RESPONSES TO CLIMATE CHANGE
+581,0,1,0,0,1,0,0.355322646,0.865279084,0.222260834,4,Collapse and recovery of forage fish populations prior to commercial exploitation
+582,0,1,0,1,1,0,0.5568637799999999,0.8068703740000001,0.12342034399999999,4,Habitat suitability of Rhincodon typus in three localities of the Gulf of California: Environmental drivers of seasonal aggregations
+583,0,1,0,0,1,0,0.47171312,0.8145447220000002,0.196907956,4,"Edible mycorrhizal fungi of the world: What is their role in forest sustainability, food security, biocultural conservation and climate change?"
+584,0,1,0,1,1,0,0.646519294,0.62619381,0.1082585044,4,"Possible combined effects of climate change, deforestation, and harvesting on the epiphyte Catopsis compacta : a multidisciplinary approach"
+585,0,1,0,0,1,1,0.33367136,0.7182699899999999,0.5873985960000001,4,Inequality in nature and society
+586,0,1,0,1,1,0,0.722303582,0.608645786,0.167525397,4,Global biodiversity scenarios and landscape ecology
+587,0,1,0,0,1,1,0.3784713139999999,0.641064918,0.6630299479999999,4,Organising a Safe Space for Navigating Social-Ecological Transformations to Sustainability
+588,0,1,0,0,1,0,0.375511464,0.839014658,0.291994176,4,The suggestion that landscapes should contain 40% of forest cover lacks evidence and is problematic
+589,0,1,0,0,1,0,0.28979593200000003,0.873601402,0.284804302,4,Global fishery prospects under contrasting management regimes
+590,0,1,0,0,1,0,0.284747402,0.869531538,0.29240329000000004,4,"Trends, drivers, and lessons from a long-term data series of the Asturian (northern Spain) gooseneck barnacle territorial use rights system"
+591,0,1,0,0,1,0,0.26974851,0.88167431,0.31438026199999997,4,Fishing agreements in the lower Amazon: for gain and restraint
+592,0,1,0,0,1,0,0.334686734,0.870411968,0.280711924,4,"Cuicatec ethnozoology: traditional knowledge, use, and management of fauna by people of San Lorenzo Papalo, Oaxaca, Mexico"
+593,0,1,0,1,1,0,0.555958288,0.774282836,0.12531630700000002,4,"A Method to Count Pirarucu Arapaima gigas : Fishers, Assessment, and Management"
+594,0,1,0,0,1,0,0.254683618,0.8052779280000001,0.469689758,4,Comanagement of coral reef social-ecological systems
+595,0,1,0,0,1,0,0.40596986400000007,0.8582922820000001,0.184139444,4,Chronic fishing disturbance has changed shelf sea benthic community structure
+596,0,1,0,0,1,0,0.29742225400000005,0.86900976,0.334506678,4,"Wild Food Thistle Gathering and Pastoralism: An Inextricable Link in the Biocultural Landscape of Barbagia, Central Sardinia (Italy)"
+597,0,1,0,0,1,0,0.30746434600000005,0.8724767840000001,0.314702854,4,"Explaining the resurgent popularity of the wild: motivations for wild plant gathering in the Biosphere Reserve Grosses Walsertal, Austria"
+598,0,1,0,1,1,0,0.50683938,0.820962192,0.17750534199999998,4,Yartsa Gunbu (Cordyceps sinensis) and the Fungal Commodification of Tibet’s Rural Economy
+599,0,1,0,1,0,0,0.94109043,0.20788924199999997,0.0651398638,4,Host insect species of Ophiocordyceps sinensis: a review
+600,0,1,0,1,1,0,0.551320836,0.7636491019999999,0.1703033888,4,Conservation and sustainable use of the medicinal Leguminosae plants from Angola.
+601,0,1,0,0,1,0,0.35666216399999995,0.8667790960000001,0.25195125,4,"Medicinal Plants Traded in Informal Herbal Medicine Markets of the Limpopo Province, South Africa"
+602,0,1,0,1,1,0,0.519853728,0.784139668,0.2867470352,4,Conservation Policy: Helping or hindering science to unlock properties of plants and fungi
+603,0,1,0,0,1,0,0.298783628,0.869410048,0.308884004,4,Changes in world patterns of wild edible mushrooms use measured through international trade flows
+604,0,1,0,0,1,0,0.33423009400000003,0.859297612,0.349037154,4,Mollusks of Candomblé: symbolic and ritualistic importance
+605,0,1,0,0,1,0,0.309935954,0.868293768,0.27361094399999997,4,Catch-and-release science and its application to conservation and management of recreational fisheries
+606,0,1,0,0,1,0,0.301725552,0.8777028640000001,0.28255459,4,"Canadian Recreational Fisheries: 35 Years of Social, Biological, and Economic Dynamics from a National Survey"
+607,0,1,0,0,1,0,0.32701075199999996,0.8523604060000001,0.3696383,4,The underestimated dynamics and impacts of water-based recreational activities on freshwater ecosystems
+608,0,1,0,0,1,0,0.322859726,0.872254692,0.25002068,4,Marine ornamental fish imports in the European Union: an economic perspective
+609,0,1,0,0,1,0,0.35386299,0.866495174,0.236972632,4,"Trade in live reptiles, its impact on wild populations, and the role of the European market"
+610,0,1,0,0,1,0,0.277868558,0.873548968,0.31985072200000003,4,Tracking the global footprint of fisheries
+611,0,1,0,0,1,0,0.33820071399999996,0.79518658,0.42622988599999995,4,A reserva de desenvolvimento sustentável Mamirauá
+612,0,1,0,0,1,0,0.27326217,0.871563306,0.31506263600000006,4,"A COMUNIDADE E O MERCADO: OS DESAFIOS NA COMERCIALIZAÇÃO DE PIRARUCU MANEJADO DAS RESERVAS MAMIRAUÁ E AMANÃ, AMAZONAS - BRASIL."
+613,0,1,0,0,1,0,0.2860244579999999,0.868931968,0.300661696,4,RECOUNT PIRARUCU: A METHOD FOR ASSESSING THE QUALITY OF PIRAUCU COUNTINGS
+614,0,1,0,0,1,1,0.319890572,0.730234972,0.62415072,4,Recentralizing While Decentralizing: How National Governments Reappropriate Forest Resources
+615,0,1,0,1,1,0,0.7491082200000001,0.56995342,0.088861232,4,Observations on intraspecific aggression and coeval sibling cannibalism by larval and juvenile Claias gariepinus (Clariidae: Pisces) under controlled conditions
+616,0,1,0,0,1,0,0.2581934,0.8740732760000001,0.389235472,4,Why Women Hunt: Risk and Contemporary Foraging in a Western Desert Aboriginal Community
+617,0,1,0,0,1,1,0.28049741800000005,0.796012324,0.510989884,4,Why we must question the militarisation of conservation
+618,0,1,0,0,1,0,0.283584192,0.855408354,0.382483896,4,Global fisheries subsidies: An updated estimate
+619,0,1,0,0,1,0,0.28268303400000006,0.861040944,0.46417495999999997,4,"Forest and wildlife resource-conservation efforts based on indigenous knowledge: The case of Nharira community in Chikomba district, Zimbabwe"
+620,0,1,0,0,1,0,0.27406211,0.8676163840000001,0.432818708,4,"Traditional ecological knowledge and practices for forest conservation in Thathe Vondo in Limpopo Province, South Africa"
+621,0,1,0,0,1,0,0.328297198,0.859638466,0.313703494,4,"Medicinal Plants in Urban Districts of Tanzania: Plants, Gender Roles and Sustainable Use"
+622,0,1,0,0,1,1,0.34436331600000003,0.662041246,0.678014238,4,Rethinking the financialization of ‘nature’
+623,0,1,0,0,1,0,0.297792226,0.8792387460000001,0.283525886,4,An overview of international wildlife trade from Southeast Asia
+624,0,1,0,0,1,0,0.361221494,0.8488235739999999,0.3131539,4,Baby pangolins on my plate: possible lessons to learn from the COVID-19 pandemic
+625,0,1,1,0,1,0,0.27186123,0.8808681220000001,0.347798406,4,Impacts of a trophy hunting ban on private land conservation in South African biodiversity hotspots
+626,0,1,0,0,1,0,0.330349474,0.875766452,0.266707662,4,"Human–wildlife conflict, benefit sharing and the survival of lions in pastoralist community-based conservancies"
+627,0,1,0,0,1,1,0.267221866,0.79443176,0.574821722,4,"Ecotourism and the development of indigenous communities: The good, the bad, and the ugly"
+628,0,1,0,1,1,0,0.59681827,0.7048757219999999,0.21490142799999998,4,Implications of climate change for agricultural productivity in the early twenty-first century
+629,0,1,0,1,0,0,0.743796752,0.49868345999999997,0.1086129902,4,Burning for enhanced non-timber forest product yield may jeopardize the resource base through interactive effects
+630,0,1,0,0,1,0,0.413186638,0.846788246,0.20570072,4,Expanding global commodities trade and consumption place the world’s primates at risk of extinction
+631,0,1,0,0,1,0,0.31254405399999996,0.874060006,0.28413269799999996,4,Under what circumstances can wildlife farming benefit species conservation?
+632,0,1,0,0,1,0,0.310127358,0.87030747,0.30482809,4,Evaluating the relationships between the legal and illegal international wildlife trades
+633,0,1,0,0,1,0,0.281569108,0.846410126,0.439733896,4,Animal Harms and Food Production: Informing Ethical Choices
+634,0,1,0,0,1,0,0.294420184,0.872935994,0.3160116540000001,4,"COVID-19, Systemic Crisis, and Possible Implications for the Wild Meat Trade in Sub-Saharan Africa"
+635,0,1,0,0,1,0,0.28751394799999996,0.870094662,0.37797987600000005,4,Worshipping the Tiger: Modeling Non-use Existence Values of Wildlife Spiritual Services
+636,0,1,0,0,1,0,0.41710314400000004,0.82322867,0.27495966,4,Costs of coexistence: understanding the drivers of tolerance towards Asian elephants Elephas maximus in rural Bangladesh
+637,0,1,0,0,1,0,0.3043652600000001,0.8677659799999999,0.327982684,4,"The collapse of tourism and its impact on wildlife tourism destinations"""
+638,0,1,0,1,0,0,0.880189028,0.45661759400000007,0.07115251920000001,4,Fragmented and isolated: limited gene flow coupled with weak isolation by environment in the paleoendemic giant sequoia ( Sequoiadendron giganteum )
+639,0,1,0,0,1,0,0.26975574599999996,0.875028182,0.339708406,4,Recovery Times and Sustainability in Logged-Over Natural Forests in the Caribbean
+640,0,1,0,0,1,0,0.38515475600000004,0.847365462,0.2503076,4,The global tree restoration potential
+641,0,1,0,0,1,0,0.27542887,0.86919386,0.383423884,4,"Forest concessions in the Maya Biosphere Reserve, Guatemala: A decade later"
+642,0,1,0,0,1,1,0.29650603000000003,0.690097264,0.6632268499999999,4,"Governance, Land and Distribution: A Discussion on the Political Economy of Community-Based Conservation"
+643,0,1,0,0,1,1,0.250527536,0.809167654,0.523169176,4,Decentralization can help reduce deforestation when user groups engage with local government
+644,0,1,0,0,1,0,0.305169618,0.8750520179999999,0.28934606599999996,4,Alpine medicinal plant trade and Himalayan mountain livelihood strategies
+645,0,1,0,1,0,0,0.823850956,0.4505634680000001,0.1250534252,4,Enhanced Passive Safety Surveillance (EPSS) confirms an optimal safety profile of the use of MF59 ® ‐adjuvanted influenza vaccine in older adults: Results from three consecutive seasons
+646,0,1,0,0,1,0,0.28068433,0.87496912,0.303028104,4,Interactions and management for the future of marine aquaculture and capture fisheries
+647,0,1,0,0,1,0,0.322466066,0.867437622,0.251329838,4,Bottom trawl fishing footprints on the world’s continental shelves
+648,0,1,0,0,1,0,0.277962804,0.878763468,0.31784707,4,"Status, Institutions, and Prospects for Global Capture Fisheries"
+649,0,1,0,0,1,0,0.327395748,0.8714486860000001,0.254343394,4,Choosing best practices for managing impacts of trawl fishing on seabed habitats and biota
+650,0,1,0,0,1,0,0.27688625599999994,0.869195496,0.31515818,4,Reflections on the success of traditional fisheries management
+651,0,1,0,0,1,0,0.341947568,0.830846388,0.37268473799999996,4,Wealthy countries dominate industrial fishing
+652,0,1,0,0,1,0,0.34404366000000003,0.865525478,0.23836762599999997,4,Chronic and intensive bottom trawling impairs deep-sea biodiversity and ecosystem functioning
+653,0,1,0,0,1,0,0.3271635,0.8111138180000002,0.49853073,4,Ecotourists and Indigenous Hosts: Diverging Views on Their Relationship With Nature
+654,0,1,1,1,1,0,0.542543288,0.75753082,0.28245357800000004,4,Biodiversity conservation in a telecoupled world
+655,0,1,0,0,1,0,0.30758568799999997,0.86894248,0.32105229399999996,4,Narco-Fish: Global fisheries and drug trafficking
+656,0,1,0,0,1,0,0.286116452,0.877624358,0.299127578,4,Tourism as a driver of conflicts and changes in fisheries value chains in Marine Protected Areas
+657,0,1,0,0,1,0,0.376331708,0.8613943560000001,0.21628592800000002,4,"The harvest of freshwater turtles (Chelidae) from Papua, Indonesia, for the international pet trade"
+658,0,1,0,1,0,0,0.83714309,0.460993342,0.10862065959999997,4,"Plant diversity in a changing world: Status, trends, and conservation needs"
+659,0,1,0,0,1,0,0.339974342,0.8755985000000001,0.25552770799999996,4,"The threat to primates and other mammals from the bushmeat trade in Africa, and how this threat could be diminished 1"
+660,0,1,0,0,1,0,0.31874784,0.8704188859999998,0.270716898,4,"The Trade in and Household Use of Phoenix reclinata Palm Frond Hand Brushes on the Wild Coast, South Africa"
+661,0,1,0,0,1,0,0.27522530200000006,0.868839608,0.369012396,4,Why does illegal wildlife trade persist in spite of legal alternatives in transboundary regions?
+662,0,1,0,0,1,0,0.289372502,0.8773385640000001,0.32895812999999996,4,Logging concessions enable illegal logging crisis in the peruvian amazon
+663,0,1,0,0,1,0,0.474805094,0.813563386,0.15245274720000002,4,"Recovery of saltwater crocodiles following unregulated hunting in tidal rivers of the Northern Territory, Australia"
+664,0,1,0,0,1,1,0.254618497,0.794898538,0.51427378,4,Avaliação Financeira do Manejo Florestal Comunitário
+665,0,1,0,0,1,0,0.267165024,0.872853952,0.358011476,4,Booming markets for Moroccan argan oil appear to benefit some rural households while threatening the endemic argan forest
+666,0,1,0,0,1,0,0.34435395999999996,0.8701554579999999,0.22515409799999997,4,"Harvesting, local trade, and conservation of parrots in the Northeastern Peruvian Amazon"
+667,0,1,0,0,1,0,0.323039568,0.8757736420000001,0.264628396,4,The live bird trade in Brazil and its conservation implications: an overview
+668,0,1,0,0,1,0,0.278003832,0.88440249,0.31475196000000005,4,"The bushmeat trade in African savannas: Impacts, drivers, and possible solutions"
+669,0,1,0,0,1,0,0.331607788,0.861979146,0.32952931799999996,4,Medicinal plants sold at traditional markets in southern Ecuador
+670,0,1,0,0,1,0,0.348053618,0.866944736,0.277171402,4,Almost Saving Whales: The Ambiguity of Success at the International Whaling Commission
+671,0,1,0,0,1,0,0.48504574,0.813769834,0.183793262,4,CITES and the Zoonotic Disease Content in International Wildlife Trade
+672,0,1,0,0,1,0,0.342713466,0.857690056,0.323015658,4,"Traditional knowledge, uses, and perceptions of mushrooms among the Wixaritari and mestizos of Villa Guerrero, Jalisco, Mexico"
+673,0,1,0,0,1,0,0.26754175,0.879639386,0.36013302999999997,4,"Are Nontimber Forest Products the Antidote to Rainforest Degradation? Brazil Nut Extraction in Madre De Dios, Peru"
+674,0,1,0,0,1,0,0.347580538,0.810060612,0.47016283200000003,4,The Globalization of Ayahuasca Shamanism and the Erasure of Indigenous Shamanism
+675,0,1,0,0,1,1,0.424286238,0.6162666939999999,0.6332672020000001,4,What We Know (and Could Know) About International Environmental Agreements
+676,0,1,0,0,1,1,0.330351376,0.7439893120000001,0.608650252,4,From carrying capacity to overtourism: a perspective article
+677,0,1,0,0,1,0,0.48311029000000005,0.824590548,0.17807442720000002,4,The European Union Is Still Unable to Find Nemo and Dory-Time for a Reliable Traceability System for the Marine Aquarium Trade
+678,0,1,0,0,1,0,0.337284912,0.87027751,0.241828888,4,Aquaculture of marine ornamental fish: overview of the production trends and the role of academia in research progress
+679,0,1,0,0,1,0,0.28934997,0.87468881,0.293585358,4,To cope or to sustain? Eroding long-term sustainability in an Indonesian coral reef fishery
+680,0,1,0,1,1,0,0.55210991,0.691245408,0.33765571600000005,4,"Bridging Indigenous and science-based knowledge in coastal-marine research, monitoring, and management in Canada: a systematic map protocol"
+681,0,1,0,1,1,0,0.538452224,0.810404442,0.17228761,4,Boreal forest health and global change
+682,0,1,0,0,1,0,0.26439975,0.864710448,0.35149971399999996,4,Remaining questions in the case for balanced harvesting
+683,0,1,0,0,1,0,0.28542618599999997,0.877519406,0.33532718,4,Recreational use of wild edible mushrooms: mycological tourism in the world with an emphasis on Mexico
+684,0,1,0,0,1,1,0.422189824,0.5543349599999999,0.679759038,4,Conceptualizing power to study social-ecological interactions
+685,0,1,0,1,1,0,0.55189665,0.73172033,0.181144096,4,Turning back from the brink: Detecting an impending regime shift in time to avert it
+686,0,1,1,0,1,1,0.315399364,0.7000270879999999,0.6486088460000001,4,Hard choices: Making trade-offs between biodiversity conservation and human well-being
+687,0,1,0,0,1,0,0.292767334,0.872054862,0.29222085999999997,4,Benchmarking global fisheries discards
+688,0,1,0,1,1,0,0.71864541,0.5020012439999999,0.228600533,4,Ecological Principles and Guidelines for Managing the Use of Land
+689,0,1,0,0,1,0,0.48652552,0.82828313,0.21224339799999997,4,Plant conservation in the Anthropocene – Challenges and future prospects
+690,0,1,0,1,1,0,0.51236346,0.806109558,0.254632528,4,"CyberTracker: An integral management tool used by rangers in the Djelk Indigenous Protected Area, central Arnhem Land, Australia"
+691,0,1,0,1,1,0,0.820039014,0.5010515,0.09193260979999998,4,"The North Sea regime shift: Evidence, causes, mechanisms and consequences"
+692,0,1,0,0,1,0,0.255854068,0.865312876,0.39322946000000003,4,Micro-level explanations for emergent patterns of self-governance arrangements in small-scale fisheries—A modeling approach
+693,0,1,0,0,1,0,0.282516464,0.8766584940000002,0.31674010999999996,4,"Deer and elk hunter recruitment, retention, and participation trends in Montana"
+694,0,1,0,0,1,0,0.32367589999999996,0.8709746840000001,0.27539727,4,Trade-offs in the multi-use potential of managed boreal forests
+695,0,1,0,0,1,0,0.499879768,0.79664713,0.16296477199999998,4,"Limitations to sustainable frankincense production: blocked regeneration, high adult mortality and declining populations: Sustainable frankincense production"
+696,0,1,0,0,1,0,0.4123792359999999,0.843947962,0.264970098,4,Reptiles used in traditional folk medicine: conservation implications
+697,0,1,0,0,1,0,0.42769647399999994,0.835013436,0.19286017400000002,4,Anthropogenic lead in Amazonian wildlife
+698,0,1,0,0,1,0,0.340342916,0.868772514,0.279944806,4,"Eating from the wild: diversity of wild edible plants used by Tibetans in Shangri-la region, Yunnan, China"
+699,0,1,0,0,1,1,0.286149268,0.786141676,0.544669098,4,Biophysical and sociocultural factors underlying spatial trade-offs of ecosystem services in semiarid watersheds
+700,0,1,0,0,1,0,0.40520768399999996,0.856783278,0.209530358,4,What do we know about the life-history traits of widely hunted tropical mammals?
+701,0,1,0,0,1,0,0.341566372,0.8656460380000001,0.25727528800000005,4,Evaluating how hunters see and react to telemetry collars on white‐tailed deer - Jacques - 2011 - The Journal of Wildlife Management - Wiley Online Library
+702,0,1,0,0,1,0,0.488838776,0.824503382,0.1515778452,4,Is hunting an effective tool to control overabundant deer? A test using an experimental approach
+703,0,1,0,0,1,0,0.267638646,0.87298217,0.383468502,4,Behind the economics of hunting in Andalusian forests
+704,0,1,0,0,1,0,0.294941958,0.8787059719999999,0.296566012,4,"The Montana deer and Elk hunting population: The importance of cohort group, license price, and population demographics on hunter retention, recruitment, and population change - Schorr - 2014 - The Journal of Wildlife Management - Wiley Online Library"
+705,0,1,0,0,1,1,0.27474874600000004,0.8239419719999999,0.526069962,4,Multiple-use forestry as a boundary object: From a shared ideal to multiple realities
+706,0,1,0,0,1,0,0.31525353,0.8593066840000001,0.28469962,4,Predicting the evolutionary consequences of trophy hunting on a quantitative trait
+707,0,1,0,0,1,0,0.25141388400000003,0.8580054379999998,0.45233928199999995,4,Pro-poor Commercial Management of Non-timber Forest Products in Nepal's Community Forest User Groups: Factors for Success
+708,0,1,0,0,1,0,0.300932416,0.8507060080000001,0.422070252,4,From hunters to farmers: Changing means of subsistence and food production among the Oroqen
+709,0,1,0,0,1,0,0.331098234,0.8533886580000001,0.33272917199999996,4,"Eating ecosystems, wildlife harvest and depletion compromise socioecological stability"
+710,0,1,0,0,1,0,0.2803373539999999,0.8641397919999999,0.33956400200000003,4,Does aquaculture add resilience to the global food system?
+711,0,1,0,0,1,0,0.336939278,0.875985554,0.254933154,4,Illegal trade in wild cats and its link to Chinese‐led development in Central and South America
+712,0,1,0,0,1,0,0.28317616,0.870686662,0.347281432,4,Towards informed and multi-faceted wildlife trade interventions
+713,0,1,0,0,1,0,0.31941765,0.8626155719999999,0.33977162400000005,4,From Poachers to Protectors: Engaging Local Communities in Solutions to Illegal Wildlife Trade: Engage communities against illegal wildlife trade
+714,0,1,0,0,1,0,0.430680908,0.8520268739999999,0.226940262,4,Hunters as citizen scientists: Contributions to biodiversity monitoring in Europe
+715,0,1,0,0,1,0,0.446103824,0.837230366,0.180003062,4,Adaptive harvest management of North American waterfowl populations: a brief history and future prospects
+716,0,1,0,0,1,0,0.37115861600000005,0.850243124,0.24649424199999997,4,"The contribution of 'chitoumou', the edible caterpillar Cirina butyrospermi, to the food security of smallholder farmers in southwestern Burkina Faso"
+717,0,1,0,0,1,0,0.26041627,0.873947548,0.350762352,4,"The role of bushmeat in urban household consumption: Insights from Bangui, the capital city of the Central African Republic"
+718,0,1,0,0,1,1,0.29945977999999995,0.7914933080000001,0.530186228,4,Land Trusts and Conservation Easements: Who Is Conserving What for Whom?
+719,0,1,0,0,1,1,0.34851957600000005,0.709916546,0.595892452,4,Insights on fostering the emergence of robust conservation actions from Zimbabwe's CAMPFIRE program
+720,0,1,0,0,1,0,0.260735714,0.851104164,0.47828812200000004,4,"Insights on linking forests, trees, and people from the air, on the ground, and in the laboratory"
+721,0,1,0,0,1,1,0.47421115,0.678074002,0.557390842,4,The Tragedy of the Commons
+722,0,1,0,0,1,0,0.355187566,0.8578282700000001,0.28928837399999996,4,"Criteria and indicators for promoting cultivation and conservation of Medicinal and Aromatic Plants in Western Himalaya, India"
+723,0,1,0,0,1,0,0.45865137199999995,0.8192518919999999,0.284472198,4,Indigenous Knowledge and Seasonal Calendar Inform Adaptive Savanna Burning in Northern Australia
+724,0,1,0,0,1,0,0.38444227999999997,0.848931464,0.279522788,4,"People have shaped most of terrestrial nature for at least 12,000 years"
+725,0,1,0,0,1,0,0.25786563600000006,0.854013656,0.45656120200000005,4,Relationship between openness to trade and deforestation: Empirical evidence from the Brazilian Amazon
+726,0,1,0,0,1,0,0.27767896799999997,0.875648154,0.35828243600000004,4,"Legal and Administrative Regulation of Palms and Other NTFPs in Colombia, Ecuador, Peru and Bolivia"
+727,0,1,0,0,1,0,0.406813942,0.748499528,0.477162628,4,Institutions and inequality interplay shapes the impact of economic growth on biodiversity loss
+728,0,1,0,1,0,0,0.7990121720000001,0.47930121400000003,0.09183467240000001,4,Understanding the drivers of Southeast Asian biodiversity loss
+729,0,1,0,0,1,0,0.24798034199999996,0.8619079139999999,0.4667095,4,Renting legality: How FLEGT is reinforcing power relations in Indonesian furniture production networks
+730,0,1,0,0,1,0,0.265923828,0.87038726,0.350191586,4,"Illustrating the hidden economic, social and ecological values of global forage fish resources"
+731,0,1,0,0,1,0,0.292324486,0.86523425,0.316542298,4,Do exports of renewable resources lead to resource depletion? Evidence from fisheries
+732,0,1,0,0,1,0,0.433200394,0.836105896,0.166056742,4,Effect of unmanaged harvests for the aquarium trade on the population status and dynamics of redline torpedo barb: A threatened aquatic flagship
+733,0,1,0,0,1,0,0.339306806,0.8686092999999999,0.23276646799999998,4,Genetic tracking of basking shark products in international trade
+734,0,1,0,0,1,0,0.25572140000000004,0.8666494699999999,0.378425844,4,Towards a typology of interactions between small-scale fisheries and global seafood trade
+735,0,1,0,0,1,0,0.25496697,0.8795956200000001,0.345529922,4,Use of Market Data to Assess Bushmeat Hunting Sustainability in Equatorial Guinea
+736,0,1,0,0,1,0,0.32256112800000003,0.8789875979999999,0.25189469,4,"Caiman hunting in Central Amazonia, Brazil"
+737,0,1,0,0,1,0,0.298205056,0.8651105000000001,0.302436224,4,Reconsidering the Consequences of Selective Fisheries
+738,0,1,0,1,0,0,0.8025060820000001,0.410806004,0.23673305879999998,4,Framing sustainability in a telecoupled world
+739,0,1,0,1,1,0,0.516519222,0.801709944,0.146633008,4,"Rapid Vulnerability Assessment of Yartsa Gunbu (Ophiocordyceps sinensis [Berk.] G.H. Sung et al) in Pithoragarh District, Uttarakhand State, India"
+740,0,1,0,0,1,0,0.379352242,0.854298174,0.241249402,4,Patterns in rhino poaching activity on private land in South Africa
+741,0,1,0,0,1,0,0.28925535,0.8627207840000001,0.36867457,4,The Seven Forms of Challenges in the Wildlife Trade
+742,0,1,0,1,1,0,0.654637964,0.659610328,0.14700227400000002,4,Summarizing the Evidence on the International Trade in Illegal Wildlife
+743,0,1,0,0,1,0,0.359297194,0.856741034,0.23579157399999998,4,Evaluating the feasibility of pangolin farming and its potential conservation impact
+744,0,1,0,0,1,0,0.27533526999999997,0.8705872080000001,0.35609327600000007,4,Sustainable Timber Trade: A Study on Discrepancies in Chinese Logs and Lumber Trade Statistics
+745,0,1,0,1,1,0,0.7817581,0.60301198,0.10121554299999999,4,Spreading dead zones and consequences for marine ecosystems.
+746,0,1,0,1,1,0,0.8462668820000001,0.522070724,0.0719778274,4,Primary and secondary dispersal of Bertholletia excelsa: Implications for sustainable harvests
+747,0,1,0,0,1,0,0.37481654200000003,0.85274307,0.229622858,4,Long-term effect of selective logging on floristic composition: A 25 year experiment in the Brazilian Amazon
+748,0,1,0,1,1,0,0.653749654,0.7343121979999999,0.1392736068,4,Defaunation in the Anthropocene
+749,0,1,0,0,1,0,0.4426108080000001,0.8332955679999999,0.217796092,4,"Plant biodiversity and ethnobotany inside the projected impact area of the Upper Seti Hydropower Project, Western Nepal"
+750,0,1,0,0,1,0,0.259320682,0.862450258,0.38541981200000003,4,A respected central government and other obstacles to community-based management of the matsutake mushroom in Bhutan
+751,0,1,0,0,1,0,0.316363654,0.84100822,0.40498446999999993,4,Why the North American Model of Wildlife Conservation is Problematic for Modern Wildlife Management
+752,0,1,0,1,1,0,0.602329932,0.7667273380000001,0.1385376266,4,Status and Ecological Effects of the World's Largest Carnivores
+753,0,1,0,0,1,0,0.37110709000000003,0.866182484,0.221056552,4,Correlation and persistence of hunting and logging impacts on tropical rainforest mammals
+754,0,1,0,0,1,0,0.395441794,0.854305092,0.195220884,4,"Source–sink systems and conservation of hunted ungulates in the Lacandon Forest, Mexico"
+755,0,1,0,0,1,0,0.309961632,0.8771420580000001,0.273289516,4,Defining and identifying sustainable harvests of resources: Archaeological examples of pinniped harvests in the eastern North Pacific
+756,0,1,0,0,1,0,0.37118791799999995,0.8716529979999998,0.21279262399999999,4,Buying through your teeth: traditional currency and conservation of flying foxes Pteropus spp. in Solomon Islands
+757,0,1,0,1,1,0,0.75568462,0.5225495,0.22876665479999997,4,Fitness and its role in evolutionary genetics.
+758,0,1,0,0,1,0,0.32497403,0.8745133700000001,0.2460289,4,A review of the impacts of fisheries on open-ocean ecosystems
+759,0,1,0,0,1,0,0.30026271400000004,0.87911422,0.271918252,4,Historical shark meat consumption and trade trends in a global richness hotspot
+760,0,1,0,1,0,0,0.957599968,0.12415949639999999,0.0742737224,4,"Climate change, biological invasions, and the shifting distribution of Mediterranean fishes: A large-scale survey based on local ecological knowledge"
+761,0,1,0,0,1,0,0.34068758800000004,0.8586100739999999,0.232418178,4,Seasonal dynamics of small-scale fisheries in the Adriatic Sea
+762,0,1,0,0,1,0,0.367739786,0.8683030580000001,0.208822216,4,Diving back in time: Extending historical baselines for yelloweye rockfish with Indigenous knowledge
+763,0,1,0,0,1,0,0.26511800599999996,0.8650826620000001,0.39215641400000006,4,Do responsible fishing areas work? Comparing collective action challenges in three small-scale fisheries in Costa Rica
+764,0,1,0,0,1,0,0.428059468,0.8419206499999999,0.197642118,4,An Attempt to Predict Which Amazonian Tree Species May be Threatened by Logging Activities
+765,0,1,0,0,1,0,0.313051324,0.871765834,0.25371687000000004,4,Carp (Cyprinidae) Fisheries in Swedish Lakes: A Combined Environmental Assessment Approach to Evaluate Data-limited Freshwater Fish Resources as Food
+766,0,1,0,0,1,0,0.316522558,0.8747152739999999,0.24907175600000003,4,Comparative analysis of artisanal and recreational fisheries for Dentex dentex in a Marine Protected Area
+767,0,1,0,0,1,0,0.34670060999999996,0.86752669,0.22552171,4,Do traditional fishers recognise reef fish species declines? Shifting environmental baselines in Eastern Brazil
+768,0,1,0,1,1,0,0.52390697,0.8055422799999998,0.14005327099999998,4,Rapidly shifting baselines in yangtze fishing communities and local memory of extinct species
+769,0,1,0,0,1,0,0.29509166800000003,0.875659714,0.275075096,4,Local people see and care most? Severe depletion of inshore fisheries and its consequences for Māori communities in New Zealand
+770,0,1,0,0,1,0,0.4690503039999999,0.8171287419999999,0.18111645599999998,4,"Wildmeat or Bushmeat? Subsistence Hunting and Commercial Harvesting in Papua (West New Guinea), Indonesia"
+771,0,1,0,0,1,0,0.352758906,0.849958942,0.23431810999999997,4,Demographic side effects of selective hunting in ungulates and carnivores
+772,1,1,0,1,0,0,0.8535319579999999,0.377316176,0.0815111364,4,"The global pet trade in amphibians: species traits, taxonomic bias, and future directions"
+773,0,1,0,0,1,0,0.36654449199999994,0.863616526,0.25853833000000004,4,Stimuli and barriers to innovation in wildlife policy – long-term institutional analysis of wolf management in Belarus
+774,0,1,0,0,1,0,0.362742858,0.866171002,0.23070217999999998,4,Hunting as a management tool? Cougar-human conflict is positively related to trophy hunting
+775,0,1,0,0,1,0,0.410967662,0.841653222,0.27794261800000003,4,No Place for Predators?
+776,0,1,0,0,1,0,0.47829605,0.834980234,0.154346929,4,The effect of management for red grouse shooting on the population density of breeding birds on heather-dominated moorland: Grouse moor management and breeding birds
+777,0,1,0,0,1,0,0.316301854,0.8607743940000001,0.30495194999999997,4,A global indicator of utilized wildlife populations: Regional trends and the impact of management
+778,0,1,0,0,1,0,0.405367402,0.834004918,0.199310228,4,Selective harvest focused on sexual signal traits can lead to extinction under directional environmental change
+779,0,1,0,0,1,0,0.34337679,0.8688419379999999,0.244869788,4,Assessing biological realism of wildlife population estimates in data‐poor systems
+780,0,1,0,1,1,0,0.696593,0.578779044,0.128130484,4,The Importance of Traditional Ecological Knowledge for Palm-weevil Cultivation in the Venezuelan Amazon
+781,0,1,0,0,1,0,0.28265070800000003,0.880227732,0.31631402,4,Local opinions on trophy hunting in Kyrgyzstan
+782,0,1,0,1,1,0,0.542508222,0.750177838,0.16417997,4,‘Intentional Genetic Manipulation’ as a conservation threat
+783,0,1,0,0,1,0,0.412383864,0.828791498,0.295590048,4,Fundamental Differences between Wildlife and Biomedical Research
+784,0,1,0,0,1,0,0.32367859200000004,0.8694033040000001,0.297310518,4,Killing Wolves to Save Them? Legal Responses to ‘Tolerance Hunting’ in the European Union and United States
+785,0,1,0,0,1,1,0.275178622,0.8060113040000001,0.548874646,4,Beyond PES and REDD+: Costa Rica on the way to climate-smart landscape management?
+786,0,1,0,0,1,0,0.48712776,0.629834326,0.387039462,4,Biocultural indicators to support locally led environmental management and monitoring
+787,0,1,0,0,1,0,0.294731492,0.8686410999999999,0.33900000599999996,4,Using multiple indicators to evaluate the sustainability of dolphin-based wildlife tourism in rural India
+788,0,1,1,0,1,0,0.26852944800000006,0.860122746,0.404230752,4,Common and conflicting objectives and practices of herders and conservation managers: the need for a conservation herder
+789,0,1,0,0,1,0,0.263244656,0.867512606,0.42929364799999997,4,Local perceptions of ecosystem services and protection of culturally protected forests in southeast China
+790,0,1,0,0,1,0,0.270820082,0.8361975600000001,0.48958014800000005,4,An occupational ergonomics in the Indonesian state mandatory sustainable forest management instrument: A review
+791,0,1,0,0,1,0,0.453021762,0.8290759639999999,0.188558784,4,Partial cutting in old-growth boreal stands: An integrated experiment
+792,0,1,0,0,1,0,0.299759338,0.8550171039999999,0.40928036399999995,4,A national portrait of community forestry on public land in Canada
+793,0,1,0,0,1,0,0.24263209000000002,0.8573476579999999,0.47467901599999995,4,"Logging Community-Based Forests in the Amazon: An Analysis of External Influences, Multi-Partner Governance, and Resilience"
+794,0,1,0,0,1,0,0.348458566,0.8022867899999999,0.42406303999999995,4,"Vers des forêts de proximité en terres publiques ? Le « bricolage » institutionnel comme vecteur d’innovation en foresterie communautaire au Québec, Canada"
+795,0,1,0,1,1,0,0.6833913540000001,0.6844230579999999,0.1378713764,4,Potential Species and Character of Wild Diesel Plant in Tianjin
+796,0,1,0,1,0,0,0.8343017679999999,0.46173059,0.0854017978,4,Investigation on Cross-Compatibility Barriers in the Biofuel Crop Jatropha curcas L. with Wild Jatropha Species
+797,0,1,0,0,1,0,0.312523078,0.8768788059999999,0.275685864,4,A Framework for Assessing Supply-Side Wildlife Conservation
+798,0,1,0,0,1,0,0.35443910799999995,0.82385954,0.364428722,4,Perennial grasslands enhance biodiversity and multiple ecosystem services in bioenergy landscapes
+799,0,1,0,0,1,0,0.323399816,0.85906395,0.358218344,4,"The implications of ritual practices and ritual plant uses on nature conservation: a case study among the Naxi in Yunnan Province, Southwest China"
+800,0,1,0,0,1,0,0.38276695600000005,0.8413860060000001,0.257304628,4,"Urban Foraging in Berlin: People, Plants and Practices within the Metropolitan Green Infrastructure"
+801,0,1,0,0,1,0,0.279371384,0.8706344859999999,0.35895194199999997,4,"Urban foraging of wild plants in two medium-sized South African towns: People, perceptions and practices"
+802,0,1,0,0,1,0,0.39151941600000006,0.8447632,0.22993823600000002,4,Underutilized Natural Gum and Resin Resources in Ethiopia for Future Directions and Commercial Utilization
+803,0,1,0,0,1,0,0.34183585799999994,0.868373164,0.22207270599999998,4,Climate vulnerability and resilience in the most valuable North American fishery
+804,0,1,0,0,1,0,0.48841331000000004,0.7657798999999998,0.33824406100000004,4,Setting robust biodiversity goals
+805,0,1,0,0,1,1,0.287538202,0.753340436,0.5752375860000001,4,No net loss for people and biodiversity
+806,0,1,0,0,1,0,0.33356220400000003,0.870149412,0.28552482599999995,4,Strategic advertising of online news articles as an intervention to influence wild species product consumers
+807,0,1,0,0,1,0,0.258416846,0.8589440100000001,0.38874114400000004,4,Emergence of a global science–business initiative for ocean stewardship
+808,0,1,0,0,1,0,0.315156092,0.870186732,0.257055032,4,Exploring benefits of spatial cooperative harvesting in a sea urchin fishery: an agent-based approach
+809,0,1,0,0,1,1,0.28630461800000007,0.815467954,0.5380923259999999,4,Managing cultural values in sustainable tourism: Conflicts in protected areas
+810,0,1,1,0,1,1,0.30141824,0.773149458,0.5463386720000001,4,The Value of the World's Ecosystem Services and Natural Capital
+811,0,1,0,0,1,1,0.30380239800000003,0.67614644,0.6496267899999999,4,An ecosystem services framework to support both practical conservation and economic development
+812,0,1,0,1,1,0,0.500264412,0.789455794,0.282185274,4,Urban street tree biodiversity and antidepressant prescriptions
+813,0,1,0,0,1,0,0.322222798,0.8617129680000002,0.25366898200000004,4,Global ecosystem overfishing: Clear delineation within real limits to production
+814,0,1,0,0,1,0,0.300716404,0.874961638,0.295221864,4,Fuelwood sustainability revisited: integrating size structure and resprouting into a spatially realistic fuelshed model
+815,0,1,0,0,1,0,0.28454503200000003,0.872760224,0.35001511,4,Charcoal production in the Mopane woodlands of Mozambique: what are the trade-offs with other ecosystem services?
+816,0,1,0,0,1,0,0.30653787600000004,0.865269642,0.366174292,4,"20 Years of Aboriginal Woodcarving in Arnhem land, Australia: Using art sales records to examine the Dynamics of Sculpture Production"
+817,0,1,0,1,1,0,0.818258904,0.535595438,0.135650513,4,The study of biodiversity in the era of massive sequencing
+818,0,1,0,1,1,0,0.767483114,0.60122174,0.0910081272,4,DNA barcoding in a biodiversity hot spot: potential value for the identification of M alagasy E uphorbia L. listed in CITES A ppendices I and II
+819,0,1,0,0,1,0,0.289527048,0.834309914,0.43255443800000004,4,Seasonal Calendar and Gender Disaggregated Daily Activities of Indigenous Galo Farmers of Eastern Himalayan Region of India
+820,0,1,0,1,1,0,0.50079469,0.80937161,0.18650213200000001,4,Comprehensiveness of conservation of useful wild plants: An operational indicator for biodiversity and sustainable development targets
+821,0,1,0,1,1,0,0.5718114219999999,0.7966612339999999,0.14034144080000002,4,The impact of high-altitude ski-runs on alpine grassland bird communities: Ski-runs and alpine grassland bird communities
+822,0,1,0,1,1,0,0.5711751620000001,0.741007768,0.139255657,4,Assessing the effect of roads on impala ( Aepyceros melampus ) stress levels using faecal glucocorticoid metabolites
+823,0,1,0,0,1,0,0.36382828,0.860720612,0.244844028,4,"Physiological stress response of African elephants to wildlife tourism in Madikwe Game Reserve, South Africa"
+824,0,1,0,0,1,0,0.39759438199999997,0.8644111460000001,0.234014844,4,Relative effects of recreational activities on a temperate terrestrial wildlife assemblage
+825,0,1,0,0,1,0,0.434606062,0.850597424,0.181582758,4,Physiological stress responses of tigers due to anthropogenic disturbance especially tourism in two central Indian tiger reserves
+826,0,1,0,0,1,0,0.389185962,0.8144837419999998,0.444583,4,"Evolving the narrative for protecting a rapidly changing ocean, post‐COVID‐19"
+827,0,1,0,0,1,1,0.30640912600000003,0.797237742,0.50643761,4,25 years of criteria and indicators for sustainable forest management: Why some intergovernmental C & I processes flourished while others faded
+828,0,1,0,0,1,0,0.32955505999999996,0.8412833660000001,0.358291802,4,The Sustainable-Use Debate: Observations from IUCN
+829,0,1,0,0,1,0,0.37204536600000004,0.8589194960000001,0.259120646,4,Conserving Wolves by Transforming Them? The Transformative Effects of Technologies of Government in Biodiversity Conservation
+830,0,1,0,0,1,0,0.285810466,0.882940984,0.30991039800000003,4,"Getting to grips with the magnitude of exploitation: Bushmeat in the Cross–Sanaga rivers region, Nigeria and Cameroon"
+831,0,1,0,0,1,1,0.397511484,0.61879921,0.664136706,4,"Legal pluralism, social theory, and the state"
+832,0,1,0,0,1,1,0.384830044,0.6464932999999999,0.6614111379999998,4,Cultural Continuity as a Determinant of Indigenous Peoples’ Health: A Metasynthesis of Qualitative Research in Canada and the United States
+833,0,1,0,1,1,0,0.563556202,0.627864852,0.483042624,4,Taking Participatory Citizen Science to Extremes
+834,0,1,0,0,1,1,0.402470124,0.5781082200000001,0.663091022,4,Resilience Attributes of Social-Ecological Systems: Framing Metrics for Management
+835,0,1,0,0,1,1,0.36071335399999993,0.695636084,0.620693168,4,SOCIAL AND CULTURAL POLICIES TOWARD INDIGENOUS PEOPLES: Perspectives from Latin America
+836,0,1,0,1,1,0,0.80497389,0.535587498,0.1289611116,4,Predicting changes in community composition and ecosystem functioning from plant traits: revisiting the Holy Grail
+837,0,1,0,0,1,1,0.42221324599999993,0.595884038,0.671733938,4,Re-conceptualizing the Anthropocene: A call for collaboration
+838,0,1,0,0,1,0,0.364915548,0.850206512,0.315658934,4,Ethnobotanical value and conservation of sacred groves of the Kpaa Mende in Sierra Leone
+839,0,1,0,0,1,0,0.265736004,0.856948852,0.470279104,4,Linking the Conservation of Culture and Nature: A Case Study of Sacred Forests in Zimbabwe
+840,0,1,0,0,1,1,0.392451146,0.661416618,0.58713008,4,Exploring Institutional Transformations to Address High-End Climate Change in Iberia
+841,0,1,0,0,1,0,0.263707524,0.8397202499999998,0.46846037799999996,4,Sustainable use and incentive-driven conservation: realigning human and conservation interests
+842,0,1,0,0,1,0,0.36373502599999996,0.871505408,0.22575779,4,Effects of Trophy Hunting on Lion and Leopard Populations in Tanzania
+843,0,1,0,0,1,0,0.267887174,0.862106474,0.38485801599999997,4,Trade and sustainability: the impact of the International Tropical Timber Agreements on exports
+844,0,1,0,1,1,0,0.5702036400000001,0.789789736,0.140221929,4,Reliability of Indicators of Decline in Abundance: Reliability of Indicators of Decline
+845,0,1,0,1,0,0,0.85715202,0.47929392000000004,0.0881009172,4,The false classification of extinction risk in noisy environments
+846,0,1,0,0,1,0,0.353342208,0.8630805020000001,0.220153664,4,Is it good or bad to fish with FADs? What are the real impacts of the use of drifting FADs on pelagic marine ecosystems?
+847,0,1,0,0,1,0,0.4863522860000001,0.8142455180000001,0.18898466800000002,4,Edible insects in China: Utilization and prospects.
+848,0,1,0,0,1,0,0.28800462800000004,0.8787853400000001,0.27816522200000005,4,Indicators for wild animal offtake: methods and case study for African mammals and birds
+849,0,1,0,0,1,0,0.283185158,0.8797570479999999,0.301255092,4,Bringing home the biggest bacon: a cross-site analysis of the structure of hunter-kill profiles in Neotropical forests
+850,0,1,0,0,1,0,0.34567124599999993,0.855324858,0.28374674000000005,4,Palm Uses in Northwestern South America: A Quantitative Review
+851,0,1,0,0,1,0,0.311493826,0.868425434,0.299990272,4,Trade in Palm Products in North-Western South America
+852,0,1,0,1,0,0,0.885812888,0.447847772,0.0694303964,4,Effects of landscape characteristics on amphibian distribution in a forest-dominated landscape
+853,0,1,0,0,1,0,0.346449708,0.8713263080000001,0.23874376600000002,4,"The biology, economy, hunting and legislation of edible Frogs (Ranidae) Intended for Export in Turkey"
+854,0,1,0,0,1,0,0.28474513199999996,0.8832298680000001,0.304582896,4,Urban wild meat consumption and trade in central Amazonia
+855,0,1,0,1,1,0,0.598448538,0.7516867520000001,0.11049926600000001,4,"The extirpation of large mammals and implications for montane forest conservation: the case of the Kilum-Ijim Forest, North-west Province, Cameroon"
+856,0,1,0,0,1,0,0.389319478,0.8554829040000002,0.24103827400000002,4,Wild vegetable mixes sold in the markets of Dalmatia (southern Croatia)
+857,0,1,0,0,1,0,0.429040394,0.801121126,0.300903778,4,Assessing agricultural risks of climate change in the 21st century in a global gridded crop model intercomparison
+858,0,1,0,0,1,0,0.32760356200000007,0.8736584520000001,0.258562354,4,ESTIMATING THE ECONOMIC IMPACTS OF CLIMATE CHANGE ON 16 MAJOR US FISHERIES
+859,0,0,1,1,1,0,0.596199288,0.665800626,0.342724834,4,Measuring impacts of extreme weather events using the life satisfaction approach
+860,0,0,1,0,1,1,0.354214382,0.593282482,0.692190672,4,Valuing Cultural Ecosystem Services
+861,0,0,1,0,1,1,0.42680845199999995,0.6487646140000001,0.613295292,4,From Hopeless to Curious? Thoughts on Hausman's “Dubious to Hopeless” Critique of Contingent Valuation
+862,0,0,1,0,1,1,0.353284094,0.632496128,0.671595262,4,Rethinking Community-Based Conservation
+863,0,0,1,0,1,1,0.37740733,0.606089348,0.673768286,4,An Intellectual History of Environmental Economics
+864,0,0,1,0,1,0,0.303777258,0.868475484,0.324814442,4,"Natural resource use, crop damage and attitudes of rural people in the vicinity of the Maputo Elephant Reserve, Mozambique"
+865,0,0,1,0,1,1,0.319620358,0.7333536,0.57105894,4,"Assessing landscape preferences: a visual choice experiment in the agricultural region of Märkische Schweiz, Germany"
+866,0,0,1,0,1,1,0.45973396599999994,0.582872748,0.614203732,4,Cultural Consensus Theory: Applications and Frequently Asked Questions
+867,0,0,1,0,1,0,0.47071220799999997,0.737663408,0.425875672,4,How to measure preferences for photographs of natural landscapes
+868,0,0,1,0,1,1,0.375414374,0.651249638,0.649487708,4,When and how to use Q methodology to understand perspectives in conservation research: The Q methodology
+869,0,0,1,0,1,0,0.306317836,0.842754184,0.417470684,4,"Meat consumption, health, and the environment"
+870,0,0,1,0,1,1,0.329760038,0.7562131080000001,0.5910490920000001,4,Rethinking Participation in Environmental Decision-Making: Epistemologies of Marine Conservation in South-East England
+871,0,0,1,0,1,1,0.30989416,0.670440264,0.6659005079999999,4,The role of culture and identity for economic values: a quantitative study of Māori attitudes
+872,0,0,1,0,1,1,0.321919432,0.6175078679999999,0.67533192,4,The ecosystem service of sense of place: benefits for human well-being and biodiversity conservation
+873,0,0,1,0,1,1,0.34950427799999995,0.5763758019999999,0.695716582,4,The deliberative value formation model
+874,0,0,1,0,1,1,0.343780552,0.64873723,0.654337756,4,"The maturation of ecosystem services: Social and policy research expands, but whither biophysically informed valuation?"
+875,0,0,1,0,1,1,0.391155156,0.580357724,0.69399594,4,Reframing Problems of Incommensurability in Environmental Conflicts Through Pragmatic Sociology: From Value Pluralism to the Plurality of Modes of Engagement with the Environment
+876,0,0,1,0,1,1,0.257532976,0.7752242500000001,0.616384082,4,Goals and values of farmers
+877,0,0,1,0,1,1,0.296281652,0.6643093080000001,0.6748068220000001,4,"Measure, model, optimise: Understanding reductionist concepts of value in freshwater governance"
+878,0,0,1,0,1,1,0.39424985,0.70387139,0.575699516,4,The Drivers of Greenwashing
+879,0,0,1,0,1,0,0.262894544,0.86604052,0.410249374,4,"Rural Households' Demand for Frankincense Forest Conservation in Tigray, Ethiopia: A Contingent Valuation Analysis"
+880,0,0,1,0,1,1,0.35514374000000004,0.593367222,0.66565783,4,Multi-Criteria Decision Analysis and Cost-Benefit Analysis: Comparing alternative frameworks for integrated valuation of ecosystem services
+881,0,0,1,0,1,1,0.496694618,0.665856958,0.501343532,4,Linguistic Injustice in the Writing of Research Articles in English as a Second Language: Data From Taiwanese and Mexican Researchers
+882,0,0,1,0,1,1,0.360723204,0.708641002,0.631764478,4,Cosmological Deixis and Amerindian Perspectivism
+883,0,0,1,0,1,1,0.37924580799999996,0.581335786,0.695588606,4,"Wellbeing, values, and planning in environmental management"
+884,0,0,1,0,1,1,0.339161954,0.666640846,0.63982966,4,Choices without Prices without Apologies
+885,0,0,1,0,1,1,0.42253320800000005,0.681765464,0.5531529880000001,4,Policy analysis and environmental problems at different scales: asking the right questions
+886,0,0,1,0,1,1,0.41492290800000003,0.598451568,0.6636181,4,Connecting Diverse Knowledge Systems for Enhanced Ecosystem Governance: The Multiple Evidence Base Approach
+887,0,1,1,0,1,1,0.29950541199999997,0.66696976,0.6634606940000001,4,The importance of deliberation in valuing ecosystem services in developing countries—Evidence from the Solomon Islands
+888,0,0,1,0,1,1,0.266393824,0.7757483159999999,0.6273154420000001,4,Game masters and Amazonian Indigenous views on sustainability
+889,0,1,1,0,1,1,0.37778701000000003,0.673559258,0.6456860740000001,4,Buen Vivir: Today's tomorrow
+890,0,0,1,0,1,1,0.35004537199999997,0.618029062,0.686698582,4,"IPBES: Don’t throw out the baby whilst keeping the bathwater; Put people’s values central, not nature’s contributions"
+891,0,0,1,0,1,0,0.26691276,0.8624555839999999,0.350319646,4,Research into fisheries equity and fairness—addressing conservation burden concerns in transboundary fisheries
+892,0,0,1,0,1,1,0.37524559,0.5581002780000001,0.696422324,4,Relational values: the key to pluralistic valuation of ecosystem services
+893,0,0,1,0,1,1,0.39449326,0.6008786840000001,0.65919512,4,"Sympathy, commitment, and preference"
+894,0,0,1,0,1,1,0.36225064,0.646593948,0.647487494,4,Contingent Valuation: From Dubious to Hopeless
+895,0,0,1,0,1,1,0.323516336,0.6348319419999999,0.6816744720000001,4,Indicators for relational values of nature’s contributions to good quality of life: the IPBES approach for Europe and Central Asia
+896,0,0,1,0,1,1,0.38650056000000005,0.6526548579999999,0.632918708,4,Do textbooks respond to the requirements of Environmental Education? An analysis in Secondary Education
+897,0,0,1,0,1,1,0.35160219800000003,0.5720575560000001,0.706170238,4,Making intrinsic values work; integrating intrinsic values of the more-than-human world through the Life Framework of Values
+898,0,0,1,0,1,1,0.38384275399999995,0.583738588,0.679237848,4,Environmental ethics beyond principle? The case for a pragmatic contextualism
+899,0,0,1,0,1,1,0.26573773999999994,0.77052651,0.610790632,4,Conservation Ethos in Local Traditions: The West Bengal Heritage
+900,0,0,1,0,1,1,0.32282969799999994,0.717936658,0.6004605,4,Payment for ecosystem services in Lima’s watersheds: power and imaginaries in an urban-rural hydrosocial territory
+901,0,0,1,0,1,1,0.34569947,0.663243468,0.636750756,4,Self-Efficacy and Intrinsic Motivation Guiding Environmental Behavior
+902,0,0,1,0,1,1,0.265301318,0.773960428,0.643049216,4,"Forests, development and the globalisation of justice: Forests, development and the globalisation of justice"
+903,0,0,1,0,1,1,0.24214567800000003,0.848560086,0.5167867740000001,4,Theorizing Access: Forest Profits along Senegal's Charcoal Commodity Chain
+904,0,0,1,0,1,0,0.276146008,0.869209382,0.3740311,4,"Economic valuation of the Leuser National Park on Sumatra, Indonesia"
+905,0,0,1,0,1,1,0.340415296,0.666887172,0.629332982,4,Ecological networks: A spatial concept for multi-actor planning of sustainable landscapes
+906,0,0,1,0,1,1,0.32703664799999993,0.7407419120000001,0.562091086,4,Testing Temporal Stability of Recreation Values
+907,0,0,1,0,1,0,0.31758349199999997,0.827471224,0.397801532,4,Valuation of Ecosystem Services to promote sustainable aquaculture practices
+908,0,0,1,0,1,0,0.274753934,0.84820186,0.43694923399999996,4,Indigenous knowledge as decision support tool in rainwater harvesting
+909,0,0,1,0,1,1,0.378541,0.6052073899999999,0.63647164,4,Guidance to Enhance the Validity and Credibility of Environmental Benefit Transfers
+910,0,0,1,0,1,1,0.35743565,0.6185205619999999,0.6881946320000001,4,Natural capital – a practitioner’s overview of concepts and applications
+911,0,0,1,0,1,1,0.30496580800000006,0.678616472,0.66778201,4,Conserving Natures? Co‐producing Payments for Ecosystem Services in Mongolian Rangelands
+912,0,0,1,0,1,1,0.24021239800000002,0.8042174879999999,0.574672556,4,"Troubled Encounters: Payments for Ecosystem Services in Chiapas, Mexico"
+913,0,0,1,0,1,1,0.341277718,0.6001437079999999,0.686189004,4,Ecosystem services and economic theory: integration for policy-relevant research
+914,0,0,1,0,1,1,0.27132621799999995,0.735957268,0.623137596,4,The Livelihood Impacts of Payments for Environmental Services and Implications for REDD+
+915,0,0,1,0,1,1,0.23355084600000003,0.835594744,0.54869793,4,"Agrarian livelihoods under siege: Carbon forestry, tenure constraints and the rise of capitalist forest enclosures in Ghana"
+916,0,0,1,0,1,1,0.29692901400000005,0.705058876,0.6214315060000001,4,"Challenges and opportunities for REDD plus : A reality check from perspectives of effectiveness, efficiency and equity"
+917,0,0,1,0,1,1,0.40172308,0.5663119,0.6893437880000001,4,Integrating multiple perspectives on the human-nature relationship: A reply to Fletcher 2017
+918,0,0,1,0,1,1,0.408368124,0.5796619460000001,0.6679713279999999,4,"Personality, values, and motivation"
+919,0,0,1,0,1,1,0.356593942,0.6869599899999999,0.636156564,4,What is an institution?
+920,0,0,1,0,1,0,0.238094252,0.857745546,0.468324796,4,Domestic Forests: A New Paradigm for Integrating Local Communities' Forestry into Tropical Forest Science
+921,0,0,1,0,1,1,0.328400908,0.603764388,0.684321124,4,Relational values in evaluations of upstream social outcomes of watershed Payment for Ecosystem Services: a review
+922,0,0,1,0,1,1,0.258485072,0.811027824,0.5250381120000001,4,"Where are commodity crops certified, and what does it mean for conservation and poverty alleviation?"
+923,0,0,1,0,1,0,0.333000038,0.843976606,0.29379626600000003,4,Participatory analysis of groundnut (Arachis hypogaea L.) cropping system and production constraints in Burkina Faso
+924,0,0,1,0,1,1,0.357865368,0.635277802,0.667210986,4,Training Transdisciplinary Educators: Intercultural Learning and Regenerative Practices in Ecuador
+925,0,0,1,0,1,1,0.266801042,0.765954562,0.615606498,4,From “Green Hell” to “Amazonia Legal”: Land use models and the re-imagination of the rainforest as a new development frontier
+926,0,0,1,0,1,1,0.335247878,0.679012138,0.661970212,4,Vivir Bien : a study in alterity
+927,0,0,1,0,1,1,0.261327896,0.803271348,0.5290108740000001,4,"Contested waterscapes: Irrigation and hydropower in the Great Ruaha River Basin, Tanzania"
+928,0,0,1,0,1,1,0.249274524,0.808618592,0.5658207519999999,4,Tracing the Political Life of Kimsacocha: Conflicts over Water and Mining in Ecuador’s Southern Andes
+929,0,0,1,0,1,1,0.29742001599999995,0.70983976,0.648599076,4,Rights of Pachamama: The emergence of an earth jurisprudence in the Americas
+930,0,0,1,0,1,1,0.302448584,0.6713588540000001,0.654166548,4,Economic Poverty and Happiness in Rural Ecuador: the Importance of Buen Vivir (Living Well)
+931,0,0,1,0,1,1,0.32134297600000006,0.643296752,0.684443514,4,"The Sustainable Development Goals viewed through Gross National Happiness, Ubuntu, and Buen Vivir"
+932,0,0,1,0,1,1,0.305114818,0.679262538,0.674834268,4,"The Andean Catch-22: ethnicity, class and resource governance in Bolivia and Ecuador"
+933,0,0,1,0,1,0,0.36618654800000006,0.834913448,0.271745098,4,"On-farm rice diversity and farmers’ preferences for varietal attributes in Ayeyarwady Delta, Myanmar"
+934,0,0,1,0,1,1,0.3778950279999999,0.585430782,0.67989669,4,Building capacities for transformative change towards sustainability: Imagination in Intergovernmental Science-Policy Scenario Processes
+935,0,0,1,0,1,1,0.345857944,0.645418212,0.651366476,4,Community-based Environmental Resource Management Systems for Sustainable Livelihood and Climate Change Adaptation: A Review of Best Practices in Africa
+936,0,0,1,0,1,0,0.33564444,0.8006794819999999,0.48043857599999995,4,"Identidad y espiritualidad maya en la escuela de agricultura ecológica U YITS KA´AN en Maní, Yucatán, Mexico"
+937,0,0,1,0,1,1,0.371049604,0.693952054,0.581723328,4,Do April showers bring May flowers? Knowledge and perceptions of local biodiversity influencing understanding of global environmental change. A presentation of the PIAF project
+938,0,0,1,0,1,1,0.332256038,0.7136357720000001,0.6014397340000001,4,Unexploited opportunities in understanding liveable and biodiverse cities. A review on urban biodiversity perception and valuation
+939,0,0,1,0,1,1,0.46613942,0.5850919680000001,0.6214690700000001,4,Collaborative Governance for Climate Change Adaptation: Mapping citizen-municipality interactions: Collaborative governance for climate change adaptation
+940,0,0,1,0,1,1,0.375645862,0.733340208,0.5746300380000001,4,Extinction of experience: the loss of human-nature interactions
+941,0,0,1,0,1,1,0.341252062,0.732585248,0.5521204660000001,4,"A novel method for fine-scale biodiversity assessment and prediction across diverse urban landscapes reveals social deprivation-related inequalities in private, not public spaces"
+942,0,0,1,0,1,1,0.37342452000000004,0.6101355159999999,0.684828332,4,Wiped Out by the “Greenwave”: Environmental Gentrification and the Paradoxical Politics of Urban Sustainability
+943,0,0,1,0,1,1,0.36371930799999996,0.6875408479999999,0.593944584,4,"A characterization of media representation of biodiversity and implications for public perceptions and environmental policy: the case of Québec, Canada"
+944,0,0,1,0,1,1,0.39468025,0.6100810959999999,0.6572033960000001,4,Nature-based solutions for the contemporary city/Re-naturing the city/Reflections on urban landscape
+945,0,0,1,1,1,0,0.5336027879999999,0.677037384,0.416935756,4,Governing green change_ Ecosystem-based measures for reducing landslide risk in Rio de Janeiro
+946,0,0,1,0,1,1,0.41227237999999994,0.618220604,0.647772834,4,Ecological science and transformation to the sustainable city
+947,0,0,1,0,1,1,0.30313458000000004,0.7245604400000001,0.620413352,4,"Rural landlessness, extended entitlements and inter‐household relations in south Asia: A Bangladesh case"
+948,0,0,1,0,1,1,0.268156514,0.8172581440000002,0.559098152,4,"Working Groups or Wage Labour? Cash-crops, Reciprocity and Money among the Maka of Southeastern Cameroon"
+949,0,0,1,0,1,1,0.277690068,0.77937979,0.5731185740000001,4,"Land, investments and public-private partnerships: what happened to the Beira Agricultural Growth Corridor in Mozambique?"
+950,0,0,1,0,1,1,0.36125873,0.6928707999999999,0.6282865639999999,4,Food sovereignty
+951,0,0,1,0,1,1,0.30769874999999997,0.6648625,0.648028524,4,"Latin American ethnopedology: A vision of its past, present, and future"
+952,0,0,1,0,1,0,0.349834694,0.8511833360000001,0.31231634399999997,4,Can stakeholders agree on how to reduce human–carnivore conflict on Namibian livestock farms? A novel Q-methodology and Delphi exercise
+953,0,0,1,0,1,1,0.35672951,0.636894822,0.673963598,4,Deliberative Quality and Expertise: Uses of Evidence in Citizens’ Juries on Wind Farms
+954,0,0,1,0,1,1,0.302417246,0.6707675140000001,0.657395502,4,National Accounting and the Valuation of Ecosystem Assets and Their Services
+955,0,0,1,0,1,1,0.367960588,0.6645662280000001,0.5634339639999999,4,Mapping ecosystem services for policy support and decision making in the European Union
+956,0,0,1,1,1,0,0.531833242,0.690437602,0.338468224,4,Ensemble distribution models in conservation prioritization: from consensus predictions to consensus reserve networks
+957,0,0,1,0,1,1,0.45576820599999995,0.631298364,0.5909407600000001,4,Practical solutions for bottlenecks in ecosystem services mapping
+958,0,0,1,0,1,1,0.361312144,0.630029524,0.6646409280000001,4,Key Principles of Community-Based Natural Resource Management: A Synthesis and Interpretation of Identified Effective Approaches for Managing the Commons
+959,0,0,1,1,1,1,0.518328292,0.5310198500000001,0.607930236,4,Integrating local and scientific knowledge for environmental management
+960,0,0,1,0,1,1,0.47315261599999997,0.5951124940000001,0.6348523880000001,4,Crafting analytical tools to study institutional change
+961,0,0,1,0,1,1,0.433412002,0.5702463120000001,0.6741307080000001,4,"Knowledge for Governance, Governance of Knowledge: Inclusive Knowledge Management in Collaborative Governance Processes"
+962,0,0,1,0,1,1,0.36697107000000007,0.5982575400000001,0.6787715000000001,4,Working Towards Sustainable Development in the Face of Uncertainty and Incomplete Knowledge
+963,0,0,1,0,1,1,0.404619134,0.587552946,0.676810114,4,Anticipatory governance for social-ecological resilience
+964,0,0,1,0,1,1,0.30625737599999997,0.70896134,0.6616608319999999,4,"Values, images, and principles: What they represent and how they may improve fisheries governance"
+965,0,0,1,0,1,1,0.42280595000000004,0.622363042,0.609702648,4,Managing Change toward Adaptive Water Management through Social Learning
+966,0,0,1,0,1,1,0.388437282,0.593231364,0.6869771539999999,4,How knowledge enables governance: The coproduction of environmental governance capacity
+967,0,0,1,0,1,1,0.41200008599999993,0.560209644,0.688463172,4,Sustainability transformations: a resilience perspective
+968,0,0,1,0,1,1,0.38133764,0.5978839720000001,0.6714577800000001,4,"Sense of Place, Fast and Slow: The Potential Contributions of Affordance Theory to Sense of Place"
+969,0,0,1,0,1,1,0.43050511,0.654047014,0.561032554,4,Coproducing flood risk management through citizen involvement: insights from cross-country comparison in Europe
+970,0,0,1,0,1,1,0.39465622,0.62943903,0.6252487419999999,4,"Adaptation to climate change in urban areas: Climate-greening London, Rotterdam, and Toronto"
+971,0,0,1,0,1,1,0.37184253,0.63416574,0.641466696,4,Planning for multifunctional urban green infrastructures: Promises and challenges
+972,0,0,1,0,1,0,0.35617488399999997,0.8292213260000001,0.398552932,4,"Vegetation in Bangalore’s Slums: Boosting Livelihoods, Well-Being and Social Capital"
+973,0,0,1,0,1,0,0.497395588,0.682353056,0.325444744,4,Beyond green: Broad support for biodiversity in multicultural European cities
+974,0,0,1,0,1,1,0.441866612,0.5756828580000001,0.640520048,4,"Community-based adaptation through ecological design: lessons from Negril, Jamaica"
+975,0,0,1,0,1,0,0.4252357,0.7309852159999999,0.48322216000000007,4,"The perspectives of the urban poor in climate vulnerability assessments – The case of Kota, India"
+976,0,0,1,0,1,1,0.35819662,0.628171576,0.6732333400000001,4,The social production of ecosystem services: A framework for studying environmental justice and ecological complexity in urbanized landscapes
+977,0,0,1,0,1,1,0.409825526,0.5824430900000002,0.6715420599999999,4,"Cities, systems and sustainability: status and perspectives of research on urban transformations"
+978,0,0,1,1,0,0,0.799917078,0.499891678,0.1466075732,4,Wrinkled Graphene Cages as Hosts for High-Capacity Li Metal Anodes Shown by Cryogenic Electron Microscopy
+979,0,0,1,0,1,1,0.321229854,0.80688378,0.557102638,4,What Gives You a Social Licence? An Exploration of the Social Licence to Operate in the Australian Mining Industry
+980,0,0,1,0,1,1,0.31076854,0.7820794440000001,0.516516562,4,"Integrating analyses of local land-use regulations, cultural perceptions and land-use/land cover data for assessing the success of community-based conservation"
+981,0,0,1,0,1,1,0.406488004,0.5672262960000001,0.6709723719999999,4,Postcolonialism and global justice
+982,0,0,1,0,1,0,0.306261014,0.775497392,0.46844916799999997,4,A cost-benefit analysis of climate-smart agriculture options in Southern Africa: Balancing gender and technology
+983,0,0,1,0,1,1,0.351267534,0.64856951,0.65963319,4,Nudge politics: efficacy and ethics
+984,0,0,1,0,1,1,0.39997121199999996,0.604225118,0.66595654,4,Green nudging
+985,0,0,1,0,1,1,0.44058816600000006,0.575625088,0.653836812,4,New Environmental Theories: Toward a Coherent Theory of Environmentally Significant Behavior
+986,0,0,1,0,1,1,0.39713477999999997,0.70782375,0.594635576,4,"Dancing Teachers Into Being With a Garden, or How to Swing or Parkour the Strict Grid of Schooling"
+987,0,0,1,0,1,1,0.324984496,0.6912030659999999,0.652481264,4,The Rise of Socially Responsible Investment Funds: The Paradoxical Role of the Financial Logic
+988,0,0,1,0,1,1,0.275224242,0.734358114,0.6110936839999999,4,The Impact of Payments for Environmental Services on Communal Lands: An Analysis of the Factors Driving Household Land-Use Behavior in Ecuador
+989,0,0,1,0,1,1,0.33210599199999996,0.648588664,0.6503164199999999,4,Mapping Ecosystem Services to Human Well‐being: a toolkit to support integrated landscape management for the SDGs
+990,0,0,1,1,1,1,0.5193541740000001,0.6247433419999999,0.5339819680000001,4,"Teamwork, Soft Skills, and Research Training"
+991,0,0,1,0,1,0,0.31466337,0.84134212,0.379201386,4,Linking Land and Sea through Collaborative Research to Inform Contemporary applications of Traditional Resource Management in Hawai‘i
+992,0,0,1,0,1,1,0.279507424,0.8353037459999999,0.502930128,4,"The banana plant and the moon: Conservation and the Malagasy ethos of life in Masoala, Madagascar"
+993,0,0,1,0,1,0,0.316641364,0.8788224299999999,0.264860824,4,Food Insecurity and the Unsustainable Hunting of Wildlife in a UNESCO World Heritage Site
+994,0,0,1,0,1,1,0.282414722,0.8081469200000001,0.5356274919999999,4,Conservation and Unscripted Development: Proximity to Park Associated with Development and Financial Diversity
+995,0,0,1,0,1,1,0.24582312499999998,0.82335062,0.5694082999999999,4,Tradeoffs in carbon commodification: A political ecology of common property forest governance
+996,0,0,1,0,1,0,0.26016546279999997,0.8525520739999999,0.434889572,4,Solving Brazil's land use puzzle: Increasing production and slowing Amazon deforestation
+997,0,0,1,0,1,0,0.254452392,0.8582672839999999,0.472198822,4,Women as decision makers in community forest management: Evidence from Nepal
+998,0,0,1,0,1,0,0.386783654,0.777120512,0.449002034,4,Las tribulaciones de la Iniciativa Yasuní-ITT
+999,0,0,1,0,1,1,0.393764894,0.689311122,0.593712502,4,"Indigenous mobility traditions, colonialism, and the anthropocene"
+1000,0,0,1,0,1,1,0.253442662,0.8106037840000001,0.585118708,4,"The politics of participation: Negotiating relationships through community forestry in the Maya Biosphere Reserve, Guatemala"
+1001,0,0,1,0,1,0,0.291986706,0.867911504,0.35683181799999997,4,Promoting ecotourism in the buffer zone areas of Nanda Devi Biosphere Reserve: An option to resolve people—policy conflict
+1002,0,0,1,0,1,0,0.29408286400000005,0.845575908,0.379641874,4,Effects of protected area establishment and cash crop price dynamics on land use transitions 1990–2017 in north-eastern Madagascar
+1003,0,0,1,0,1,0,0.268210902,0.8645780700000001,0.38879143000000005,4,"Indigenous and traditional knowledge, sustainable harvest, and the long road ahead to reach the 2020 Global Strategy for Plant Conservation objectives"
+1004,0,0,1,0,1,1,0.3208759,0.728355322,0.523805552,4,Motivational factors influencing farming practices in northern Ghana
+1005,0,0,1,0,1,0,0.278685648,0.854686614,0.37889309000000004,4,A framed field experiment on collective enforcement mechanisms with Ethiopian farmers
+1006,0,0,1,0,1,1,0.36070543,0.67918598,0.6224977039999999,4,Look at me Saving the Planet! The Imitation of Visible Green Behavior and its Impact on the Climate Value-Action Gap
+1007,0,0,1,0,1,1,0.325432306,0.655407324,0.642426908,4,El Buen Vivir como alternativa al desarrollo. Algunas reflexiones económicas y no tan económicas
+1008,0,0,1,0,1,0,0.4913764479999999,0.670408294,0.499062638,4,Who gets to imagine transformative change? Participation and representation in biodiversity assessments
+1009,0,0,1,0,1,1,0.33393558399999995,0.7369970880000001,0.619657548,4,Bypassing Globalization: Barter markets as a new indigenous economy in Peru
+1010,0,0,1,1,1,0,0.530559524,0.701900054,0.17084202799999998,4,The Soy Moratorium in the Amazon Biome Monitored by Remote Sensing Images
+1011,0,0,1,0,1,1,0.38453179400000004,0.694578166,0.572626536,4,Scenario Planning: a Tool for Conservation in an Uncertain World
+1012,0,0,1,0,1,1,0.39880793,0.7431725800000001,0.511086568,4,Educare and Educere: Is a Balance Possible in the Educational System?
+1013,0,0,1,0,1,1,0.34441156399999995,0.608807282,0.6913217540000001,4,The Monetized Economy Versus Care and the Environment: Degrowth Perspectives On Reconciling an Antagonism
+1014,0,0,1,0,1,0,0.26772862799999997,0.8107045020000001,0.464883112,4,The impact of swidden decline on livelihoods and ecosystem services in Southeast Asia: A review of the evidence from 1990 to 2015
+1015,0,0,1,0,1,1,0.327869194,0.6817597799999999,0.6497672719999998,4,Suma qamaña in Bolivia: Indigenous Understandings of Well-being and Their Contribution to a Post-Neoliberal Paradigm
+1016,0,0,1,0,1,1,0.337017896,0.780467716,0.533438354,4,"Creating legal rights for rivers: lessons from Australia, New Zealand, and India"
+1017,0,0,1,1,0,0,0.9038539140000001,0.274349214,0.09650808279999999,4,"One Health, emerging infectious diseases and wildlife: two decades of progress?"
+1018,0,0,1,0,1,1,0.317790484,0.7599836520000001,0.53047126,4,"REDD+ and Biodiversity Conservation: A Review of the Biodiversity Goals, Monitoring Methods, and Impacts of 80 REDD+ Projects: Biodiversity conservation in REDD+ projects"
+1019,0,0,1,0,1,1,0.3399782,0.617893744,0.69476044,4,"The Circular Economy and human needs satisfaction: Promising the radical, delivering the familiar"
+1020,0,0,1,0,1,1,0.31107494199999997,0.690846946,0.646186466,4,An urgent call for circular economy advocates to acknowledge its limitations in conserving biodiversity
+1021,0,0,1,0,1,1,0.354320638,0.640930348,0.6314381539999999,4,Measuring what matters and guiding policy: An evaluation of the Genuine Progress Indicator
+1022,0,0,1,0,1,1,0.367441544,0.613949496,0.67675095,4,The transformative potential of the Sustainable Development Goals (SDGs)
+1023,0,0,1,0,1,1,0.38234262399999996,0.6771959320000001,0.5815585299999999,4,Can existing assessment tools be used to track equity in protected area management under Aichi Target 11?
+1024,0,0,1,0,1,1,0.26634840000000004,0.7459224860000001,0.616652676,4,Enhancing synergies in nature’s contributions to people in socio-ecological production landscapes and seascapes: lessons learnt from ten site-based projects in biodiversity hotspots
+1025,0,0,1,0,1,0,0.29048807200000004,0.8135969340000001,0.49613053,4,Environmental accounting models and nature conservation strategies
+1026,0,0,1,0,1,1,0.36014368399999996,0.6186755700000001,0.67277334,4,Human behavior and sustainability
+1027,0,0,1,0,1,1,0.336295468,0.6711962459999999,0.649123296,4,Turbulent Worlds
+1028,0,0,1,0,1,1,0.450262808,0.5652752080000001,0.651404208,4,Social Norms and Pro-environmental Behavior: A Review of the Evidence
+1029,0,0,1,0,1,1,0.39768929,0.676542118,0.5771748320000001,4,Technological transitions as evolutionary reconfiguration processes: A multi-level perspective and a case-study
+1030,0,0,1,0,1,1,0.370018572,0.6047699699999999,0.6662941200000001,4,The role of social values in the management of ecological systems
+1031,0,0,1,0,1,1,0.367071006,0.720167692,0.563416972,4,Identifying and prioritizing human behaviors that benefit biodiversity
+1032,0,0,1,0,1,1,0.439540296,0.595504866,0.617136462,4,Framework for scenario development in LCA
+1033,0,1,1,0,1,1,0.40345523400000005,0.659599254,0.604534224,4,Combining participative backcasting and exploratory scenario development: Experiences from the SCENES project
+1034,0,0,1,0,1,1,0.441016006,0.57757965,0.633702628,4,Participatory scenario development for environmental management: A methodological framework illustrated with experience from the UK uplands
+1035,0,0,1,0,1,1,0.44526187000000006,0.601489136,0.6178337079999999,4,Exploring the usefulness of scenario archetypes in science-policy processes: experience across IPBES assessments
+1036,0,0,1,0,1,1,0.34034566600000005,0.646598006,0.6524008099999999,4,"Distant Interactions, Power, and Environmental Justice in Protected Area Governance: A Telecoupling Perspective"
+1037,0,0,1,1,1,0,0.525529562,0.78206446,0.238689515,4,Farmer's knowledge and use of soil fauna in agriculture: a worldwide review
+1038,0,0,1,0,1,1,0.482043318,0.5542850899999999,0.6298379,4,Five principles for the practice of knowledge exchange in environmental management
+1039,0,0,1,0,1,1,0.42746630999999996,0.5832957480000001,0.645492452,4,The Adaptive Capacity Wheel: A method to assess the inherent characteristics of institutions to enable the adaptive capacity of society
+1040,0,0,1,1,1,0,0.538718146,0.626736116,0.461341742,4,Contextualizing social vulnerability: Findings from case studies across Europe
+1041,0,0,1,0,1,1,0.3907929,0.619423658,0.6677264139999999,4,An Anthropology of Knowledge
+1042,0,0,1,0,1,1,0.401751314,0.5711279200000001,0.681487204,4,Leadership for Social Justice and Equity: Weaving a Transformative Framework and Pedagogy
+1043,0,0,1,0,1,1,0.39429192399999996,0.6430395040000001,0.637760188,4,Self-determination theory and work motivation
+1044,0,0,1,0,1,1,0.303795234,0.7148320260000001,0.6392916719999999,4,Exploring criteria for transformative policy capacity in the context of South Africa’s biodiversity economy
+1045,0,0,1,0,1,1,0.42874534200000003,0.568188986,0.6592731279999999,4,Institutionalising reflexivity? Transformative learning and the Intergovernmental science-policy Platform on Biodiversity and Ecosystem Services (IPBES)
+1046,0,0,1,0,1,1,0.306610774,0.6759523220000001,0.657813156,4,"Cutting nature to fit: Urbanization, neoliberalism and biodiversity offsetting in England"
+1047,0,0,1,0,1,1,0.42675219799999997,0.702154424,0.527762526,4,A decision analysis framework for stakeholder involvement and learning in groundwater management
+1048,0,0,1,0,1,0,0.294815782,0.842523074,0.38841557800000004,4,"An analysis of trade-offs between multiple ecosystem services and stakeholders linked to land use and water quality management in the Great Barrier Reef, Australia"
+1049,0,0,1,0,1,1,0.319867264,0.6386315639999999,0.670285606,4,Payments for ecosystem services: From local to global
+1050,0,0,1,0,1,1,0.28686649399999997,0.686907688,0.6561772400000001,4,Shared wealth or nobody's land? The worth of natural capital and ecosystem services
+1051,0,0,1,0,1,1,0.3149615740000001,0.74577379,0.571341174,4,Diffusion of global sustainability standards: the institutional fit of the ASC-Shrimp Standard in Indonesia
+1052,0,0,1,0,1,1,0.31371869399999996,0.66429557,0.6594779880000001,4,"Integrated natural resource management as pathway to poverty reduction: Innovating practices, institutions and policies"
+1053,0,0,1,0,1,1,0.366586182,0.6613425960000001,0.631154586,4,"Salience, Credibility, Legitimacy and Boundaries: Linking Research, Assessment and Decision Making"
+1054,0,0,1,0,1,0,0.27077859800000004,0.8367945139999999,0.472809546,4,The Search for Value and Meaning in the Cocoa Supply Chain in Costa Rica
+1055,0,0,1,0,1,1,0.269745278,0.82161942,0.502564876,4,From governance to government: The strengthened role of state bureaucracies in forest and agricultural certification
+1056,0,0,1,0,1,1,0.277342046,0.80928004,0.518524434,4,Smallholders do not Eat Certificates
+1057,0,0,1,0,1,1,0.284611546,0.802196568,0.5366292859999999,4,"What is a land grab? Exploring green grabs, conservation, and private protected areas in southern Chile"
+1058,0,0,1,0,1,1,0.338470024,0.6243173599999999,0.674823662,4,Beyond Market Logics: Payments for Ecosystem Services as Alternative Development Practices in the Global South
+1059,0,0,1,0,1,1,0.358725924,0.737474256,0.54022254,4,Is Investor–State Dispute Settlement (ISDS) Superior to Litigation Before Domestic Courts?: An EU View on Bilateral Trade Agreements
+1060,0,0,1,0,1,0,0.298810476,0.8554774320000001,0.42678220600000005,4,"Behind the life cycle of coal: Socio-environmental liabilities of coal mining in Cesar, Colombia"
+1061,0,0,1,0,1,1,0.31157111200000004,0.6942917919999999,0.6514970379999999,4,From gross domestic product to wellbeing: How alternative indicators can help connect the new economy with the Sustainable Development Goals
+1062,0,0,1,0,1,1,0.40064974,0.643846004,0.641838342,4,"GRASP agents: social first, intelligent later"
+1063,0,0,1,0,1,0,0.358710706,0.833707568,0.391385904,4,Threats to land and environmental defenders in nature’s last strongholds
+1064,0,0,1,0,1,1,0.305958028,0.742021424,0.591763748,4,Simple Incentives and Group Dependence for Successful Payments for Ecosystem Services Programs: Evidence from an Experimental Game in Rural Lao PDR
+1065,0,0,1,0,1,0,0.27555256,0.8267942300000002,0.46091375,4,Conserving Biodiversity Through Certification of Tropical Agroforestry Crops at Local and Landscape Scales: Conserving biodiversity by crop certification
+1066,0,0,1,0,1,1,0.39674527200000004,0.681742414,0.5206279140000001,4,"Comparing approaches to spatially explicit ecosystem service modeling: A case study from the San Pedro River, Arizona"
+1067,0,0,1,0,1,0,0.33499663599999996,0.8097094180000001,0.46917680199999995,4,Multi‐criteria decision analysis for nature conservation: A review of 20 years of applications
+1068,0,0,1,0,1,1,0.3890138,0.6082958059999999,0.6714726080000001,4,Mind the Gap: Why do people act environmentally and what are the barriers to pro-environmental behavior?
+1069,0,0,1,0,1,1,0.34856391800000003,0.6130048159999999,0.691582636,4,"Environmental Ethics: Driving Factors Beneath Behavior, Discourse and Decision-Making"
+1070,0,0,1,0,1,1,0.39446843600000003,0.577811136,0.684547866,4,"Grounding IPBES experts’ views on the multiple values of nature in epistemology, knowledge and collaborative science"
+1071,0,0,1,0,1,1,0.367426136,0.5913308580000001,0.68979945,4,Capitalism in sustainability transitions research: Time for a critical turn?
+1072,0,0,1,0,1,1,0.34597643600000005,0.609779034,0.692903012,4,"Critique and transformation: On the hypothetical nature of ecosystem service value and its neo-Marxist, liberal and pragmatist criticisms"
+1073,0,0,1,0,1,0,0.260183038,0.8442569600000001,0.497228516,4,"How Societal Values Determine the Local Use of Forest Resources—Findings from the Rural Community Kegong (Northwest Yunnan, China)"
+1074,0,0,1,0,1,1,0.37094819,0.607589454,0.68316865,4,Understanding the role of values in institutional change: the case of the energy transition
+1075,0,0,1,0,1,1,0.275497612,0.8212557659999999,0.522153224,4,"Land Ethics from the Borneo Tropical Rain Forests in Sarawak, Malaysia: An Empirical and Conceptual Analysis"
+1076,0,0,1,0,1,0,0.49371329799999997,0.689967286,0.23997174100000002,4,"An introduction to ‘other effective area-based conservation measures’ under Aichi Target 11 of the Convention on Biological Diversity: Origin, interpretation and emerging ocean issues"
+1077,0,0,1,0,1,1,0.34184401799999997,0.662414534,0.661868334,4,The moral mechanism of counter accounts: The case of industrial animal production
+1078,0,0,1,0,1,1,0.33268324,0.7138342200000001,0.540947394,4,Regional engagement and spatial modelling for natural resource management planning
+1079,0,0,1,0,1,1,0.40209022400000005,0.595646382,0.663304506,4,Participatory scenario planning for developing innovation in community adaptation responses: three contrasting examples from Latin America
+1080,0,0,1,0,1,1,0.42054943599999994,0.661688854,0.6250986860000001,4,"Restoring our senses, restoring the Earth. Fostering imaginative capacities through the arts for envisioning climate transformations"
+1081,0,0,1,0,1,1,0.263123804,0.8301800800000001,0.53411287,4,Offsetting Benefits? Analyzing Access to Forest Carbon
+1082,0,0,1,0,1,1,0.35159577999999997,0.778961024,0.5193806619999999,4,Kijiikwewin aji: Sweetgrass stories with traditional Indigenous women in northern Ontario
+1083,0,0,1,0,1,1,0.304852256,0.675969946,0.661220856,4,Conservationists' perspectives on poverty: An empirical study
+1084,0,0,1,0,1,0,0.40761386,0.7575848940000001,0.48961543800000007,4,Biodiversity Conservation and the Eradication of Poverty
+1085,0,0,1,1,0,0,0.8757197339999999,0.431383424,0.0761750564,4,Outbreaks of Vector-Borne and Zoonotic Diseases Are Associated With Changes in Forest Cover and Oil Palm Expansion at Global Scale
+1086,0,0,1,0,1,1,0.28678446599999996,0.69724202,0.628320342,4,"Stewardship of Natural Resources: Definition, Ethical and Practical Aspects"
+1087,0,0,1,0,1,1,0.368700926,0.684074324,0.64301388,4,"Infantilization, ubuntu and teko porã: general elements for education and ethics afroperspectivistas"
+1088,0,0,1,0,1,1,0.31782321799999996,0.729584478,0.596257722,4,"Environmental Taxation, Inequality and Engel’s Law: The Double Dividend of Redistribution"
+1089,0,0,1,0,1,0,0.35693231000000003,0.7458552500000001,0.47906627999999996,4,Biodiversity conservation in a post-COVID-19 economy
+1090,0,0,1,0,1,1,0.33224579200000004,0.66600316,0.663971586,4,"Indigenous Autonomy, Community-Based Research, and Development aid: Sumaq kawsay in three epistemic scenarios"
+1091,0,0,1,0,1,0,0.46245692399999994,0.8142084,0.241759274,4,Challenges to and opportunities for biodiversity science–policy interfaces
+1092,0,0,1,0,1,1,0.35838902399999994,0.632450882,0.673751356,4,Culture and the Independent Self: Obstacles to environmental sustainability?
+1093,0,0,1,0,1,1,0.39560456000000005,0.6083755479999999,0.66498483,4,"Weaving Indigenous science, protocols and sustainability science"
+1094,0,0,1,0,1,0,0.30403881200000005,0.8382390940000001,0.448078312,4,"How Circular is the Global Economy?: An Assessment of Material Flows, Waste Production, and Recycling in the European Union and the World in 2005"
+1095,0,0,1,0,1,1,0.357974334,0.6119919059999999,0.6868801440000001,4,Social Provisioning as a Starting Point for Feminist Economics
+1096,0,0,1,0,1,1,0.38446252999999997,0.670838328,0.613329836,4,Physical and Psychological Factors in Sense of Community: New Urbanist Kentlands and Nearby Orchard Village
+1097,0,0,1,0,1,1,0.392215972,0.6580401640000001,0.62604252,4,"Settler Colonialism, Ecology, and Environmental Injustice"
+1098,0,0,1,0,1,1,0.40010676199999995,0.563232258,0.69018659,4,Deliberative Ecological Economics for Sustainability Governance
+1099,0,0,1,0,1,1,0.357565566,0.678248046,0.6372720359999999,4,The impact of religious faith on attitudes to environmental issues and Carbon Capture and Storage (CCS) technologies: A mixed methods study
+1100,0,0,1,0,1,1,0.33152319199999997,0.68755632,0.6726579020000001,4,Ubuntu is Not Only about the Human! An Analysis of the Role of African Philosophy and Ethics in Environment Management
+1101,0,0,1,0,1,1,0.440213184,0.586102798,0.652892714,4,A Critical Reading of Ecocentrism and Its Meta-Scientific Use of Ecology: Instrumental Versus Emancipatory Approaches in Environmental Education and Ecology Education
+1102,0,0,1,0,1,1,0.38897046999999996,0.570530214,0.699098798,4,"Stewardship, care and relational values"
+1103,0,0,1,0,1,0,0.26637786,0.863403552,0.40906351999999996,4,How Environmental Decline Restructures Indigenous Gender Practices: What Happens to Karuk Masculinity When There Are No Fish?
+1104,0,0,1,0,1,1,0.31996463999999997,0.6781137320000001,0.6792457040000001,4,"Between Pachamama and Mother Earth: Gender, Political Ontology and the Rights of Nature in Contemporary Bolivia"
+1105,0,0,1,0,1,1,0.378083544,0.6107421359999999,0.684493336,4,"Ubuntu, public policy ethics and tensions in South Africa's foreign policy"
+1106,0,0,1,0,1,1,0.36197408,0.614869034,0.668144922,4,Notes from the field: Lessons learned from using ecosystem service approaches to inform real-world decisions
+1107,0,0,1,0,1,1,0.298915394,0.7235985840000001,0.6027276720000001,4,Using gross ecosystem product (GEP) to value nature in decision making
+1108,0,0,1,0,1,0,0.48811208199999995,0.783172192,0.28026724000000003,4,Linking Management Effectiveness Indicators to Observed Effects of Protected Areas on Fire Occurrence in the Amazon Rainforest: Management Effectiveness and Fire
+1109,0,0,1,0,1,1,0.28800924199999994,0.7829775160000001,0.5997969280000001,4,Staking claims and shaking hands: Impact and benefit agreements as a technology of government in the mining sector
+1110,0,0,1,1,1,0,0.583064912,0.753980096,0.1784230492,4,"Variability of the useful life of reservoirs in tropical locations: A case study from the Burdekin Falls Dam, Australia"
+1111,0,0,1,0,1,1,0.341856922,0.661964616,0.617576842,4,Payment for Ecosystem Services (PES) in Latin America: Analysing the performance of 40 case studies
+1112,0,0,1,0,1,1,0.266056592,0.812006162,0.554368854,4,The Place of Community Forest Management in the REDD+ Landscape
+1113,0,1,1,0,1,1,0.42612843999999994,0.562412312,0.669401082,4,Participatory scenario planning in place-based social-ecological research: insights and experiences from 23 case studies
+1114,0,0,1,0,1,1,0.349309274,0.6298329060000001,0.662976048,4,Disentangling trade-offs and synergies around ecosystem services with the influence network framework: illustration from a consultative process over the French Alps
+1115,0,0,1,0,1,0,0.49117134799999995,0.676733202,0.46347661999999995,4,Remote sensing of ecosystem services: A systematic review
+1116,0,0,1,0,1,1,0.36347316399999996,0.622592938,0.646153808,4,"A Quantitative Review of Urban Ecosystem Service Assessments: Concepts, Models, and Implementation"
+1117,0,0,1,0,1,1,0.35097805,0.7673367260000001,0.51627469,4,Developing China’s Ecological Redline Policy using ecosystem services assessments for land use planning
+1118,0,0,1,0,1,0,0.306291748,0.7906023679999999,0.4815704,4,Bringing Ecosystem Services into Economic Decision-Making: Land Use in the United Kingdom
+1119,0,0,1,0,1,1,0.416730886,0.6083904019999999,0.6567994520000001,4,Can You Hear us Now? Voices from the Margin: Using Indigenous Methodologies in Geographic Research
+1120,0,0,1,0,1,0,0.30858202199999996,0.862476372,0.32493174,4,Using Social Media to Measure the Contribution of Red List Species to the Nature-Based Tourism Potential of African Protected Areas
+1121,0,0,1,0,1,1,0.289338178,0.764038452,0.573179706,4,Privatizing the commons: impact on ecosystem services in Bangalore’s lakes
+1122,0,0,1,0,1,1,0.316758796,0.6570263900000001,0.663089726,4,Integrating non-monetary and monetary valuation methods – SoftGIS and hedonic pricing
+1123,0,0,1,0,1,0,0.486889564,0.8321356999999999,0.21459408600000002,4,Have we neglected the societal importance of sand dunes? An ecosystem services perspective
+1124,0,1,1,0,1,1,0.32365490399999997,0.6227542660000001,0.69149064,4,What matters and why? Ecosystem services and their bundled qualities
+1125,0,0,1,0,1,1,0.38379353,0.672606208,0.61921203,4,Cultural ecosystem services as revealed through short stories from residents of the Swabian Alb (Germany)
+1126,0,0,1,0,1,1,0.375888052,0.62119125,0.646003816,4,Evaluation of cultural ecosystem services: A review of methods
+1127,0,0,1,1,1,0,0.522117984,0.759370914,0.20122175800000003,4,"The total economic value of threatened, endangered and rare species: An updated meta-analysis"
+1128,0,0,1,0,1,1,0.33625252799999994,0.6701915439999999,0.617600662,4,Identifying the scope effect on a meta-analysis of biodiversity valuation studies
+1129,0,0,1,0,1,1,0.334997914,0.671931084,0.618385304,4,Valuing non-market valuation studies using meta-analysis: A demonstration using estimates of willingness-to-pay for water quality improvements
+1130,0,0,1,0,1,1,0.369501734,0.637849888,0.637597576,4,Contingent Valuation: Is Some Number Better than No Number?
+1131,0,0,1,0,1,1,0.342689674,0.6290888299999999,0.653523564,4,Contingent Valuation: Controversies and Evidence
+1132,0,0,1,0,1,1,0.32931379400000005,0.693217472,0.641693418,4,"Social Norms, Morals and Self-interest as Determinants of Pro-environment Behaviours: The Case of Household Recycling"
+1133,0,0,1,0,1,1,0.327096206,0.71370208,0.62262318,4,Meaningful and efficient? Enduring challenges to Aboriginal participation in environmental assessment
+1134,0,0,1,0,1,1,0.445000116,0.65321331,0.607822754,4,Judging interpretations: But is it rigorous? trustworthiness and authenticity in naturalistic evaluation
+1135,0,0,1,0,1,1,0.332551314,0.698949732,0.618182312,4,Behavioural factors affecting the adoption of sustainable farming practices: a policy-oriented review
+1136,0,0,1,0,1,0,0.30219972,0.819428308,0.42726801000000003,4,Benefits of biodiversity enhancement of nature-oriented silviculture: Evidence from two choice experiments in Germany
+1137,0,0,1,0,1,1,0.38384475,0.6293326739999999,0.670981278,4,Gendered Geographies of Environmental Injustice
+1138,0,0,1,0,1,1,0.32034968799999997,0.663828416,0.67205066,4,Ecosystem services or services to ecosystems? Valuing cultivation and reciprocal relationships between humans and ecosystems
+1139,0,0,1,0,1,1,0.367752626,0.593655794,0.68231536,4,Exploring empirical typologies of human-nature relationships and linkages to the ecosystem services concept
+1140,0,0,1,1,1,1,0.510740852,0.5750969020000001,0.573029588,4,A formal framework for scenario development in support of environmental decision-making
+1141,0,0,1,0,1,1,0.40522220400000003,0.5954287980000001,0.6875058279999999,4,Multiple conceptualizations of nature are key to inclusivity and legitimacy in global environmental governance
+1142,0,0,1,0,1,1,0.46037927399999995,0.590238724,0.637523784,4,Two Concepts of Epistemic Injustice
+1143,0,0,1,0,1,1,0.44089815000000004,0.5611922220000001,0.6551588180000001,4,The Psychology of Worldviews
+1144,0,0,1,0,1,0,0.32207127,0.8015153680000001,0.399866614,4,Sharing local ecological knowledge as a human adaptation strategy to arid environments: Evidence from an ethnobotany survey in Morocco
+1145,0,0,1,0,1,1,0.3345685420000001,0.627274396,0.6881222,4,Ecosystem services and beyond: Using multiple metaphors to understand human–environment relationships
+1146,0,1,1,0,1,1,0.376865342,0.664995614,0.60216555,4,The Intersections of Biological Diversity and Cultural Diversity:Towards Integration
+1147,0,0,1,0,1,0,0.481778586,0.787439164,0.24661871400000002,4,Language extinction triggers the loss of unique medicinal knowledge
+1148,0,0,1,0,1,1,0.415043938,0.666051582,0.604132874,4,Mental health benefits of interactions with nature in children and teenagers: a systematic review
+1149,0,0,1,0,1,1,0.393808998,0.6201071579999999,0.652353328,4,Public Management as Interagency Cooperation: Testing Epistemic Community Theory at the Domestic Level
+1150,0,0,1,1,1,0,0.5967245480000001,0.548647186,0.46364903599999996,4,A scoping review of scoping reviews: advancing the approach and enhancing the consistency
+1151,0,0,1,0,1,0,0.364347162,0.84196259,0.25987669,4,"Land occupation and transformation impacts of soybean production in Southern Amazonia, Brazil"
+1152,0,0,1,0,1,1,0.325118104,0.6473382240000001,0.6688367339999999,4,Compensation and Rewards for Environmental Services in the Developing World: Framing Pan-Tropical Analysis and Comparison
+1153,0,0,1,0,1,0,0.37359696,0.835830226,0.32164443200000004,4,Pyrogeography and the Global Quest for Sustainable Fire Management
+1154,0,0,1,0,1,1,0.479475138,0.6126541379999999,0.582447516,4,Leveraging impact assessment for satisfactory project outcomes: benefits of early planning and participatory decision-making
+1155,0,0,1,0,1,1,0.389302582,0.56458373,0.680131534,4,Sustainability assessment: the state of the art
+1156,0,0,1,1,1,0,0.580214708,0.7943786,0.16433603280000003,4,"Conservation of the Ethiopian church forests: Threats, opportunities and implications for their management"
+1157,0,0,1,0,1,0,0.448838864,0.747865168,0.415432068,4,A classification of threats to traditional ecological knowledge and conservation responses
+1158,0,1,1,0,1,1,0.314152122,0.72923861,0.5813459959999999,4,Rediscovery of traditional ecological knowledge as adaptive management
+1159,0,0,1,0,1,1,0.303237184,0.754799388,0.566643032,4,Considering the needs of indigenous and local populations in conservation programs: Needs of Local Populations
+1160,0,0,1,0,1,1,0.37586445199999996,0.629484636,0.6677143299999999,4,More is more: Scaling political ecology within limits to growth
+1161,0,0,1,0,1,0,0.338389448,0.845785032,0.344473468,4,Local benefits from community forests in the middle hills of Nepal
+1162,0,0,1,0,1,0,0.496297926,0.664213786,0.311347932,4,Towards Decolonisation of Australia's Protected Area Management: the Nantawarrina Indigenous Protected Area Experience
+1163,0,0,1,0,1,0,0.287305056,0.83909716,0.45589881400000004,4,From Management to Stewardship: Viewing Forests As Complex Adaptive Systems in an Uncertain World: From management to stewardship
+1164,0,0,1,0,1,1,0.29952146199999996,0.755672978,0.618777364,4,Indigenous Beliefs and Environmental Stewardship: A Rural Ghana Experience
+1165,0,0,1,0,1,1,0.414144628,0.578660808,0.6577264,4,A comprehensive model of the psychology of environmental behaviour—A meta-analysis
+1166,0,1,1,0,1,1,0.415323534,0.6210766779999999,0.623890822,4,The roads ahead: Narratives for shared socioeconomic pathways describing world futures in the 21st century
+1167,0,0,1,0,1,1,0.41897375800000003,0.683083214,0.582186592,4,Developing interventions to change recycling behaviors: A case study of applying behavioral science
+1168,0,0,1,0,1,1,0.365844736,0.626659168,0.65372232,4,Insights from psychology about the design and implementation of energy interventions using the Behaviour Change Wheel
+1169,0,0,1,0,1,1,0.36224961,0.660357786,0.633158904,4,Values Stability and Change in Adulthood: A 3-Year Longitudinal Study of Rank-Order Stability and Mean-Level Differences
+1170,0,0,1,1,1,0,0.511191806,0.640176954,0.4677892132,4,Planetary boundaries: Guiding human development on a changing planet
+1171,0,0,1,0,1,1,0.41354719199999995,0.661419538,0.592611886,4,Mortality Salience Increases Adherence to Salient Norms and Values
+1172,0,0,1,0,1,1,0.41630788399999996,0.580491686,0.640229958,4,"Changing, Priming, and Acting on Values: Effects via Motivational Relations in a Circular Model"
+1173,0,0,1,0,1,1,0.37031723000000005,0.574299588,0.687107542,4,Applying integrated valuation of ecosystem services in Latin America: Insights from 21 case studies
+1174,0,0,1,0,1,0,0.26958285800000004,0.8593306519999999,0.42029488,4,Economic Efficiency and Incentives for Change within Namibia's Community Wildlife Use Initiatives
+1175,0,0,1,1,1,0,0.546386068,0.670321896,0.42765534,4,Process for integrating local and indigenous knowledge with science for hydro-meteorological disaster risk reduction and climate change adaptation in coastal and small island communities
+1176,0,1,1,0,1,0,0.31910275,0.869055054,0.29183212000000003,4,Ethnoecology of the interchange of wild and weedy plants and mushrooms in Phurépecha markets of Mexico: economic motives of biotic resources management
