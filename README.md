@@ -89,7 +89,7 @@ IPBES-Classifier/
 
 1. Clone the repository:
 ```bash
-git clone <repository-url>
+git clone https://github.com/CTGN/IPBES-Classifier.git
 cd IPBES-Classifier
 ```
 
