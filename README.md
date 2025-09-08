@@ -54,7 +54,7 @@ uv run python -c "import torch; print('Torch OK')"
 
 ## Get data and model weights (public S3)
 
-If you want to run evaluation or inference right away, download the prepared dataset and final checkpoints from the public S3 bucket. Replace `<your-bucket>` with the actual bucket name.
+If you want to run evaluation or inference right away, you will be able to download the prepared dataset and final checkpoints from the public S3 bucket when it will be ready. `<bucket>` will be the actual bucket name when that one will be ready.
 
 Prerequisite (Linux):
 ```bash
@@ -68,12 +68,12 @@ unzip -q awscliv2.zip && sudo ./aws/install
 
 Download the dataset into `IPBES-Classifier/data`:
 ```bash
-aws s3 sync s3://<your-bucket>/dataset ./data --no-sign-request
+aws s3 sync s3://<bucket>/dataset ./data --no-sign-request
 ```
 
 Download final model checkpoints into `IPBES-Classifier/results/final_model`:
 ```bash
-aws s3 sync s3://<your-bucket>/checkpoints ./results/final_model --no-sign-request
+aws s3 sync s3://<bucket>/checkpoints ./results/final_model --no-sign-request
 ```
 
 Expected structure after download:
@@ -90,8 +90,6 @@ results/
 └── final_model/
     └── best_model_cross_val_<loss>_<model>_fold-<k>/
 ```
-
-Tip: If the bucket is public, `--no-sign-request` avoids requiring AWS credentials.
 
 ## Build the dataset yourself (optional)
 
