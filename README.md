@@ -56,9 +56,14 @@ uv run python -c "import torch; print('Torch OK')"
 
 If you want to run evaluation or inference right away, download the prepared dataset and final checkpoints from the public S3 bucket. Replace `<your-bucket>` with the actual bucket name.
 
-Prerequisite (macOS):
+Prerequisite (Linux):
 ```bash
-brew install awscli
+# Option A (Debian/Ubuntu)
+sudo apt-get update && sudo apt-get install -y awscli
+
+# Option B (any distro, AWS CLI v2)
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+unzip -q awscliv2.zip && sudo ./aws/install
 ```
 
 Download the dataset into `IPBES-Classifier/data`:
@@ -150,7 +155,7 @@ End-to-end (preprocess → HPO → train → ensemble) for a set of models:
 - `results/final_model/best_model_cross_val_<...>/`: Saved Hugging Face checkpoints for the best model per fold.
 - `plots/`: Training/eval curves and HPO visuals.
 
-## Inference with a saved checkpoint
+## Inference with a saved checkpoint (The final inference pipeline is not ready yet)
 
 You can load a saved checkpoint directory from `results/final_model/` with Hugging Face Transformers:
 
@@ -181,15 +186,6 @@ print(scores)
 Optional environment variables you might care about:
 ```bash
 export PYALEX_EMAIL=your-email@domain.com   # only relevant if you use data fetching utils
-export CUDA_VISIBLE_DEVICES=0               # pick GPU
+
 ```
 
-## Notes and tips
-
-- Batch size is fixed to 100 in code paths for stability across GPUs.
-- Metrics commonly used: `eval_AP`, `eval_kappa`, etc. Pick one via `--hpo_metric` and `-bm`.
-- Model names can be any HF identifier (e.g., `google-bert/bert-base-uncased`, `dmis-lab/biobert-v1.1`, `FacebookAI/roberta-base`).
-
-## License
-
-See repository license (if provided) or contact the authors.
