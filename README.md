@@ -52,44 +52,29 @@ uv sync
 uv run python -c "import torch; print('Torch OK')"
 ```
 
-## Get data and model weights (public S3)
+## Download Dataset and Model Weights (Linux)
 
-If you want to run evaluation or inference right away, you will be able to download the prepared dataset and final checkpoints from the public S3 bucket when it will be ready. `<bucket>` will be the actual bucket name when that one will be ready.
+The dataset and pretrained model weights are publicly hosted in an S3 bucket: [ipbes-classifier (public)](https://ipbes-classifier.s3.text-analytics.ch/).
 
-Prerequisite (Linux):
+Use `wget` to download the contents into the correct project folders:
 ```bash
-# Option A (Debian/Ubuntu)
-sudo apt-get update && sudo apt-get install -y awscli
+# From project root
+mkdir -p data results/final_model
 
-# Option B (any distro, AWS CLI v2)
-curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
-unzip -q awscliv2.zip && sudo ./aws/install
+# Download model checkpoints → results/final_model/
+wget -r -np -nH --cut-dirs=1 -R "index.html*" -e robots=off \
+  -P results/final_model \
+  https://ipbes-classifier.s3.text-analytics.ch/checkpoints/
+
+# Download dataset → data/
+wget -r -np -nH --cut-dirs=1 -R "index.html*" -e robots=off \
+  -P data \
+  https://ipbes-classifier.s3.text-analytics.ch/dataset/
 ```
 
-Download the dataset into `IPBES-Classifier/data`:
-```bash
-aws s3 sync s3://<bucket>/dataset ./data --no-sign-request
-```
-
-Download final model checkpoints into `IPBES-Classifier/results/final_model`:
-```bash
-aws s3 sync s3://<bucket>/checkpoints ./results/final_model --no-sign-request
-```
-
-Expected structure after download:
-```
-data/
-├── cleaned_dataset.csv
-└── folds/
-    ├── train0_run-0.csv
-    ├── dev0_run-0.csv
-    ├── test0_run-0.csv
-    └── ... (for each fold/run)
-
-results/
-└── final_model/
-    └── best_model_cross_val_<loss>_<model>_fold-<k>/
-```
+After running the above commands:
+- `results/final_model/` contains the cross-validation checkpoints
+- `data/` contains the dataset files
 
 ## Build the dataset yourself (optional)
 
