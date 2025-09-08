@@ -98,9 +98,9 @@ cd IPBES-Classifier
 uv sync
 ```
 
-3. Set up environment:
+3. Verify installation:
 ```bash
-export IPBES_ENV=development
+uv run python -c "import torch; print('Installation successful!')"
 ```
 
 ## Usage
@@ -134,7 +134,7 @@ uv run src/models/ipbes/train.py \
 ### Running the Full Pipeline
 
 ```bash
-# Launch the complete IPBES pipeline
+# Launch the complete IPBES pipeline from pre-processing to testing
 ./scripts/launch_ipbes_pipeline.sh
 ```
 
@@ -152,59 +152,4 @@ uv run src/data_pipeline/ipbes/preprocess_ipbes.py \
 
 ## Model Performance
 
-Current performance metrics (SVM baseline):
-
-- **Overall Accuracy**: ~91.4%
-- **F1 Scores**:
-  - IAS: ~77.5%
-  - SUA: ~56.3%
-  - VA: ~56.0%
-- **Precision**: 80-90%
-- **Recall**: 40-68%
-
-## Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Update configuration files if adding new paths
-5. Test your changes
-6. Submit a pull request
-
-## Configuration Best Practices
-
-- **Never hardcode paths** - use the configuration system
-- **Use relative paths** when possible
-- **Set environment variables** for production deployments
-- **Validate configurations** before running experiments
-- **Document new configuration options**
-
-## Troubleshooting
-
-### Common Issues
-
-1. **Missing directories**: The system automatically creates required directories
-2. **Configuration not found**: Check that config files exist and are properly formatted
-3. **Permission errors**: Ensure write permissions for output directories
-
-### Debug Configuration
-
-```python
-from src.utils.config_loader import get_ipbes_config, validate_config
-
-config = get_ipbes_config()
-if validate_config(config):
-    print("Configuration is valid")
-else:
-    print("Configuration validation failed")
-```
-
-## License
-
-[Add your license information here]
-
-## Citation
-
-If you use this project in your research, please cite:
-
-[Add citation information here]
+TODO
