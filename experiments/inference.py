@@ -1,240 +1,237 @@
 #!/usr/bin/env python3
 """
-Inference script for BioMoQA models using the instantiation module.
+Inference script for IPBES models using the instantiation module.
 
-This script demonstrates how to use trained BioMoQA models to make predictions
+This script demonstrates how to use trained IPBES models to make predictions
 on new texts using the instantiation.py module.
 """
-
+import argparse
+from typing import *
+import numpy as np
+import torch
 import sys
 import os
 import argparse
 import logging
 from typing import List, Dict, Any
-from transformers import AutoModel, AutoTokenizer
+from transformers import AutoModelForSequenceClassification, AutoTokenizer,DataCollatorWithPadding
 # Add src to path
 sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'src'))
 
-from src.models.biomoqa.instantiation import load_predictor, BioMoQAPredictor
+from src.utils.utils import map_name
+
 
 # Set up logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-
-def run_single_prediction(
-    model_path: str,
-    abstract: str,
-    title: str = None,
-    keywords: str = None,
-    with_title: bool = False,
-    with_keywords: bool = False,
-    threshold: float = 0.5
-) -> Dict[str, Any]:
-    """
-    Run prediction on a single text.
+class IPBESPredictor():
+    """This class object englobes all the functionalities related to the inference pipeline,
+    ie. loading the models weights, loading the input data, using the model's weights to predict the output"""
     
-    Args:
-        model_path: Path to the trained model
-        abstract: Abstract text
-        title: Title text (optional)
-        keywords: Keywords (optional)
-        with_title: Whether model was trained with titles
-        with_keywords: Whether model was trained with keywords
-        threshold: Classification threshold
+    def __init__(
+        self,
+        weights_path,
+        model_name,
+        loss_type="BCE",
+        with_title="False",
+        with_keywords="False",
+        threshold=0.5
+        ) -> None:
+
+        self.weights_path=weights_path
+        self.model_name=model_name
+        self.loss_type=loss_type
+        self.with_title=with_title
+        self.with_keywords=with_keywords
+        self.threshold=threshold
+
+        if not os.path.exists(self.weights_parent_dir):
+            raise FileNotFoundError(f"Checkpoints parent directory does not exist : {self.weights_parent_dir}")
         
-    Returns:
-        Dictionary with prediction results
-    """
-    logger.info("Loading BioMoQA predictor...")
-    predictor = load_predictor(
-        model_path=model_path,
-        with_title=with_title,
-        with_keywords=with_keywords,
-        threshold=threshold
-    )
-    
-    logger.info("Making prediction...")
-    result = predictor.evaluate_text(
-        abstract=abstract,
-        title=title,
-        keywords=keywords,
-        return_binary=True
-    )
-    
-    return result
-
-
-def run_batch_predictions(
-    model_path: str,
-    texts: List[Dict[str, str]],
-    with_title: bool = False,
-    with_keywords: bool = False,
-    threshold: float = 0.5
-) -> List[Dict[str, Any]]:
-    """
-    Run predictions on a batch of texts.
-    
-    Args:
-        model_path: Path to the trained model
-        texts: List of dictionaries containing text data
-        with_title: Whether model was trained with titles
-        with_keywords: Whether model was trained with keywords
-        threshold: Classification threshold
-        
-    Returns:
-        List of prediction results
-    """
-    logger.info("Loading BioMoQA predictor...")
-    predictor = load_predictor(
-        model_path=model_path,
-        with_title=with_title,
-        with_keywords=with_keywords,
-        threshold=threshold
-    )
-    
-    results = []
-    for i, text_data in enumerate(texts):
-        logger.info(f"Processing text {i+1}/{len(texts)}")
-        
-        result = predictor.evaluate_text(
-            abstract=text_data.get('abstract', ''),
-            title=text_data.get('title'),
-            keywords=text_data.get('keywords'),
-            return_binary=True
-        )
-        results.append(result)
-    
-    return results
-
-
-def main():
-    parser = argparse.ArgumentParser(description="Run inference with BioMoQA models")
-    parser.add_argument(
-        "--model_path",
-        type=str,
-        required=True,
-        help="Path to the trained model checkpoint"
-    )
-    parser.add_argument(
-        "--abstract",
-        type=str,
-        help="Abstract text for single prediction"
-    )
-    parser.add_argument(
-        "--title",
-        type=str,
-        help="Title text (optional)"
-    )
-    parser.add_argument(
-        "--keywords",
-        type=str,
-        help="Keywords (optional)"
-    )
-    parser.add_argument(
-        "--with_title",
-        action="store_true",
-        help="Whether the model was trained with titles"
-    )
-    parser.add_argument(
-        "--with_keywords", 
-        action="store_true",
-        help="Whether the model was trained with keywords"
-    )
-    parser.add_argument(
-        "--threshold",
-        type=float,
-        default=0.5,
-        help="Classification threshold (default: 0.5)"
-    )
-    parser.add_argument(
-        "--demo",
-        action="store_true",
-        help="Run demo with example texts"
-    )
-    
-    args = parser.parse_args()
-    
-    if args.demo:
-        # Demo with example texts
-        logger.info("Running demo with example texts...")
-        
-        example_texts = [
-            {
-                "abstract": """
-                This study investigates the effects of climate change on biodiversity patterns 
-                in marine ecosystems. We analyzed species composition data from coral reefs 
-                across multiple geographical locations over a 10-year period. Our findings 
-                show significant shifts in species distribution correlating with temperature 
-                increases and ocean acidification levels.
-                """,
-                "title": "Climate Change Impacts on Marine Biodiversity",
-                "keywords": "climate change, biodiversity, marine ecosystems, coral reefs"
-            },
-            {
-                "abstract": """
-                A novel machine learning approach for protein structure prediction is presented.
-                The method combines deep learning architectures with evolutionary information
-                to achieve state-of-the-art accuracy. We tested our approach on multiple
-                benchmark datasets and compared it with existing methods.
-                """,
-                "title": "Deep Learning for Protein Structure Prediction",
-                "keywords": "machine learning, protein structure, deep learning, bioinformatics"
-            },
-            {
-                "abstract": """
-                We describe a new surgical technique for minimally invasive cardiac procedures.
-                The technique reduces patient recovery time and shows improved outcomes
-                compared to traditional open-heart surgery. A randomized controlled trial
-                with 200 patients demonstrates the safety and efficacy of this approach.
-                """,
-                "title": "Minimally Invasive Cardiac Surgery Technique",
-                "keywords": "cardiac surgery, minimally invasive, medical technique"
-            }
+        #Path of every fold for the given model config
+        self.model_paths  = [
+            os.path.join(self.weights_parent_dir, dirname)
+            for dirname in os.listdir(self.weights_parent_dir)
+            if dirname.startswith( "best_model_cross_val_"+str(self.loss_type)+"_" +str(map_name(self.model_name))) and os.path.isdir(os.path.join(self.weights_parent_dir, dirname))
         ]
         
-        results = run_batch_predictions(
-            model_path=args.model_path,
-            texts=example_texts,
-            with_title=args.with_title,
-            with_keywords=args.with_keywords,
-            threshold=args.threshold
-        )
-        
-        logger.info("\n" + "="*50)
-        logger.info("DEMO RESULTS")
-        logger.info("="*50)
-        
-        for i, result in enumerate(results):
-            logger.info(f"\nText {i+1}:")
-            if 'title' in result:
-                logger.info(f"Title: {result['title']}")
-            logger.info(f"Abstract: {result['abstract'][:100]}...")
-            logger.info(f"Score: {result['score']:.4f}")
-            logger.info(f"Prediction: {'Positive' if result['prediction'] == 1 else 'Negative'}")
-            
-    elif args.abstract:
-        # Single prediction
-        result = run_single_prediction(
-            model_path=args.model_path,
-            abstract=args.abstract,
-            title=args.title,
-            keywords=args.keywords,
-            with_title=args.with_title,
-            with_keywords=args.with_keywords,
-            threshold=args.threshold
-        )
-        
-        logger.info("\n" + "="*50)
-        logger.info("PREDICTION RESULT")
-        logger.info("="*50)
-        logger.info(f"Score: {result['score']:.4f}")
-        logger.info(f"Prediction: {'Positive' if result['prediction'] == 1 else 'Negative'}")
-        
-    else:
-        logger.error("Either provide --abstract for single prediction or use --demo for examples")
-        parser.print_help()
+        self._load_model()
 
+    def _load_model(self):
+        """
+        Loads models for each fold, for the given configuration. initializes the data data collators.
+        """
+
+        if not self.model_paths:
+            raise FileNotFoundError(f"No model checkpoints found in directory: {self.weights_parent_dir}")
+            
+        try:
+            try:
+                self.tokenizer_per_fold = [AutoTokenizer.from_pretrained(model_path) for model_path in self.model_paths]
+            except:
+                logger.warning("Tokenizer not found in model path, using default BERT tokenizer")
+                self.tokenizer_per_fold = [AutoTokenizer.from_pretrained("google-bert/bert-base-uncased") for _ in range(len(self.model_paths)) ]
+            
+            #List of model object per fold
+            self.models_per_fold = [AutoModelForSequenceClassification.from_pretrained(
+                model_path,
+                num_labels=3
+            ) for model_path in self.model_paths]
+
+            # Move models to device and set to eval mode
+            for model in self.models_per_fold:
+                model.to(self.device)
+                model.eval()
+            
+            #! We never use that !
+            #Set the data collator for each tokenizer per fold
+            self.data_collators = [DataCollatorWithPadding(
+                tokenizer=tokenizer,
+                padding=True
+            ) for tokenizer in self.tokenizer_per_fold]
+            
+            logger.info(f"Successfully loaded {len(self.model_paths)} models from: {self.weights_parent_dir}")
+            
+        except Exception as e:
+            logger.error(f"Error loading model: {e}")
+            raise
+
+    def predict_score(
+            self,
+            abstract: str,
+            title: Optional[str] = None,
+            keywords: Optional[str] = None
+        ) -> float:
+            """Predict score using ensemble of all fold models"""
+            fold_scores = []
+            
+            for (model, tokenizer) in zip(self.models_per_fold, self.tokenizer_per_folds):
+                # Tokenize with specific fold tokenizer
+                tokens = self._tokenize_text_with_tokenizer(abstract, title, keywords, tokenizer)
+                
+                with torch.no_grad():
+                    outputs = model(**tokens)
+                    #The following will be an tensor of dimension (1,3) ?
+                    #TODO : Double check that
+                    logits = outputs.logits.squeeze()
+                    score = torch.sigmoid(logits).cpu().item()
+                    fold_scores.append(score)
+            
+            # Return folds average adjust the dimension based on the answer of the above question
+            return np.mean(fold_scores)
+
+    def _tokenize_text_with_tokenizer(
+        self,
+        abstract: str,
+        title: Optional[str] = None,
+        keywords: Optional[str] = None,
+        tokenizer: AutoTokenizer = None
+    ) -> Dict[str, torch.Tensor]:
+        """Tokenize text with specific tokenizer"""
+        if tokenizer is None:
+            tokenizer = self.tokenizer_per_fold[0]
+            
+        if self.with_title and self.with_keywords:
+            if title is None or keywords is None:
+                raise ValueError("Model requires both title and keywords, but one or both are missing")
+            
+            sep_tok = tokenizer.sep_token or "[SEP]"
+            combined = title + sep_tok + keywords
+            
+            tokens = tokenizer(
+                combined,
+                abstract,
+                truncation=True,
+                max_length=512,
+                return_attention_mask=True,
+                return_tensors="pt"
+            )
+            
+        elif self.with_title:
+            if title is None:
+                raise ValueError("Model requires title, but it's missing")
+                
+            tokens = tokenizer(
+                title,
+                abstract,
+                truncation=True,
+                max_length=512,
+                return_attention_mask=True,
+                return_tensors="pt"
+            )
+            
+        elif self.with_keywords:
+            if keywords is None:
+                raise ValueError("Model requires keywords, but they're missing")
+                
+            tokens = tokenizer(
+                abstract,
+                keywords,
+                truncation=True,
+                max_length=512,
+                return_attention_mask=True,
+                return_tensors="pt"
+            )
+            
+        else:
+            tokens = tokenizer(
+                abstract,
+                truncation=True,
+                max_length=512,
+                return_attention_mask=True,
+                return_tensors="pt"
+            )
+        
+        tokens = {k: v.to(self.device) for k, v in tokens.items()}
+        
+        return tokens
+
+    def evaluate_text(
+        self,
+        abstract: str,
+        title: Optional[str] = None,
+        keywords: Optional[str] = None,
+        return_binary: bool = False
+    ) -> Dict[str, Any]:
+        score = self.predict_score(abstract, title, keywords)
+        
+        result = {
+            "abstract": abstract,
+            "score": score
+        }
+        
+        if title is not None:
+            result["title"] = title
+        if keywords is not None:
+            result["keywords"] = keywords
+            
+        if return_binary:
+            result["prediction"] = int(score > self.threshold)
+            
+        return result
+
+def load_predictor(
+    model_name: str,
+    loss_type: str = "BCE",
+    with_title: bool = True,
+    with_keywords: bool = False,
+    device: Optional[str] = None,
+    weights_parent_dir: str = "results/final_model",
+    threshold: float = 0.5
+) -> IPBESPredictor:
+    return IPBESPredictor(
+        model_name=model_name,
+        loss_type=loss_type,
+        with_title=with_title,
+        with_keywords=with_keywords,
+        device=device,
+        weights_parent_dir=weights_parent_dir,
+        threshold=threshold
+    )
+
+def main():
+    pass
 
 if __name__ == "__main__":
     main()
