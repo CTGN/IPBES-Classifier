@@ -31,33 +31,78 @@ from torchvision.ops import sigmoid_focal_loss
 from src.utils.utils import *
 import logging
 from src.config import *
+from src.utils.utils import compute_optimal_thresholds
 
 logger = logging.getLogger(__name__)
 
 
 def multi_label_compute_metrics(eval_pred: Tuple[np.ndarray, np.ndarray]) -> Dict[str, float]:
-    """Compute evaluation metrics from model predictions."""
-   
+    """
+    Compute evaluation metrics from model predictions.
+    This function is used DURING TRAINING for validation set evaluation.
+    It computes optimal thresholds on the validation set.
+    """
+
     logits, labels = eval_pred
-    scores = 1 / (1 + np.exp(-logits.squeeze()))  # Sigmoid
-    optimal_thresholds = plot_roc_curve(labels, scores, logger=logger, plot_dir=CONFIG["plot_dir"], data_type="val",metric="f1",multi_label=True)
-    predictions = np.array([scores[:, label_idx] >= optimal_thresholds[label_idx] for label_idx in range(labels.shape[1])]).T.astype(int)
-    f1 = f1_score(labels, predictions, average="macro", zero_division=0) or {}
-    recall = recall_score(labels, predictions, average="macro", zero_division=0) or {}
-    accuracy = accuracy_score(labels, predictions) or {}
-    precision = precision_score(labels, predictions, average="macro", zero_division=0) or {}
+    scores = 1 / (1 + np.exp(-logits.squeeze()))
     
+    optimal_thresholds = compute_optimal_thresholds(labels, scores, metric="f1", multi_label=True)
+
+    predictions = np.array([scores[:, label_idx] >= optimal_thresholds[label_idx]
+                           for label_idx in range(labels.shape[1])]).T.astype(int)
+
+    # Compute metrics with multiple averaging strategies
+    f1_macro = f1_score(labels, predictions, average="macro", zero_division=0)
+    f1_micro = f1_score(labels, predictions, average="micro", zero_division=0)
+    f1_weighted = f1_score(labels, predictions, average="weighted", zero_division=0)
+
+    recall_macro = recall_score(labels, predictions, average="macro", zero_division=0)
+    recall_weighted = recall_score(labels, predictions, average="weighted", zero_division=0)
+    precision_macro = precision_score(labels, predictions, average="macro", zero_division=0)
+    precision_weighted = precision_score(labels, predictions, average="weighted", zero_division=0)
+    accuracy = accuracy_score(labels, predictions)
     
-    return {"f1": f1,
-            "f2": fbeta_score(labels, predictions, beta=2, zero_division=0,average="macro"),
-            "roc_auc" : roc_auc_score(labels,scores,average="macro") if scores is not None else {},
-            "accuracy": accuracy,
-            "precision": precision,
-            "recall": recall,
-            "optim_thresholds": optimal_thresholds,
-            "AP":average_precision_score(labels,scores,average="macro") if scores is not None else {},
-            "NDCG":ndcg_score(np.asarray(labels).reshape(1, -1),scores.reshape(1, -1)) if scores is not None else {}
-            }
+    # Compute per-label NDCG and average for multi-label
+    ndcg_value = 0.0
+    if scores is not None:
+        ndcg_per_label = []
+        for i in range(labels.shape[1]):
+            try:
+                ndcg = ndcg_score(labels[:, i].reshape(-1, 1), scores[:, i].reshape(-1, 1))
+                ndcg_per_label.append(ndcg)
+            except ValueError:
+                ndcg_per_label.append(0.0)
+        ndcg_value = float(np.mean(ndcg_per_label)) if ndcg_per_label else 0.0
+
+    return {
+        # F1 scores with different averaging strategies
+        "f1": f1_weighted,  # Default now uses weighted
+        "f1_macro": f1_macro,
+        "f1_micro": f1_micro,
+        "f1_weighted": f1_weighted,
+        "f2_macro": fbeta_score(labels, predictions, beta=2, zero_division=0, average="macro"),
+        "f2_weighted": fbeta_score(labels, predictions, beta=2, zero_division=0, average="weighted"),
+
+        # Other metrics
+        "accuracy": accuracy,
+        "precision": precision_weighted,  # Default now uses weighted
+        "precision_macro": precision_macro,
+        "precision_weighted": precision_weighted,
+        "recall": recall_weighted,  # Default now uses weighted
+        "recall_macro": recall_macro,
+        "recall_weighted": recall_weighted,
+
+        # AUC and AP scores
+        "roc_auc_macro": roc_auc_score(labels, scores, average="macro") if scores is not None else 0.0,
+        "roc_auc_micro": roc_auc_score(labels, scores, average="micro") if scores is not None else 0.0,
+        "roc_auc_weighted": roc_auc_score(labels, scores, average="weighted") if scores is not None else 0.0,
+        "AP_macro": average_precision_score(labels, scores, average="macro") if scores is not None else 0.0,
+        "AP_weighted": average_precision_score(labels, scores, average="weighted") if scores is not None else 0.0,
+        "NDCG": ndcg_value,
+
+        # Store optimal thresholds for later use
+        "optim_thresholds": optimal_thresholds,
+    }
 
 
 class LossPlottingCallback(TrainerCallback):
@@ -68,7 +113,7 @@ class LossPlottingCallback(TrainerCallback):
 
     def on_epoch_end(self, args, state, control, **kwargs):
         logs = state.log_history[-1] if state.log_history else {}
-        print("log history :",state.log_history)
+        logger.debug(f"log history: {state.log_history}")
         if "loss" in logs:
             self.train_losses.append(logs["loss"])
         if "eval_loss" in logs:
@@ -90,20 +135,26 @@ class LossPlottingCallback(TrainerCallback):
 
 class CustomTrainingArguments(TrainingArguments):
     #TODO : make multi label a mandatory arg
-    def __init__(self,loss_type: str,multi_label: Optional[bool] = False,pos_weight: Optional[float] = None,alpha: Optional[float] = None,gamma: Optional[float] = None,*args,**kwargs):
+    def __init__(self,loss_type: str,multi_label: Optional[bool] = False,pos_weight: Optional[float | List[float]] = None,alpha: Optional[float] = None,gamma: Optional[float] = None,*args,**kwargs):
         super().__init__(*args,**kwargs)
         self.loss_type = loss_type
         self.multi_label=multi_label
 
         if loss_type == "BCE":
             if pos_weight is None:
-                # Calculate default pos_weight if not provided
-                self.pos_weight = torch.tensor([5.0, 5.0, 5.0]) 
+                # Default pos_weight based on actual class distribution (IAS, SUA, VA)
+                # Calculated as num_negative / num_positive for each class
+                self.pos_weight = [1.1158, 2.7395, 2.5960]
                 logger.info(f"Positive weight parameter set to default (in TrainingArguments) -> pos_weight={self.pos_weight}")
+            elif isinstance(pos_weight, list):
+                # Use provided list of pos_weights (one per label)
+                assert len(pos_weight) == 3, "pos_weight list must have 3 values for [IAS, SUA, VA]"
+                self.pos_weight = pos_weight
+                logger.info(f"pos_weight value in TrainingArguments (per-label): {self.pos_weight}")
             else:
-                #TODO : Make this dynamic in case  we want to add labels
-                self.pos_weight =[pos_weight for _ in range(3)]
-                logger.info(f"pos_weight value in TrainingArguments : {self.pos_weight}")
+                # Single value: replicate for all labels
+                self.pos_weight = [pos_weight for _ in range(3)]
+                logger.info(f"pos_weight value in TrainingArguments (uniform): {self.pos_weight}")
         elif loss_type == "focal":
             self.alpha = alpha if alpha is not None else 0.25  # Default alpha
             self.gamma = gamma if gamma is not None else 2.0  # Default gamma
@@ -152,9 +203,9 @@ class LearningRateCallback(TrainerCallback):
                 # Get the latest learning rate from the scheduler
                 logs["learning_rate"] = self.scheduler.get_last_lr()[0]
         def on_train_begin(self, args, state, control, **kwargs):
-            print("STATE at beggining of training : ",state)
+            logger.debug(f"STATE at beginning of training: {state}")
             return super().on_train_begin(args, state, control, **kwargs)
         def on_train_end(self, args, state, control, **kwargs):
-            print("STATE at ending of training  : ",state)
+            logger.debug(f"STATE at ending of training: {state}")
             return super().on_train_end(args, state, control, **kwargs)
         

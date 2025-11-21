@@ -1,98 +1,84 @@
-# Environment configuration for IPBES-Classifier
-# This file contains environment-specific settings
+# Environment-specific configuration overrides for IPBES-Classifier
+# These settings override the main config.yaml based on the environment
+# Set IPBES_ENV environment variable to select: development, production, or testing
 
 # Development environment (default)
 development:
-  # Paths
-  data_dir: "./data"
-  results_dir: "./results"
-  plots_dir: "./plots"
-  
-  # API settings
-  pyalex:
-    email: "leandre.catogni@hesge.ch"
-    max_retries: 1
-    retry_backoff_factor: 0.1
-  
-  # Model settings
-  models:
-    default_learning_rate: 2e-5
-    default_batch_size: 16
-    max_epochs: 10
-  
   # Logging
-  log_level: "INFO"
-  log_file: "./logs/ipbes_classifier.log"
+  logging:
+    level: INFO
+    log_file: logs/ipbes_classifier_dev.log
+
+  # Model settings - faster training for development
+  model:
+    training:
+      num_train_epochs: 5
+      per_device_train_batch_size: 8
+
+  # HPO settings - fewer trials for development
+  hpo:
+    n_trials: 5
 
 # Production environment
 production:
-  # Paths (can be overridden by environment variables)
-  data_dir: "${IPBES_DATA_DIR:-/data/ipbes}"
-  results_dir: "${IPBES_RESULTS_DIR:-/results/ipbes}"
-  plots_dir: "${IPBES_PLOTS_DIR:-/plots/ipbes}"
-  
-  # API settings
-  pyalex:
-    email: "${PYALEX_EMAIL:-leandre.catogni@hesge.ch}"
-    max_retries: 3
-    retry_backoff_factor: 0.5
-  
-  # Model settings
-  models:
-    default_learning_rate: 1e-5
-    default_batch_size: 32
-    max_epochs: 20
-  
+  # Paths can be overridden by environment variables
+  paths:
+    data_dir: ${IPBES_DATA_DIR:-data}
+    results_dir: ${IPBES_RESULTS_DIR:-results}
+    plots_dir: ${IPBES_PLOTS_DIR:-plots}
+
+  # API settings - more retries for production
+  api:
+    pyalex:
+      max_retries: 3
+      retry_backoff_factor: 0.5
+
+  # Model settings - optimized for production
+  model:
+    training:
+      learning_rate: 1e-5
+      per_device_train_batch_size: 32
+      num_train_epochs: 20
+      fp16: true
+
   # Logging
-  log_level: "WARNING"
-  log_file: "/var/log/ipbes_classifier.log"
+  logging:
+    level: WARNING
+    log_file: /var/log/ipbes/ipbes_classifier.log
+
+  # HPO settings
+  hpo:
+    n_trials: 50
 
 # Testing environment
 testing:
   # Paths
-  data_dir: "./test_data"
-  results_dir: "./test_results"
-  plots_dir: "./test_plots"
-  
-  # API settings
-  pyalex:
-    email: "test@example.com"
-    max_retries: 1
-    retry_backoff_factor: 0.1
-  
-  # Model settings
-  models:
-    default_learning_rate: 5e-5
-    default_batch_size: 8
-    max_epochs: 2
-  
-  # Logging
-  log_level: "DEBUG"
-  log_file: "./test_logs/ipbes_classifier.log"
+  paths:
+    data_dir: test_data
+    results_dir: test_results
+    plots_dir: test_plots
+    logs_dir: test_logs
 
-# Common settings across all environments
-common:
-  # Seed for reproducibility
-  seed: 42
-  
-  # Model configuration
-  num_labels: 1
-  default_training_args:
-    save_total_limit: 1
-    gradient_accumulation_steps: 4
-    fp16: false
-    logging_strategy: "epoch"
-    report_to: "tensorboard"
-  
-  # Dataset configuration
-  ipbes_datasets:
-    ias: "IPBES IAS_2352922"
-    sua: "IPBES SUA_2344805"
-    va: "IPBES VA_2345372"
-  
-  # File patterns
-  file_patterns:
-    results: "results.csv"
-    multi_label_metrics: "multi_labels_metrics.csv"
-    test_folds: "test_folds.csv"
-    test_predictions: "test preds"
+  # Model settings - minimal epochs for testing
+  model:
+    training:
+      learning_rate: 5e-5
+      per_device_train_batch_size: 4
+      num_train_epochs: 2
+
+  # Data processing - smaller batches for testing
+  data_processing:
+    batch_size: 50
+    num_proc: 2
+    cross_validation:
+      n_folds: 2
+      n_runs: 1
+
+  # Logging
+  logging:
+    level: DEBUG
+    log_file: test_logs/ipbes_classifier_test.log
+
+  # HPO settings - minimal trials for testing
+  hpo:
+    n_trials: 2

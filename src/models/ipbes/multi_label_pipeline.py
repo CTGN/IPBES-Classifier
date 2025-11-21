@@ -261,13 +261,22 @@ class TrainMultiLabelPipeline:
 
 
                 # Set up training arguments
+                # Construct pos_weight list for BCE
+                pos_weight_list = None
+                if self.loss_type == "BCE":
+                    pos_weight_list = [
+                        config["pos_weight_ias"],
+                        config["pos_weight_sua"],
+                        config["pos_weight_va"]
+                    ]
+
                 training_args = CustomTrainingArguments(
                     output_dir=f'.', #! Is that alright ?
                     seed=CONFIG["seed"],
                     data_seed=CONFIG["seed"],
                     **CONFIG["default_training_args"],
                     loss_type=self.loss_type,
-                    pos_weight=config["pos_weight"] if self.loss_type=="BCE" else None,
+                    pos_weight=pos_weight_list if self.loss_type=="BCE" else None,
                     alpha=config["alpha"] if self.loss_type=="focal" else None,
                     gamma=config["gamma"]if self.loss_type=="focal" else None,
                     weight_decay=config["weight_decay"],
@@ -304,12 +313,14 @@ class TrainMultiLabelPipeline:
             # Define hyperparameter search space based on loss_type
             if self.loss_type == "BCE":
                 tune_config = {
-                    "pos_weight": tune.uniform(1.0,10.0),
+                    "pos_weight_ias": tune.uniform(0.5, 2.0),
+                    "pos_weight_sua": tune.uniform(1.5, 4.0),
+                    "pos_weight_va": tune.uniform(1.5, 4.0),
                     "learning_rate": tune.loguniform(1e-6, 1e-4),
                     #"gradient_accumulation_steps": tune.choice([2,4,8]),
                     "weight_decay": tune.uniform(0.0, 0.3),
                     "num_train_epochs": tune.choice([2, 3, 4,5]),
-                    }  # Tune pos_weight for BCE
+                    }
             elif self.loss_type == "focal":
                 tune_config = {
                     "alpha": tune.uniform(0.5, 1.0),  # Tune alpha for focal loss
@@ -391,7 +402,12 @@ class TrainMultiLabelPipeline:
                     multi_label=True,
                 )
             if self.loss_type == "BCE":
-                training_args.pos_weight = best_config["pos_weight"]
+                # Handle per-label pos_weights
+                training_args.pos_weight = [
+                    best_config["pos_weight_ias"],
+                    best_config["pos_weight_sua"],
+                    best_config["pos_weight_va"]
+                ]
             if self.loss_type == "focal":
                 training_args.alpha = best_config["alpha"]
                 training_args.gamma = best_config["gamma"]

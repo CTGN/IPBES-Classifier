@@ -72,13 +72,14 @@ def fetch_crossref_metadata(doi: str, params: dict = None, filters: dict = None)
     try:
         # Make request to CrossRef API
         url = f"{CROSSREF_BASE_URL}{doi}"
+        email = os.getenv("PYALEX_EMAIL", "")
         headers = {
-            'User-Agent': 'BioMoQA-Classifier/1.0 (mailto:leandre.catogni@hesge.ch)' 
+            'User-Agent': f'BioMoQA-Classifier/1.0 (mailto:{email})'
         }
-        
+
         # Add default mailto parameter
         if 'mailto' not in params:
-            params['mailto'] = 'leandre.catogni@hesge.ch'
+            params['mailto'] = email
         
         if len(list(filters.keys())) > 0:
             fval = ''
@@ -374,7 +375,7 @@ if __name__ == "__main__":
 
     # enter query parameters and filters
     params = {
-        'mailto': 'leandre.catogni@hesge.ch'
+        'mailto': os.getenv("PYALEX_EMAIL", "")
     }
     filters = {
     }

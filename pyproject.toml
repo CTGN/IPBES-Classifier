@@ -1,7 +1,7 @@
 [project]
-name = "biomoqa-playground"
+name = "ipbes-classifier"
 version = "0.1.0"
-description = "Add your description here"
+description = "IPBES multi-label text classifier for biodiversity research"
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [

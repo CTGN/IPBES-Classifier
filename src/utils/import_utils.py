@@ -72,13 +72,16 @@ def safe_import(module_name: str, fallback: Optional[Any] = None) -> Any:
 def get_config() -> dict:
     """
     Get configuration reliably.
-    
+
+    This function now returns the YAML-based CONFIG that's backed by ConfigManager.
+    The CONFIG object is backward-compatible and can be used as a dictionary.
+
     Returns:
-        Configuration dictionary
+        Configuration dictionary (backed by YAML ConfigManager)
     """
-    # Try multiple import strategies
+    # Try multiple import strategies to get the YAML-based CONFIG
     try:
-        # Strategy 1: Direct import
+        # Strategy 1: Direct import (preferred - uses YAML config system)
         from src.config import CONFIG
         return CONFIG
     except ImportError:
@@ -92,27 +95,32 @@ def get_config() -> dict:
                 # Strategy 3: Relative import
                 from ..config import CONFIG
                 return CONFIG
-            except ImportError:
-                # Strategy 4: Fallback - create minimal config
+            except (ImportError, ValueError):
+                # Strategy 4: Fallback - create minimal config only if all imports fail
+                # This should rarely happen now that we use YAML config system
+                import warnings
+                warnings.warn("Could not load YAML config system, using fallback minimal config")
                 project_root = get_project_root()
                 return {
                     "seed": 42,
+                    "num_labels": 3,
                     "project_root": str(project_root),
                     "data_dir": str(project_root / "data"),
                     "results_dir": str(project_root / "results"),
                     "models_dir": str(project_root / "results" / "models"),
                     "final_model_dir": str(project_root / "results" / "final_model"),
                     "ray_results_dir": str(project_root / "results" / "ray_results"),
-                    "test_preds_dir": str(project_root / "results" / "test preds"),
+                    "test_preds_dir": str(project_root / "results" / "test_preds"),
                     "metrics_dir": str(project_root / "results" / "metrics"),
-                    "plots_dir": str(project_root / "plots"),
+                    "plot_dir": str(project_root / "plots"),
                     "raw_data_dir": str(project_root / "data" / "Raw"),
                     "corpus_dir": str(project_root / "data" / "Raw" / "Corpus"),
                     "positives_dir": str(project_root / "data" / "Raw" / "Positives"),
                     "folds_dir": str(project_root / "data" / "folds"),
                     "cleaned_dataset_path": str(project_root / "data" / "cleaned_dataset.csv"),
                     "corpus_output_dir": str(project_root / "data" / "corpus"),
-                    "pyalex_email": "leandre.catogni@hesge.ch",
+                    "checkpoints_dir": str(project_root / "outputs" / "checkpoints"),
+                    "pyalex_email": os.getenv("PYALEX_EMAIL", ""),
                     "pyalex_max_retries": 1,
                     "pyalex_retry_backoff_factor": 0.1,
                     "environment": os.getenv("IPBES_ENV", "development"),

@@ -116,7 +116,7 @@ def _compute_binary_metrics(predictions: np.ndarray, labels: np.ndarray, scores=
         "roc_auc": roc_auc_score(labels, scores) if scores is not None else 0.0,
         "AP": average_precision_score(labels, scores) if scores is not None else 0.0,
         "MCC": matthews_corrcoef(labels, predictions),
-        "NDCG": ndcg_score(np.asarray(labels).reshape(1, -1), scores.reshape(1, -1)) if scores is not None else 0.0,
+        "NDCG": ndcg_score(np.asarray(labels).reshape(1, -1), np.asarray(scores).reshape(1, -1)) if scores is not None else 0.0,
         "kappa": cohen_kappa_score(labels, predictions),
         'TN': tn, 'FP': fp, 'FN': fn, "TP": tp
     }
@@ -197,6 +197,16 @@ def _compute_multilabel_metrics(predictions: np.ndarray, labels: np.ndarray, sco
     if scores is not None:
         scores = np.asarray(scores)
         try:
+            # Compute per-label NDCG and average
+            ndcg_per_label = []
+            for i in range(labels.shape[1]):
+                try:
+                    # For each label, treat it as a ranking problem per sample
+                    ndcg = ndcg_score(labels[:, i].reshape(-1, 1), scores[:, i].reshape(-1, 1))
+                    ndcg_per_label.append(ndcg)
+                except ValueError:
+                    ndcg_per_label.append(0.0)
+
             metrics.update({
                 "roc_auc_macro": float(roc_auc_score(labels, scores, average="macro")),
                 "roc_auc_micro": float(roc_auc_score(labels, scores, average="micro")),
@@ -204,7 +214,7 @@ def _compute_multilabel_metrics(predictions: np.ndarray, labels: np.ndarray, sco
                 "AP_macro": float(average_precision_score(labels, scores, average="macro")),
                 "AP_micro": float(average_precision_score(labels, scores, average="micro")),
                 "AP_weighted": float(average_precision_score(labels, scores, average="weighted")),
-                "NDCG": float(ndcg_score(labels, scores))
+                "NDCG": float(np.mean(ndcg_per_label)) if ndcg_per_label else 0.0
             })
             
             # Add per-label ROC-AUC and AP
@@ -277,36 +287,123 @@ def tokenize_datasets(
     logger.info(f"{len(datasets)} datasets tokenized successfully")
     return tokenized_datasets
 
-def plot_roc_curve(y_true, y_scores, logger, plot_dir, data_type=None, metric="eval_f1",store_plot=True,multi_label=False):
-    
-    if not multi_label:
-        # Single label case - keep original logic
-        fpr, tpr, thresholds = roc_curve(y_true, y_scores) 
-        roc_auc = auc(fpr, tpr)
+def compute_optimal_thresholds(y_true, y_scores, metric="f1", multi_label=False):
+    """
+    Compute optimal thresholds for classification based on a metric.
+    This function should be called ONCE on the validation set after training.
 
+    Args:
+        y_true: True labels
+        y_scores: Prediction scores/probabilities
+        metric: Metric to optimize ('f1', 'accuracy', 'precision', 'recall', 'kappa')
+        multi_label: Whether this is multi-label classification
+
+    Returns:
+        Optimal threshold(s) - float for single-label, array for multi-label
+    """
+    if not multi_label:
+        # Single label case
+        fpr, tpr, thresholds = roc_curve(y_true, y_scores)
         metric_scores = []
 
         for thresh in thresholds:
             y_pred = (y_scores >= thresh).astype(int)
             try:
                 if metric == "f1":
-                    score = f1_score(y_true, y_pred)
+                    score = f1_score(y_true, y_pred, zero_division=0)
                 elif metric == "accuracy":
                     score = accuracy_score(y_true, y_pred)
                 elif metric == "precision":
-                    score = precision_score(y_true, y_pred)
+                    score = precision_score(y_true, y_pred, zero_division=0)
                 elif metric == "recall":
-                    score = recall_score(y_true, y_pred)
+                    score = recall_score(y_true, y_pred, zero_division=0)
                 elif metric == "kappa":
                     score = cohen_kappa_score(y_true, y_pred)
                 else:
                     raise ValueError(f"Unsupported metric: {metric}")
             except ValueError:
-                score = 0  # Handle edge cases like all one class in y_pred
+                score = 0
             metric_scores.append(score)
 
         optimal_idx = np.argmax(metric_scores)
         optimal_threshold = thresholds[optimal_idx]
+
+        logger.info(f"Optimal threshold for {metric}: {optimal_threshold:.4f}")
+        return optimal_threshold
+
+    else:
+        # Multi-label case - compute optimal threshold for each label
+        y_true = np.array(y_true)
+        y_scores = np.array(y_scores)
+
+        n_labels = y_true.shape[1]
+        optimal_thresholds = []
+
+        for label_idx in range(n_labels):
+            y_true_label = y_true[:, label_idx]
+            y_scores_label = y_scores[:, label_idx]
+
+            # Compute ROC curve for this label
+            fpr, tpr, thresholds = roc_curve(y_true_label, y_scores_label)
+
+            # Find optimal threshold based on the specified metric
+            metric_scores = []
+            for thresh in thresholds:
+                y_pred_label = (y_scores_label >= thresh).astype(int)
+                try:
+                    if metric == "f1":
+                        score = f1_score(y_true_label, y_pred_label, zero_division=0)
+                    elif metric == "accuracy":
+                        score = accuracy_score(y_true_label, y_pred_label)
+                    elif metric == "precision":
+                        score = precision_score(y_true_label, y_pred_label, zero_division=0)
+                    elif metric == "recall":
+                        score = recall_score(y_true_label, y_pred_label, zero_division=0)
+                    elif metric == "kappa":
+                        score = cohen_kappa_score(y_true_label, y_pred_label)
+                    else:
+                        raise ValueError(f"Unsupported metric: {metric}")
+                except ValueError:
+                    score = 0
+                metric_scores.append(score)
+
+            optimal_idx = np.argmax(metric_scores)
+            optimal_threshold = thresholds[optimal_idx]
+            optimal_thresholds.append(optimal_threshold)
+
+        optimal_thresholds = np.array(optimal_thresholds)
+        logger.info(f"Optimal thresholds for {metric} (per label): {optimal_thresholds}")
+        return optimal_thresholds
+
+def plot_roc_curve(y_true, y_scores, logger, plot_dir, data_type=None, metric="eval_f1",store_plot=True,multi_label=False, return_thresholds=True):
+    """
+    Plot ROC curve and optionally return optimal thresholds.
+
+    Args:
+        y_true: True labels
+        y_scores: Prediction scores
+        logger: Logger instance
+        plot_dir: Directory to save plots
+        data_type: Type of data ('val', 'test', etc.) for filename
+        metric: Metric to optimize for threshold selection
+        store_plot: Whether to save the plot
+        multi_label: Whether this is multi-label classification
+        return_thresholds: Whether to compute and return optimal thresholds (set to False for test set!)
+
+    Returns:
+        Optimal threshold(s) if return_thresholds=True, None otherwise
+    """
+
+    if not multi_label:
+        # Single label case
+        fpr, tpr, thresholds = roc_curve(y_true, y_scores)
+        roc_auc = auc(fpr, tpr)
+
+        # Compute optimal threshold only if requested (for validation set)
+        if return_thresholds:
+            optimal_threshold = compute_optimal_thresholds(y_true, y_scores, metric=metric, multi_label=False)
+        else:
+            optimal_threshold = 0.5  # Default for plotting only
 
         fig, ax1 = plt.subplots(figsize=(8, 6))
         ax1.plot(fpr, tpr, color='darkorange', lw=2, label=f'ROC curve (area = {roc_auc:.3f})')
@@ -333,15 +430,20 @@ def plot_roc_curve(y_true, y_scores, logger, plot_dir, data_type=None, metric="e
             plt.show()
             logger.info("ROC curve displayed")
 
-        return optimal_threshold
-    
+        return optimal_threshold if return_thresholds else None
+
     else:
-        # Multi-label case - compute optimal threshold for each label
+        # Multi-label case
         y_true = np.array(y_true)
         y_scores = np.array(y_scores)
-        
+
         n_labels = y_true.shape[1]
-        optimal_thresholds = []
+
+        # Compute optimal thresholds only if requested (for validation set)
+        if return_thresholds:
+            optimal_thresholds = compute_optimal_thresholds(y_true, y_scores, metric=metric, multi_label=True)
+        else:
+            optimal_thresholds = np.array([0.5] * n_labels)  # Default for plotting only
         
         # Create subplots for each label
         fig, axes = plt.subplots(1, n_labels, figsize=(6*n_labels, 6))
@@ -349,40 +451,18 @@ def plot_roc_curve(y_true, y_scores, logger, plot_dir, data_type=None, metric="e
             axes = [axes]
         
         colors = ['darkorange', 'green', 'red', 'purple', 'brown', 'pink']
-        
+
         for label_idx in range(n_labels):
             y_true_label = y_true[:, label_idx]
             y_scores_label = y_scores[:, label_idx]
-            
+
             # Compute ROC curve for this label
             fpr, tpr, thresholds = roc_curve(y_true_label, y_scores_label)
             roc_auc = auc(fpr, tpr)
-            
-            # Find optimal threshold based on the specified metric
-            metric_scores = []
-            for thresh in thresholds:
-                y_pred_label = (y_scores_label >= thresh).astype(int)
-                try:
-                    if metric == "f1":
-                        score = f1_score(y_true_label, y_pred_label, zero_division=0)
-                    elif metric == "accuracy":
-                        score = accuracy_score(y_true_label, y_pred_label)
-                    elif metric == "precision":
-                        score = precision_score(y_true_label, y_pred_label, zero_division=0)
-                    elif metric == "recall":
-                        score = recall_score(y_true_label, y_pred_label, zero_division=0)
-                    elif metric == "kappa":
-                        score = cohen_kappa_score(y_true_label, y_pred_label)
-                    else:
-                        raise ValueError(f"Unsupported metric: {metric}")
-                except ValueError:
-                    score = 0  # Handle edge cases
-                metric_scores.append(score)
-            
-            optimal_idx = np.argmax(metric_scores)
-            optimal_threshold = thresholds[optimal_idx]
-            optimal_thresholds.append(optimal_threshold)
-            
+
+            # Get the optimal threshold for this label (already computed above)
+            optimal_threshold = optimal_thresholds[label_idx]
+
             # Plot ROC curve for this label
             ax = axes[label_idx]
             color = colors[label_idx % len(colors)]
@@ -415,9 +495,10 @@ def plot_roc_curve(y_true, y_scores, logger, plot_dir, data_type=None, metric="e
         else:
             plt.show()
             logger.info("Multi-label ROC curves displayed")
-            logger.info(f"Optimal thresholds: {optimal_thresholds}")
+            if return_thresholds:
+                logger.info(f"Optimal thresholds: {optimal_thresholds}")
 
-        return np.array(optimal_thresholds)
+        return optimal_thresholds if return_thresholds else None
 
 def plot_precision_recall_curve(y_true, y_scores,plot_dir,data_type=None):
     precision, recall, _ = precision_recall_curve(y_true, y_scores)
@@ -465,12 +546,38 @@ def visualize_ray_tune_results(analysis, logger, plot_dir=None, metric="eval_rec
     # Create plots directory
     os.makedirs(os.path.join(plot_dir, "hyperparams"), exist_ok=True)
     
-    # For BCE loss (pos_weight parameter)
-    if "pos_weight" in df.columns:
+    # For BCE loss (pos_weight parameters)
+    # Check for per-label pos_weights (new format)
+    if "pos_weight_ias" in df.columns:
+        # Create separate plots for each label
+        labels_config = [
+            ("pos_weight_ias", "IAS"),
+            ("pos_weight_sua", "SUA"),
+            ("pos_weight_va", "VA")
+        ]
+
+        for param_name, label_name in labels_config:
+            if param_name in df.columns:
+                plt.figure(figsize=(10, 6))
+                plt.scatter(df[param_name], df[metric], alpha=0.7)
+                if param_name in best_config:
+                    plt.axvline(x=best_config[param_name], color='r', linestyle='--',
+                               label=f"Best {param_name}: {best_config[param_name]:.2f}")
+                plt.xlabel(f"{param_name}")
+                plt.ylabel(f"{metric}")
+                plt.title(f"Effect of {param_name} ({label_name}) on {metric}")
+                plt.grid(True)
+                plt.legend()
+                plt.savefig(os.path.join(plot_dir, "hyperparams", f"{param_name}_effect.png"))
+                plt.close()
+                logger.info(f"{param_name} effect plot saved")
+
+    # For backward compatibility with old single pos_weight format
+    elif "pos_weight" in df.columns:
         plt.figure(figsize=(10, 6))
         plt.scatter(df["pos_weight"], df[metric], alpha=0.7)
         if "pos_weight" in best_config:
-            plt.axvline(x=best_config["pos_weight"], color='r', linestyle='--', 
+            plt.axvline(x=best_config["pos_weight"], color='r', linestyle='--',
                        label=f"Best pos_weight: {best_config['pos_weight']:.2f}")
         plt.xlabel("pos_weight")
         plt.ylabel(f"{metric}")
@@ -638,34 +745,3 @@ def clear_cuda_cache():
     torch.cuda.empty_cache()
     logger.info(f"Cleared CUDA cache. Memory allocated: {torch.cuda.memory_allocated() / 1e9:.2f} GB, "
                 f"Memory reserved: {torch.cuda.memory_reserved() / 1e9:.2f} GB")
-    
-"""
-def mail_report(message,subject='Classifier report'):
-
-
-
-    msg = MIMEText(message)
-
-    # me == the sender's email address
-    # you == the recipient's email address
-    msg['Subject'] = subject
-    msg['From'] = me
-    msg['To'] = you
-
-    # Send the message via our own SMTP server, but don't include the
-    # envelope header.
-    s = smtplib.SMTP('localhost')
-    s.sendmail(me, [you], msg.as_string())
-    s.quit()
-    s = smtplib.SMTP('smtp.gmail.com', 587)
-    # start TLS for security
-    s.starttls()
-    # Authentication
-    s.login("leandrecatogni", "noztox-Xazris-tuwhi9")
-    # sending the mail
-    s.sendmail("leandrecatogni", "leandrecatogni", message)
-    # terminating the session
-    s.quit()
-    return None
-
-"""

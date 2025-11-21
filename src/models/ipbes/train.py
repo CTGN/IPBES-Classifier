@@ -206,8 +206,23 @@ def train(cfg,hp_cfg):
             eval_strategy="steps",
             multi_label=True if CONFIG["num_labels"] > 1 else False,
         )
-    
-    training_args.pos_weight = hp_cfg["pos_weight"] if cfg['loss_type'] == "BCE" else None
+
+    # Handle pos_weight for BCE loss
+    if cfg['loss_type'] == "BCE":
+        # Check if using new per-label pos_weights or old uniform pos_weight
+        if "pos_weight_ias" in hp_cfg:
+            training_args.pos_weight = [
+                hp_cfg["pos_weight_ias"],
+                hp_cfg["pos_weight_sua"],
+                hp_cfg["pos_weight_va"]
+            ]
+        elif "pos_weight" in hp_cfg:
+            # Backward compatibility: single pos_weight value
+            training_args.pos_weight = hp_cfg["pos_weight"]
+        else:
+            training_args.pos_weight = None
+    else:
+        training_args.pos_weight = None
     training_args.alpha = hp_cfg["alpha"] if cfg['loss_type'] == "focal" else None
     training_args.gamma = hp_cfg["gamma"] if cfg['loss_type'] == "focal" else None
     training_args.learning_rate = hp_cfg["learning_rate"]
@@ -273,11 +288,16 @@ def train(cfg,hp_cfg):
     end_time_train=perf_counter()
     logger.info(f"Training time : {end_time_train-start_time}")
 
-    eval_results_test = trainer.evaluate(tokenized_test)
+    # ===================================================================
+    # DO NOT call trainer.evaluate(tokenized_test) here!
+    # It would compute optimal thresholds on the test set, causing data leakage.
+    # Instead, we'll use manual prediction and apply validation thresholds below.
+    # ===================================================================
+    # eval_results_test = trainer.evaluate(tokenized_test)  # REMOVED to prevent data leakage
+    logger.info("Skipping trainer.evaluate on test set to prevent data leakage")
 
     end_time_val=perf_counter()
     logger.info(f"Evaluation time : {end_time_val-end_time_train}")
-    logger.info(f"Evaluation results on test set: {eval_results_test}")
     # Number of optimizer updates performed:
 
     n_updates = trainer.state.global_step
@@ -314,12 +334,16 @@ def train(cfg,hp_cfg):
     logger.info(f"Unique values in labels: {np.unique(test_labels)}")
     res1=detailed_metrics(preds,test_labels,scores=scores)
 
+    # Plot ROC curve on test set for visualization ONLY (do NOT compute new thresholds!)
+    # Set return_thresholds=False to prevent data leakage
+    _ = plot_roc_curve(test_labels, scores, logger=logger, plot_dir=CONFIG["plot_dir"],
+                       data_type="test", multi_label=True, return_thresholds=False)
 
-    plot_roc_curve(test_labels,scores,logger=logger,plot_dir=CONFIG["plot_dir"],data_type="test",multi_label=True)
-
-    #! The following seems weird. we are talking about decision here. View it like a ranking problem. take a perspective for usage
+    # ===================================================================
+    # IMPORTANT: Use optimal thresholds computed on VALIDATION SET only
+    # ===================================================================
     threshold = eval_results_dev["eval_optim_thresholds"]
-    logger.info(f"\nOn test Set (New optimal threshold of {threshold} according to the dev set): ")
+    logger.info(f"\nOn test Set (using optimal threshold {threshold} from validation set): ")
     preds = (scores > threshold).astype(int)
     res2=detailed_metrics(preds, test_labels,scores=scores)
 

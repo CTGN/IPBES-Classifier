@@ -1,64 +1,13 @@
-# Path configuration file for IPBES-Classifier
-# This file contains all the path configurations that were previously hardcoded
+# DEPRECATED: This file is deprecated in favor of configs/config.yaml
+# All path configurations have been moved to the main config.yaml file
+# This file is kept for backward compatibility only and will be removed in future versions
 
-paths:
-  # Base directories
-  project_root: "${PROJECT_ROOT}"
-  data_dir: "${PROJECT_ROOT}/data"
-  results_dir: "${PROJECT_ROOT}/results"
-  
-  # Data subdirectories
-  raw_data_dir: "${PROJECT_ROOT}/data/Raw"
-  corpus_dir: "${PROJECT_ROOT}/data/Raw/Corpus"
-  positives_dir: "${PROJECT_ROOT}/data/Raw/Positives"
-  folds_dir: "${PROJECT_ROOT}/data/folds"
-  corpus_output_dir: "${PROJECT_ROOT}/data/corpus"
-  
-  # Results subdirectories
-  models_dir: "${PROJECT_ROOT}/results/models"
-  final_model_dir: "${PROJECT_ROOT}/results/final_model"
-  ray_results_dir: "${PROJECT_ROOT}/results/ray_results"
-  test_preds_dir: "${PROJECT_ROOT}/results/test preds"
-  metrics_dir: "${PROJECT_ROOT}/results/metrics"
-  archives_dir: "${PROJECT_ROOT}/results/archives"
-  
-  # Output directories
-  plots_dir: "${PROJECT_ROOT}/plots"
-  checkpoints_dir: "${PROJECT_ROOT}/outputs/checkpoints"
-  
-  # Specific dataset paths
-  cleaned_dataset: "${PROJECT_ROOT}/data/cleaned_dataset.csv"
-  
-  # IPBES dataset names
-  ipbes_datasets:
-    ias: "IPBES IAS_2352922"
-    sua: "IPBES SUA_2344805"
-    va: "IPBES VA_2345372"
+# Please use configs/config.yaml for all configuration management
+# The paths section in config.yaml contains all path configurations
 
-# Environment-specific overrides
-environments:
-  development:
-    # Development-specific paths
-    pass
-    
-  production:
-    # Production-specific paths (if different)
-    pass
-    
-  testing:
-    # Testing-specific paths
-    pass
-
-# File naming patterns
-file_patterns:
-  results: "results.csv"
-  multi_label_metrics: "multi_labels_metrics.csv"
-  test_folds: "test_folds.csv"
-  test_predictions: "test preds"
-  
-# API configuration
-api:
-  pyalex:
-    email: "leandre.catogni@hesge.ch"
-    max_retries: 1
-    retry_backoff_factor: 0.1
+# For reference, paths are now structured as:
+# paths:
+#   data_dir: data
+#   results_dir: results
+#   plots_dir: plots
+#   ... (see config.yaml for complete list)

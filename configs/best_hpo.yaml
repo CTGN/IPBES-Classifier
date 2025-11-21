@@ -1,6 +1,6 @@
 direction: max
 fold: 4
-hpo_metric: eval_AP
+hpo_metric: eval_AP_weighted
 learning_rate: 7.340675018434774e-05
 loss_type: BCE
 model_name: google-bert/bert-base-uncased

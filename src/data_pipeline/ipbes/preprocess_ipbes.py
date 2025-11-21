@@ -26,14 +26,16 @@ from src.data_pipeline.ipbes.fetch import fill_missing_metadata
 import gc
 from sklearn.model_selection import StratifiedKFold, train_test_split
 import numpy as np
-from src.config import *
-from src.utils import *
+from src.config import CONFIG
+from src.utils.utils import set_random_seeds
 from collections import defaultdict
 import random
 from iterstrat.ml_stratifiers import MultilabelStratifiedKFold, MultilabelStratifiedShuffleSplit
 import argparse
 
 import logging
+import torch
+from transformers import set_seed
 
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
@@ -109,8 +111,8 @@ def merge_pos_neg(pos_ds, neg_ds, store=False):
     )
     pos_ds = pos_ds.cast(new_features)
 
-    print("pos_ds size:", len(pos_ds))
-    
+    logger.info(f"pos_ds size: {len(pos_ds)}")
+
     #Add negatives labels by batch
     neg_ds = neg_ds.map(
         lambda x: add_labels(x, 0),
@@ -120,18 +122,18 @@ def merge_pos_neg(pos_ds, neg_ds, store=False):
     )
     neg_ds = neg_ds.cast(new_features)
 
-    print("neg_ds size:", len(neg_ds))
-    
-    #Merge positives and negatives 
+    logger.info(f"neg_ds size: {len(neg_ds)}")
+
+    #Merge positives and negatives
     merged_ds = datasets.concatenate_datasets([pos_ds, neg_ds])
-    print(merged_ds)
+    logger.info(f"merged_ds: {merged_ds}")
 
     if store:
         # Save in chunks to reduce memory pressure
         #? What are num_shards ? -> see doc
-        merged_ds.save_to_disk(CONFIG['corpus_output_dir'], 
+        merged_ds.save_to_disk(CONFIG['corpus_output_dir'],
                               num_shards=4)  # Split into multiple files)
-    print("Number of Positives before cleaning :",len(pos_ds))
+    logger.info(f"Number of Positives before cleaning: {len(pos_ds)}")
     return merged_ds
 
 def clean_ipbes(dataset,label_cols=["labels"]):
@@ -141,8 +143,7 @@ def clean_ipbes(dataset,label_cols=["labels"]):
     - 
     """
     #TODO : I think it would be more memory efficient to first clean the positives set and negatives set while they seperated, and then merging them knowing that they are not overlapping
-    print("Filtering out rows with no abstracts or DOI...")
-
+    logger.info("Filtering out rows with no abstracts or DOI...")
 
     # Process conflicts and duplicates using map
     seen_texts = set()
@@ -167,7 +168,7 @@ def clean_ipbes(dataset,label_cols=["labels"]):
                 num_proc=min(4, os.cpu_count() or 1))
     
     conflicting_texts = set()
-    print("Size of the dataset before cleaning:", len(dataset))
+    logger.info(f"Size of the dataset before cleaning: {len(dataset)}")
 
     #Check if, in a given batch, there is an instance for which the title or the abstract is None + check for conflicts and duplicates
     def clean_filter(examples):
@@ -203,7 +204,7 @@ def clean_ipbes(dataset,label_cols=["labels"]):
         return keep
 
     #Apply the clean function acrross the whole dataset
-    print("Applying clean_filter...")
+    logger.info("Applying clean_filter...")
     dataset = dataset.filter(clean_filter, batched=True, batch_size=1000, num_proc=os.cpu_count())
     logger.info(f"Dataset size after cleaing : {len(dataset)}")
     return dataset
@@ -222,7 +223,7 @@ def create_folds(dataset,n_folds,n_runs):
 
     for seed in derived_seeds:
         # Stratified K‐Fold on only the original (non‐optional) data
-        mskf = MultilabelStratifiedKFold(n_splits=n_folds, shuffle=True, random_state=CONFIG["seed"])
+        mskf = MultilabelStratifiedKFold(n_splits=n_folds, shuffle=True, random_state=seed)
 
         run_folds = []
         for train_dev_indices, test_indices in mskf.split(dataset['abstract'], dataset.select_columns(labels).to_pandas()):
@@ -255,10 +256,10 @@ def create_folds(dataset,n_folds,n_runs):
             
         #TODO : Store the indices and return them
         #TODO : Use the indices in the pipeline to get the corresponding data, and clear the cache after using them.
-        
+
         folds_per_run.append(run_folds)
 
-        return folds_per_run
+    return folds_per_run
 
 def fill_missing_metadata_for_positives(pos_ds_list, output_dir="data/IPBES/modified_instances", max_workers=5):
     """
@@ -321,8 +322,7 @@ def unify_multi_label(pos_ds_list,neg_ds,label_cols,balance_coeff=None):
     pos_combined_df=pos_combined_df.drop_duplicates(ignore_index=True)
     pos_combined=Dataset.from_pandas(pos_combined_df)
 
-
-    print("pos_combined",pos_combined)
+    logger.info(f"pos_combined: {pos_combined}")
 
 
     gcombined=concatenate_datasets([pos_combined,neg_ds])
@@ -364,8 +364,8 @@ def prereprocess_ipbes(pos_ds,neg_ds):
         return batch_bools
 
     pos_dataset = clean_ds.filter(lambda x : is_label(x,1), batched=True, batch_size=1000, num_proc=os.cpu_count())
-    print("Number of positives after cleaning:", len(pos_dataset))
-    print(clean_ds)
+    logger.info(f"Number of positives after cleaning: {len(pos_dataset)}")
+    logger.info(f"clean_ds: {clean_ds}")
     
     return clean_ds
 
@@ -437,10 +437,10 @@ def main():
             logger.info(f"train split size : {len(train_indices)}")
             logger.info(f"dev split size : {len(dev_indices)}")
             logger.info(f"test split size : {len(test_indices)}")
-            
-                    np.savetxt(f"{CONFIG['folds_dir']}/train{fold_idx}_run-{run_idx}.csv", train_indices, delimiter=',', fmt='%g')
-        np.savetxt(f"{CONFIG['folds_dir']}/dev{fold_idx}_run-{run_idx}.csv", dev_indices, delimiter=',', fmt='%g')
-        np.savetxt(f"{CONFIG['folds_dir']}/test{fold_idx}_run-{run_idx}.csv", test_indices, delimiter=',', fmt='%g')
+
+            np.savetxt(f"{CONFIG['folds_dir']}/train{fold_idx}_run-{run_idx}.csv", train_indices, delimiter=',', fmt='%g')
+            np.savetxt(f"{CONFIG['folds_dir']}/dev{fold_idx}_run-{run_idx}.csv", dev_indices, delimiter=',', fmt='%g')
+            np.savetxt(f"{CONFIG['folds_dir']}/test{fold_idx}_run-{run_idx}.csv", test_indices, delimiter=',', fmt='%g')
 
 if __name__ == "__main__":
     main()

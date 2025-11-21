@@ -159,29 +159,41 @@ def trainable(config,model_name,loss_type,hpo_metric,tokenized_train,tokenized_d
     # We can use a larger batch size on the A100 GPU (device 2)
     gpu_id = os.environ.get("CUDA_VISIBLE_DEVICES")
     
-    batch_size = 100
+    batch_size = 30
     
     logger.info(f"Trial on GPU {gpu_id} using batch size {batch_size}")
     
-    training_args = CustomTrainingArguments(
-        output_dir=CONFIG['models_dir'],
-        seed=CONFIG["seed"],
-        data_seed=CONFIG["seed"],
-        **CONFIG["default_training_args"],
-        loss_type=loss_type,
-        pos_weight=config["pos_weight"] if loss_type=="BCE" else None,
-        alpha=config["alpha"] if loss_type=="focal" else None,
-        gamma=config["gamma"]if loss_type=="focal" else None,
-        weight_decay=config["weight_decay"],
-        disable_tqdm=True,
-        per_device_train_batch_size=batch_size,
-        per_device_eval_batch_size=batch_size,
-        metric_for_best_model=hpo_metric,
-        load_best_model_at_end = True,
-        save_strategy='no',
-        eval_strategy="no",
-        multi_label=True if CONFIG["num_labels"] > 1 else False,
-    )
+    # Construct pos_weight as a list for multi-label BCE
+    pos_weight_list = None
+    if loss_type == "BCE":
+        pos_weight_list = [
+            config["pos_weight_ias"],
+            config["pos_weight_sua"],
+            config["pos_weight_va"]
+        ]
+
+    # Prepare training args, overriding defaults with HPO config
+    training_args_dict = dict(CONFIG["default_training_args"])
+    training_args_dict.update({
+        "output_dir": CONFIG['models_dir'],
+        "seed": CONFIG["seed"],
+        "data_seed": CONFIG["seed"],
+        "loss_type": loss_type,
+        "pos_weight": pos_weight_list if loss_type=="BCE" else None,
+        "alpha": config["alpha"] if loss_type=="focal" else None,
+        "gamma": config["gamma"] if loss_type=="focal" else None,
+        "weight_decay": config["weight_decay"],
+        "disable_tqdm": True,
+        "per_device_train_batch_size": batch_size,
+        "per_device_eval_batch_size": batch_size,
+        "metric_for_best_model": hpo_metric,
+        "load_best_model_at_end": False,
+        "save_strategy": 'no',
+        "eval_strategy": "no",
+        "multi_label": True if CONFIG["num_labels"] > 1 else False,
+    })
+
+    training_args = CustomTrainingArguments(**training_args_dict)
     training_args.learning_rate=config["learning_rate"]
     training_args.num_train_epochs=7
 
@@ -280,14 +292,17 @@ def train_hpo(cfg,fold_idx,run_idx):
     
     # Define hyperparameter search space based on loss_type
     if cfg['loss_type'] == "BCE":
-        pos_weight_range= tune.uniform(1.0,5.0)
+        # Tune separate pos_weight for each label based on their class distribution
+        # IAS is more balanced (lower weight range), SUA and VA are more imbalanced (higher weight range)
         tune_config = {
-            "pos_weight": pos_weight_range,
+            "pos_weight_ias": tune.uniform(0.5, 2.0),   # IAS: more balanced class
+            "pos_weight_sua": tune.uniform(1.5, 4.0),   # SUA: more imbalanced
+            "pos_weight_va": tune.uniform(1.5, 4.0),    # VA: more imbalanced
             "learning_rate": tune.loguniform(1e-6, 1e-4),
             #"gradient_accumulation_steps": tune.choice([2,4,8]),
             "weight_decay":tune.loguniform(1e-6, 1e-1)
             #"num_train_epochs": tune.choice([2, 3, 4, 5, 6]),
-            }  # Tune pos_weight for BCE
+            }
     elif cfg['loss_type'] == "focal":
         tune_config = {
             "alpha": tune.uniform(0.0, 1.0),  # Tune alpha for focal loss

@@ -81,11 +81,13 @@ def optimize_model(
      # Define hyperparameter search space based on loss_type
     if loss_type == "BCE":
         tune_config = {
-            "pos_weight": tune.uniform(1.0,10.0),
+            "pos_weight_ias": tune.uniform(0.5, 2.0),
+            "pos_weight_sua": tune.uniform(1.5, 4.0),
+            "pos_weight_va": tune.uniform(1.5, 4.0),
             "learning_rate": tune.loguniform(1e-6, 1e-4),
             #"gradient_accumulation_steps": tune.choice([2,4,8]),
             "weight_decay": tune.uniform(0.0, 0.3),
-            }  # Tune pos_weight for BCE
+            }
     elif loss_type == "focal":
         tune_config = {
             "alpha": tune.uniform(0.5, 1.0),  # Tune alpha for focal loss

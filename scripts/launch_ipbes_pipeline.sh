@@ -33,7 +33,7 @@ echo "------> Fold: ${fold}"
         --fold "${fold}" \
         --run "${run}" \
         --n_trials 20 \
-        --hpo_metric "eval_AP" \
+        --hpo_metric "eval_AP_weighted" \
         -m "${model}" \
         --loss "${loss}" \
         -t
@@ -45,7 +45,7 @@ echo "------> Fold: ${fold}"
         --fold "${fold}" \
         --run "${run}" \
         -m "${model}" \
-        -bm "eval_AP" \
+        -bm "eval_AP_weighted" \
         --loss "${loss}" \
         -t
     done

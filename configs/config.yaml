@@ -1,0 +1,131 @@
+# Main configuration file for IPBES Classifier
+# This is the central configuration that will be loaded by the ConfigManager
+
+# General settings
+seed: 42
+num_labels: 3
+
+# Environment (can be overridden by IPBES_ENV environment variable)
+environment: development
+
+# Paths (relative to project root)
+paths:
+  # Base directories
+  data_dir: data
+  results_dir: results
+  plots_dir: plots
+  logs_dir: logs
+
+  # Data subdirectories
+  raw_data_dir: data/Raw
+  corpus_dir: data/Raw/Corpus
+  positives_dir: data/Raw/Positives
+  folds_dir: data/folds
+  corpus_output_dir: data/corpus
+  cleaned_dataset_path: data/cleaned_dataset.csv
+
+  # Results subdirectories
+  models_dir: results/models
+  final_model_dir: results/final_model
+  ray_results_dir: results/ray_results
+  test_preds_dir: results/test_preds
+  metrics_dir: results/metrics
+  archives_dir: results/archives
+  checkpoints_dir: outputs/checkpoints
+
+# API Configuration
+api:
+  pyalex:
+    # Email should be set via PYALEX_EMAIL environment variable
+    email: ${PYALEX_EMAIL:-}
+    max_retries: 1
+    retry_backoff_factor: 0.1
+
+  crossref:
+    base_url: https://api.crossref.org/works/
+    rate_limit: 50
+    rate_limit_window: 1.0
+
+# IPBES Dataset identifiers
+datasets:
+  ipbes_ias: IPBES IAS_2352922
+  ipbes_sua: IPBES SUA_2344805
+  ipbes_va: IPBES VA_2345372
+  label_names:
+    - IAS
+    - SUA
+    - VA
+
+# Model configuration
+model:
+  default_model_name: bert-base-uncased
+  num_labels: 3
+
+  # Default training arguments
+  training:
+    save_total_limit: 1
+    learning_rate: 2e-5
+    gradient_accumulation_steps: 4
+    num_train_epochs: 10
+    per_device_train_batch_size: 16
+    per_device_eval_batch_size: 16
+    warmup_steps: 500
+    weight_decay: 0.01
+    fp16: false
+    logging_strategy: epoch
+    evaluation_strategy: epoch
+    save_strategy: epoch
+    load_best_model_at_end: true
+    report_to: tensorboard
+
+  # Loss function configuration
+  loss:
+    default_type: BCE
+    bce:
+      pos_weight: [5.0, 5.0, 5.0]
+    focal:
+      alpha: 0.25
+      gamma: 2.0
+
+# Hyperparameter optimization
+hpo:
+  n_trials: 20
+  metric: eval_f1
+  mode: max
+  scheduler:
+    type: ASHA
+    max_t: 10
+    grace_period: 1
+    reduction_factor: 2
+
+# Data processing
+data_processing:
+  with_title: true
+  with_keywords: false
+  batch_size: 100
+  num_proc: 30
+  max_length: 512
+
+  # Cross-validation settings
+  cross_validation:
+    n_folds: 5
+    n_runs: 2
+    test_size: 0.3
+    balance_coeff: null
+
+# Logging configuration
+logging:
+  level: INFO
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  log_file: logs/ipbes_classifier.log
+
+# Output file naming patterns
+output_files:
+  results_csv: results.csv
+  multi_labels_metrics_csv: multi_labels_metrics.csv
+  test_folds_csv: test_folds.csv
+
+# Ensemble configuration
+ensemble:
+  aggregation_method: mean
+  voting_threshold: 0.5
