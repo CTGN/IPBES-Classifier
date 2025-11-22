@@ -1,5 +1,7 @@
 import logging
 import os
+import shutil
+import tempfile
 from typing import *
 import argparse
 import evaluate
@@ -159,7 +161,7 @@ def trainable(config,model_name,loss_type,hpo_metric,tokenized_train,tokenized_d
     # We can use a larger batch size on the A100 GPU (device 2)
     gpu_id = os.environ.get("CUDA_VISIBLE_DEVICES")
     
-    batch_size = 30
+    batch_size = 35
     
     logger.info(f"Trial on GPU {gpu_id} using batch size {batch_size}")
     
@@ -173,9 +175,12 @@ def trainable(config,model_name,loss_type,hpo_metric,tokenized_train,tokenized_d
         ]
 
     # Prepare training args, overriding defaults with HPO config
+    # Create unique output directory for this Ray trial to avoid conflicts
+    trial_output_dir = tempfile.mkdtemp(prefix="trial_", dir=CONFIG['models_dir'])
+
     training_args_dict = dict(CONFIG["default_training_args"])
     training_args_dict.update({
-        "output_dir": CONFIG['models_dir'],
+        "output_dir": trial_output_dir,
         "seed": CONFIG["seed"],
         "data_seed": CONFIG["seed"],
         "loss_type": loss_type,
@@ -187,9 +192,10 @@ def trainable(config,model_name,loss_type,hpo_metric,tokenized_train,tokenized_d
         "per_device_train_batch_size": batch_size,
         "per_device_eval_batch_size": batch_size,
         "metric_for_best_model": hpo_metric,
-        "load_best_model_at_end": False,
-        "save_strategy": 'no',
-        "eval_strategy": "no",
+        "load_best_model_at_end": False,  # Keep False to avoid checkpoint errors in Ray
+        "save_strategy": 'no',  # No checkpoints to avoid FileNotFoundError
+        "save_total_limit": 0,  # Explicitly set to 0 to prevent any checkpoint retention
+        "eval_strategy": "epoch",  # Evaluate at end of each epoch
         "multi_label": True if CONFIG["num_labels"] > 1 else False,
     })
 
@@ -197,12 +203,22 @@ def trainable(config,model_name,loss_type,hpo_metric,tokenized_train,tokenized_d
     training_args.learning_rate=config["learning_rate"]
     training_args.num_train_epochs=7
 
+    # Create metrics callback for learning curves
+    metrics_callback = EpochMetricsCallback()
+
     trainer = CustomTrainer(
         model=model,
         args=training_args,
         train_dataset=tokenized_train,
         eval_dataset=tokenized_dev,
-        callbacks=[LearningRateCallback()],
+        callbacks=[
+            LearningRateCallback(),
+            EarlyStoppingCallback(
+                early_stopping_patience=2,  # Stop if no improvement for 2 epochs
+                early_stopping_threshold=0.001  # Minimum change to qualify as improvement
+            ),
+            metrics_callback  # Track metrics across epochs
+        ],
         data_collator=data_collator,
         compute_metrics=multi_label_compute_metrics,
         tokenizer=tokenizer,
@@ -215,7 +231,25 @@ def trainable(config,model_name,loss_type,hpo_metric,tokenized_train,tokenized_d
     eval_result = trainer.evaluate()
     logger.info(f"eval_result: {eval_result}")
 
+    # Plot learning curves for this trial
+    # Generate a unique trial name from config
+    trial_name = f"trial_{hash(str(config)) % 100000}"
+    plot_learning_curves(
+        metrics_callback=metrics_callback,
+        plot_dir=CONFIG['plot_dir'],
+        trial_name=trial_name,
+        primary_metric=hpo_metric
+    )
+
     clear_cuda_cache()
+
+    # Clean up the temporary trial directory
+    try:
+        if os.path.exists(trial_output_dir):
+            shutil.rmtree(trial_output_dir)
+            logger.info(f"Cleaned up trial directory: {trial_output_dir}")
+    except Exception as e:
+        logger.warning(f"Failed to clean up trial directory {trial_output_dir}: {e}")
 
     return eval_result
     

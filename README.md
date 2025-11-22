@@ -3,7 +3,7 @@
 Multi-label classifier for identifying IPBES-relevant scientific publications. The model predicts relevance for three assessment domains:
 
 - IAS: Invasive Alien Species
-- SUA: Sustainable Use of Animals
+- SUA: Sustainable Use Assessment
 - VA: Values Assessment
 
 It fine-tunes Transformer models (e.g., BERT, BioBERT, RoBERTa) and supports cross-validation, hyperparameter optimization (HPO), and simple ensemble averaging.

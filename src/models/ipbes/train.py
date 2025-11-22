@@ -189,7 +189,6 @@ def train(cfg,hp_cfg):
     model=AutoModelForSequenceClassification.from_pretrained(cfg['model_name'], num_labels=CONFIG["num_labels"])
     #model.gradient_checkpointing_enable()
 
-    batch_size=100
 
     # Set up training arguments
     training_args = CustomTrainingArguments(
@@ -197,8 +196,6 @@ def train(cfg,hp_cfg):
             seed=CONFIG["seed"],
             data_seed=CONFIG["seed"],
             **CONFIG["default_training_args"],
-            per_device_train_batch_size=batch_size,
-            per_device_eval_batch_size=batch_size,
             loss_type=cfg['loss_type'],
             metric_for_best_model=cfg['best_metric'],
             load_best_model_at_end=True,
