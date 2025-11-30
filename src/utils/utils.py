@@ -160,10 +160,11 @@ def _compute_multilabel_metrics(predictions: np.ndarray, labels: np.ndarray, sco
     f1_per_label = f1_score(labels, predictions, average=None, zero_division=0)
     recall_per_label = recall_score(labels, predictions, average=None, zero_division=0)
     precision_per_label = precision_score(labels, predictions, average=None, zero_division=0)
-    
+    kappa_per_label = [cohen_kappa_score(labels[:, i], predictions[:, i]) for i in range(n_labels)]
+
     # Initialize metrics dictionary
     metrics = {}
-    
+
     # Add per-label metrics
     for i, label_name in enumerate(label_names):
         tn, fp, fn, tp = mcm[i].ravel()
@@ -171,6 +172,7 @@ def _compute_multilabel_metrics(predictions: np.ndarray, labels: np.ndarray, sco
             f"f1_{label_name}": float(f1_per_label[i]),
             f"recall_{label_name}": float(recall_per_label[i]),
             f"precision_{label_name}": float(precision_per_label[i]),
+            f"kappa_{label_name}": float(kappa_per_label[i]),
             f"TN_{label_name}": int(tn),
             f"FP_{label_name}": int(fp),
             f"FN_{label_name}": int(fn),
@@ -190,7 +192,8 @@ def _compute_multilabel_metrics(predictions: np.ndarray, labels: np.ndarray, sco
         "precision_weighted": float(precision_score(labels, predictions, average="weighted", zero_division=0)),
         "accuracy": float(accuracy_score(labels, predictions)),
         "MCC": float(matthews_corrcoef(labels.flatten(), predictions.flatten())),
-        "kappa": float(cohen_kappa_score(labels.flatten(), predictions.flatten()))
+        "kappa_macro": float(np.mean(kappa_per_label)),
+        "kappa_weighted": float(np.average(kappa_per_label, weights=[np.sum(labels[:, i]) for i in range(n_labels)]))
     })
     
     # Add score-based metrics if scores are provided

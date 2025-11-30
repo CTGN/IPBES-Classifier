@@ -191,16 +191,20 @@ def train(cfg,hp_cfg):
 
 
     # Set up training arguments
+    # Override save_strategy and eval_strategy from default_training_args
+    training_args_dict = dict(CONFIG["default_training_args"])
+    training_args_dict.update({
+        "save_strategy": "steps",
+        "evaluation_strategy": "steps",
+    })
+
     training_args = CustomTrainingArguments(
             output_dir=CONFIG['models_dir'],
             seed=CONFIG["seed"],
             data_seed=CONFIG["seed"],
-            **CONFIG["default_training_args"],
+            **training_args_dict,
             loss_type=cfg['loss_type'],
             metric_for_best_model=cfg['best_metric'],
-            load_best_model_at_end=True,
-            save_strategy= "steps",
-            eval_strategy="steps",
             multi_label=True if CONFIG["num_labels"] > 1 else False,
         )
 

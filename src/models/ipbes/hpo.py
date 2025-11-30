@@ -161,7 +161,7 @@ def trainable(config,model_name,loss_type,hpo_metric,tokenized_train,tokenized_d
     # We can use a larger batch size on the A100 GPU (device 2)
     gpu_id = os.environ.get("CUDA_VISIBLE_DEVICES")
     
-    batch_size = 35
+    batch_size = 40
     
     logger.info(f"Trial on GPU {gpu_id} using batch size {batch_size}")
     
@@ -231,15 +231,13 @@ def trainable(config,model_name,loss_type,hpo_metric,tokenized_train,tokenized_d
     eval_result = trainer.evaluate()
     logger.info(f"eval_result: {eval_result}")
 
-    # Plot learning curves for this trial
-    # Generate a unique trial name from config
-    trial_name = f"trial_{hash(str(config)) % 100000}"
-    plot_learning_curves(
-        metrics_callback=metrics_callback,
-        plot_dir=CONFIG['plot_dir'],
-        trial_name=trial_name,
-        primary_metric=hpo_metric
-    )
+    # Store metrics data in eval_result for later plotting
+    eval_result['metrics_data'] = {
+        'epochs': metrics_callback.epochs,
+        'train_losses': metrics_callback.train_losses,
+        'eval_losses': metrics_callback.eval_losses,
+        'eval_metrics': metrics_callback.eval_metrics
+    }
 
     clear_cuda_cache()
 
@@ -398,6 +396,28 @@ def train_hpo(cfg,fold_idx,run_idx):
     best_config['hpo_metric'] = cfg['hpo_metric']
     best_config['direction'] = cfg['direction']
     best_config['num_trials'] = cfg['num_trials']
+
+    # Plot learning curves for the best trial only
+    if 'metrics_data' in best_results:
+        metrics_data = best_results['metrics_data']
+        # Reconstruct the metrics callback structure
+        class MetricsData:
+            def __init__(self, data):
+                self.epochs = data['epochs']
+                self.train_losses = data['train_losses']
+                self.eval_losses = data['eval_losses']
+                self.eval_metrics = data['eval_metrics']
+
+        metrics_callback_best = MetricsData(metrics_data)
+        trial_name = f"best_trial_fold-{fold_idx}_run-{run_idx}"
+        plot_learning_curves(
+            metrics_callback=metrics_callback_best,
+            plot_dir=CONFIG['plot_dir'],
+            trial_name=trial_name,
+            primary_metric=cfg['hpo_metric']
+        )
+    else:
+        logger.warning("No metrics data found in best trial results")
 
     plot_trial_performance(analysis,logger=logger,plot_dir=CONFIG['plot_dir'],metric=cfg['hpo_metric'],file_name=f"metrics_evol_{map_name(cfg['model_name'])}_fold-{fold_idx}_title-{cfg['with_title']}_run_{run_idx}.png")
 

@@ -32,7 +32,7 @@ echo "------> Fold: ${fold}"
         --config configs/hpo.yaml \
         --fold "${fold}" \
         --run "${run}" \
-        --n_trials 3 \
+        --n_trials 30 \
         --hpo_metric "eval_AP_weighted" \
         -m "${model}" \
         --loss "${loss}" \
